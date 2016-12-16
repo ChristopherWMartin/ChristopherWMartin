@@ -7,7 +7,7 @@ layout: default
 - [3D](#digital-3d)
 - [Painting](#painting)
 
-## - - - - - - - - - -
+## - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 ### Digital 3D
 <img src="img/1.png">
@@ -15,7 +15,7 @@ layout: default
 <img src="img/4.png">
 <img src="img/5.jpg">
 
-## - - - - - - - - - -
+## - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 ### Painting
 <img src="img/0.png">
