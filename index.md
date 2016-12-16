@@ -4,8 +4,8 @@ layout: default
 ## ([Resume](http://cwmart.in/Resume.pdf)) | ([Github](http://github.com/ChristopherWMartin/))
 
 ### Work:
-- [3D](#digital-3d)
-- [Painting](#painting)
+## [3D](#digital-3d)
+## [Painting](#painting)
 
 ## - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -17,6 +17,7 @@ layout: default
 
 ## - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+### Painting
 <img src="img/0.png">
 <img src="img/2.jpg">
 
