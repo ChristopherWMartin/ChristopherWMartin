@@ -4,7 +4,7 @@ title: 3D
 img: /img/1_preview.png
 ---
 
-<div class="right">
+<div class="img_row">
 	<img src="{{ site.baseurl }}/img/1.png" alt="" title="1"/>
 </div>
 <div class="img_row">
