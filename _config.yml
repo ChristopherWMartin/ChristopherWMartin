@@ -1,6 +1,6 @@
-title: CW_Mart
+title: CWMart
 url: "http://cwmart.in"
-baseurl: "/"
+baseurl: "/CWMart"
 
 markdown: kramdown
 
