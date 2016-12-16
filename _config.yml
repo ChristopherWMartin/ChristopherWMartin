@@ -1,9 +1,7 @@
 # Site settings
 title: CWM
 tag_text: CWM
-description: more --> ([Resume](http://cwmart.in/Resume.pdf)) | ([Github](http://github.com/ChristopherWMartin/))| ([Email](mailto:cmarti14@artic.edu))
-url: "http://cwmart.in"
-baseurl: ""
+description: more -->
 
 font-awesome-include: true # make this false if you don't need font-awesome
 
