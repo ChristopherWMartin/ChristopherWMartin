@@ -7,6 +7,8 @@ layout: default
 - [3D](#digital-3d)
 - [Painting](#painting)
 
+##__________________________________
+
 ### Digital 3D
 <img src="img/1.png">
 <img src="img/3.png">
