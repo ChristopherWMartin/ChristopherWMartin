@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 3D
-img: /img/1.png
+img: /img/3.png
 ---
 
 <div class="img_row">
