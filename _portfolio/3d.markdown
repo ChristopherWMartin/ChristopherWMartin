@@ -5,10 +5,10 @@ img: /img/3.png
 ---
 
 <div class="col">
-	<img class="img row" src="{{ site.baseurl }}/img/1.png" alt="" title="1"/>
+	<img src="{{ site.baseurl }}/img/1.png" alt="" title="1"/>
 </div>
 <div class="img_row">
-	<img class="col" src="{{ site.baseurl }}/img/3.png" alt="" title="2"/>
+	<img src="{{ site.baseurl }}/img/3.png" alt="" title="2"/>
 </div>
 <div class="img_row">
 	<img class="col" src="{{ site.baseurl }}/img/4.png" alt="" title="3"/>
