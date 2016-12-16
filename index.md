@@ -4,10 +4,10 @@ layout: default
 ## ([Resume](http://cwmart.in/Resume.pdf)) | ([Github](http://github.com/ChristopherWMartin/))
 
 ### Work
-- [3D](###3D)
-- [Painting](###Painting)
+- [3D](#digital3d)
+- [Painting](#painting)
 
-### 3D
+### Digital 3D
 <img src="img/0.png">
 <img src="img/1.png">
 <img src="img/2.jpg">
