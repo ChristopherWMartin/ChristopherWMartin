@@ -8,9 +8,13 @@ layout: default
 
 ### ([Email](mailto:cmarti14@artic.edu))
 
-### Work:
+## - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-## ([Digital 3D](#digital-3d)) | ([Painting](#painting))
+# Work:
+
+### ([Digital 3D](#digital-3d))
+
+### ([Painting](#painting))
 
 ## - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
