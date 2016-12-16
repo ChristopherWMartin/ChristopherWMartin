@@ -2,4 +2,4 @@
 layout: default
 ---
 
-<img src="content/images/carrepeatscreenshot3.png">
+<img src="content/images/0.png">
