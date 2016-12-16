@@ -5,7 +5,7 @@ img: /img/1_preview.png
 ---
 
 <div class="img_row">
-	<img class="col three" src="{{ site.baseurl }}/img/1.png" alt="" title="1"/>
+	<img class="right" src="{{ site.baseurl }}/img/1.png" alt="" title="1"/>
 </div>
 <div class="img_row">
 	<img class="col three" src="{{ site.baseurl }}/img/3.png" alt="" title="2"/>
