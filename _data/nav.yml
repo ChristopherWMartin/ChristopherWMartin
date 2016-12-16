@@ -7,5 +7,5 @@
 - name: "Resume"
   link: "Resume.pdf"
 
-- name: "Home"
+- name: "<--"
   link: "/"
