@@ -1,3 +1,6 @@
+- name: "Github"
+  link: "http://github.com/christopherwmartin"
+
 - name: "Work"
   link: "work"
 
@@ -6,6 +9,3 @@
 
 - name: "Home"
   link: "/"
-
-- name: "Github"
-  link: "http://github.com/christopherwmartin"
