@@ -1,10 +1,10 @@
+# Site settings
 title: CWMart
-url: "http://CWMart.in"
+email: cmarti14@artic.edu
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://cwmart.in” # the base hostname & protocol for your site 
+github_username:  christopherwmartin
 
+# Build settings
 markdown: kramdown
-
-tracking_id: #
-
-sass:
-    style: compressed
-    sass_dir: _sass
+permalink: pretty
