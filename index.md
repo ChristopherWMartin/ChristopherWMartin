@@ -2,7 +2,9 @@
 layout: default
 ---
 
-## ([Resume](http://cwmart.in/Resume.pdf)) | ([Github](http://github.com/ChristopherWMartin/))| ([Email](mailto:cmarti14@artic.edu))
+## ([Resume](http://cwmart.in/Resume.pdf))
+## ([Github](http://github.com/ChristopherWMartin/))
+## ([Email](mailto:cmarti14@artic.edu))
 
 ### Work:
 
