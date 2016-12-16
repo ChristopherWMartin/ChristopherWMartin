@@ -8,7 +8,7 @@ layout: default
 
 ### ([Email](mailto:cmarti14@artic.edu))
 
-# - - - - - - - - - - - - - - - - -
+# - - - - - - - - - - - - -
 
 # Work:
 
@@ -16,7 +16,7 @@ layout: default
 
 ### ([Painting](#painting))
 
-# - - - - - - - - - - - - - - - - -
+# - - - - - - - - - - - - -
 
 ### Digital 3D
 <img src="img/1.png">
@@ -24,10 +24,10 @@ layout: default
 <img src="img/4.png">
 <img src="img/5.jpg">
 
-# - - - - - - - - - - - - - - - - -
+# - - - - - - - - - - - - -
 
 ### Painting
 <img src="img/0.png">
 <img src="img/2.jpg">
 
-# - - - - - - - - - - - - - - - - -
+# - - - - - - - - - - - - -
