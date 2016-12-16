@@ -2,6 +2,8 @@
 title: CWM
 tag_text: CWM
 description: more -->
+url: "http://cwmart.in"
+baseurl: ""
 
 font-awesome-include: true # make this false if you don't need font-awesome
 
