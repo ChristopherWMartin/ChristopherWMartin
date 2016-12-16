@@ -2,17 +2,17 @@
 layout: default
 ---
 
-### (([Resume](http://cwmart.in/Resume.pdf))
+### ([Resume](http://cwmart.in/Resume.pdf))
 
-### (([Github](http://github.com/ChristopherWMartin/))
+### ([Github](http://github.com/ChristopherWMartin/))
 
-### ([Email](mailto:cmarti14@artic.edu))))
+### ([Email](mailto:cmarti14@artic.edu))
 
 # - - - - - - - - - - - - -
 
 # Work:
 
-### (([Digital 3D](#digital-3d))
+### ([Digital 3D](#digital-3d))
 
 ### ([Painting](#painting)))
 
