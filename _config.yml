@@ -1,10 +1,29 @@
 # Site settings
-title: CWMart
-email: cmarti14@artic.edu
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://cwmart.in” # the base hostname & protocol for your site 
-github_username:  christopherwmartin
+title: *folio
+email: you@example.com
+description: > # this means to ignore newlines until "baseurl:"
+  A simple, whitespace, helvetica based portfolio theme.
+baseurl:  # the subpath of your site, e.g. /blog/
+url:  # the base hostname & protocol for your site
+twitter_username: twitter_username
+github_username:  github_username
 
 # Build settings
 markdown: kramdown
-permalink: pretty
+
+highlighter: pygments
+
+# Pagination
+paginate: 15
+paginate_path: "/blog/page:num/"
+
+
+collections:
+  portfolio:
+    output: true
+    permalink: /portfolio/:path/
+  poetry:
+    output: true
+    permalink: /poetry/:path/
+
+
