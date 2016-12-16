@@ -1,29 +1,13 @@
 # Site settings
-title: CWMart
-email: cmarti14@artic.edu
-#description: > # this means to ignore newlines until "baseurl:"
-#  Work and CV
-baseurl:  # the subpath of your site, e.g. /blog/
-url:  http://cwmart.in # the base hostname & protocol for your site
-#twitter_username: twitter_username
-#github_username:  github_username
+title: Good Clean Read
+tag_text: Good Clean Read
+description: A responsive template for publishing single-page websites, articles that are easy on the eyes
+url: "http://127.0.0.1:4000"
+baseurl: ""
+
+font-awesome-include: true # make this false if you don't need font-awesome
 
 # Build settings
 markdown: kramdown
 
-highlighter: rouge
-
-# Pagination
-#paginate: 15
-#paginate_path: "/blog/page:num/"
-
-
-collections:
-  portfolio:
-    output: true
-    permalink: /work/:path/
-#  poetry:
-#    output: true
-#    permalink: /poetry/:path/
-
-
+exclude: ["README.md"]
