@@ -5,9 +5,7 @@ layout: default
 
 ### Work:
 
-## [Digital 3D](#digital-3d)
-
-## [Painting](#painting)
+## [Digital 3D](#digital-3d) / [Painting](#painting)
 
 ## - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
