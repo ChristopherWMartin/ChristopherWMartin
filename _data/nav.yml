@@ -6,3 +6,6 @@
 
 - name: "Home"
   link: "/"
+
+- name: "Github"
+  link: "http://github.com/christopherwmartin"
