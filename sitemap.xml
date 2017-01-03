@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>http://cwmart.in//posts/introducing-chalk</loc>
+<lastmod>2016-10-17T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>http://cwmart.in//posts/configuring-chalk</loc>
+<lastmod>2016-10-16T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>http://cwmart.in//about</loc>
+</url>
+<url>
+<loc>http://cwmart.in//</loc>
+</url>
+<url>
+<loc>http://cwmart.in//tag/design/</loc>
+</url>
+<url>
+<loc>http://cwmart.in//tag/jekyll/</loc>
+</url>
+<url>
+<loc>http://cwmart.in//tag/web/</loc>
+</url>
+<url>
+<loc>http://cwmart.in//Resume.pdf</loc>
+<lastmod>2017-01-03T17:40:16-05:00</lastmod>
+</url>
+</urlset>
