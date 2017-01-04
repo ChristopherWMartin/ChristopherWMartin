@@ -8,7 +8,7 @@
 # Site settings
 title: Chris Martin
 email: cmarti14@artic.edu
-baseurl: "/" # the subpath of your site, e.g. /blog
+# baseurl: "/" # the subpath of your site, e.g. /blog
 url: "http://cwmart.in" # the base hostname & protocol for your site 
 github_username:  ChristopherWMartin
 
@@ -20,7 +20,7 @@ kramdown:
 # Third-party services
 # just leave someone empty to disable it
 # google_analytics: 
-disqus_shortname:
+# disqus_shortname:
 
 # used this for post_excerpt at index_page
 excerpt_separator: <!--description-->
