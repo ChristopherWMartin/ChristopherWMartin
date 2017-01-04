@@ -1,88 +1,62 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>cwm | The high quality, completely customizable, performant and 100% free blog template for Jekyll</title>
-  <meta name="description" content="Chalk uses all the best tools and merges them into one premium blogging theme.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+---
+layout: default
+title: Home
+---
 
-  <meta property="og:title" content="The high quality, completely customizable, performant and 100% free blog template for Jekyll">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="http://cwmart.in//">
-  <meta property="og:description" content="Chalk uses all the best tools and merges them into one premium blogging theme.">
-  <meta property="og:site_name" content="cwm">
-  <meta property="og:image" content="http://cwmart.in//assets/og-image.jpg">
+<div class="home">
+  <div class="post-list">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:url" content="http://cwmart.in//">
-  <meta name="twitter:title" content="The high quality, completely customizable, performant and 100% free blog template for Jekyll">
-  <meta name="twitter:description" content="Chalk uses all the best tools and merges them into one premium blogging theme.">
-  <meta name="twitter:image" content="http://cwmart.in//assets/og-image.jpg">
+    {% for post in site.posts limit:5%}
 
-  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <link href="http://cwmart.in//feed.xml" type="application/rss+xml" rel="alternate" title="cwm Last 10 blog posts" />
-
-  
-    <link type="text/css" rel="stylesheet" href="/assets/dark.css">
-  
-</head>
-
-<body>
-  <main role="main">
-    <div class="grid grid-centered">
-      <div class="grid-cell">
-        <nav class="header-nav reveal">
-  <a href="/" class="header-logo" title="cwm">cwm</a>
-  <ul class="header-links">
-    
-    
-    
-    
-      <li>
-        <a href="https://github.com/ChristopherWMartin" target="_blank" title="GitHub">
-          <span class="icon icon-social-github"></span>
-        </a>
-      </li>
-    
-    
-    
-    
-    
-    
-    
-  </ul>
-</nav>
-
-        <ul class="article-list">
-  
-  
-</ul>
-
-        <footer class="footer reveal">
-  <p>
-    Chalk is a high quality, completely customizable, performant and 100% free
-    blog template for Jekyll built by
-    <a href="/about" title="About me">Nielsen Ramon</a>. Download it <a href="https://github.com/nielsenramon/chalk" target="_blank" title="Download Chalk">here</a>.
-  </p>
-</footer>
-
+    <article class="post_card post">
+      <header class="post_header">
+        <h2 class="post_title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a></h2>
+        <time class="post_date">{{ post.date | date: "%d %B %Y, %A" }}</time>
+      </header>
+      <div class="post_excerpt">
+        <p>
+          {% if post.description %}
+          {{ post.description}}
+          {% else %}
+          {{ post.excerpt }}
+          {% endif %} 
+          <a class="read-more" href="{{ post.url | prepend: site.baseurl }}"> »  </a>
+        </p> 
       </div>
-    </div>
-  </main>
-  <script type="text/javascript" src="/assets/vendor.js"></script>
-<script type="text/javascript" src="/assets/application.js"></script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
-<script>
-  WebFont.load({
-    google: {
-      families: ['Cormorant Garamond:700', 'Lato:300,400,700']
-    }
-  });
-</script>
+      <footer class="post_meta">
 
 
+        {% if post.location %}
+        <span class="author-location">
+          <div data-icon="ei-location"></div>
+          <a href=https://www.google.com/maps/place/{{post.location}}">{{ post.location }}</a>
+        </span>
+        {% endif %}
+        <!--
+        {% for category in post.categories %}
+        <a href="{{"/category/" | append: category | prepend: site.baseurl }}">
+          <data data-icon="ei-archive"></data>
+          {{category}}</a>
+        {% endfor %}
+        -->
 
-</body>
-</html>
+        <!--
+        {% if post.author %}
+        <span class="author_meta">
+          <img src="{{site.baseurl}}/assets/img/{{post.author}}.jpg"></img>
+          <span>David Lin</span>
+        </span>
+        {% endif %}
+        -->
+
+        <!--p class="readmore">
+          <a href=""><data data-icon="ei-arrow-right"></data>Read this article  </a>
+        </p-->
+      </footer>
+      <hr/>
+    </article>
+    {% endfor %}
+
+    <div class="pagination older-post"><a href="./archive"><data data-icon="ei-arrow-right"></data> Archive  </a></div>
+  </div>
+</div>
