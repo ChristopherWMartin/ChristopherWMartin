@@ -1,0 +1,8 @@
+---
+layout: post
+category: Portfolio 
+description: 
+title:  "3D Object Display"
+---
+
+![]({{site.baseurl}}/assets/img/3dDisplayDemoTrimmed.mov)
