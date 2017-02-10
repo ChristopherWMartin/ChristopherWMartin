@@ -15,7 +15,7 @@ z-index: 50;
 }
 
 .site-title {
-font-size: 20px;
+font-size: 15px;
 line-height: $nav-height;
 letter-spacing: -1px;
 margin-bottom: 0;
@@ -70,22 +70,6 @@ display: line;
     }
 }
 
-/**
- * Site footer  **********************************************************
- */
-.site-footer {
-border-top: 1px solid $grey-color-dark;
-font-size: 10px;
-background-color: $grey-color-dark;
-padding: 2px;
-color: #aaa;
-position:fixed;
-left:0px;
-bottom:0px;
-height:25px;
-width:100%;
-}
-/**
  * Pagination   **********************************************************
  */
 .pagination{
