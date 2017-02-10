@@ -1,6 +1,9 @@
 ---
 layout: page
-title: About
+title: about
 permalink: /about/
 ---
 
+Student at the School of the Art Institute of Chicago
+
+cmarti14@artic.edu
