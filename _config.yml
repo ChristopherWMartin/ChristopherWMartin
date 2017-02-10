@@ -1,8 +1,8 @@
 # Site settings
 title: Chris Martin
 email: cmarti14@artic.edu
-baseurl: cwmart.in/
-url: cwmart.in
+baseurl: /port/
+url: http://cwmart.in
 github_username: christopherwmartin
 
 # Build settings
