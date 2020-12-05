@@ -1,12 +1,14 @@
 import os
 from collections import OrderedDict
+import time
 from datetime import datetime
 from shutil import copyfile, copytree, rmtree
+import dateutil
 import pytz
 import markdown2
 from feedgen.feed import FeedGenerator
 
-URL = "https://chriswmartin.github.io/"
+URL = "https://chriswmartin.github.io"
 SITE_NAME = "Textfile"
 AUTHER_NAME = "Chris Martin"
 AUTHOR_EMAIL = "chrismartin@riseup.net"
@@ -43,14 +45,23 @@ def create_sorted_post_dict(post_dir):
     posts = {}
     filepaths = [os.path.join(post_dir, file) for file in os.listdir(post_dir) if file.endswith(".md")]
     for file in filepaths:
-        with open(file, "r") as f: 
+        with open(file, "r") as f:
+
+            for line in f:
+                if line[0] == "#":
+                    title = line.strip("#").lstrip()
+                    break
+
+            f.seek(0)
             first_line = f.readline().strip('\n')
-            for line in f: 
-                if not line.isspace():
-                    if line[0] == "#":
-                        title = line.strip("# ").strip('\n')
-                        break
-        d = {file: { "title": title, "date": first_line}}
+            try:
+                dateutil.parser.parse(first_line, fuzzy=True)
+                date = first_line
+            except ValueError:
+                timestamp =  time.ctime(os.path.getmtime(file))
+                date = datetime.strptime(str(timestamp), "%a %b %d %H:%M:%S %Y").strftime('%Y-%m-%d')
+
+        d = {file: { "title": title, "date": date}}
         posts.update(d)
     sorted_dict = dict(OrderedDict(sorted(posts.items(), key=lambda t:t[1]["date"], reverse=True)))
     return sorted_dict
@@ -77,7 +88,7 @@ for post in posts:
             data = html.read()
         bottom_data += data
      
-    posts_ul += "<li><a href=posts/" + post.split("/")[1].split(".")[0] + ".html>" + title + "</a><small> [" + timestamp + "]</small></li>" 
+    posts_ul += "<li><a href=posts/" + post.split("/")[1].split(".")[0] + ".html>" + title + "</a><small class='timestamp'><" + timestamp + "></small></li>" 
 
     post_html = markdown2.markdown_path(post, extras=["fenced-code-blocks"])
     assembled_post_html = top_data + post_html + bottom_data

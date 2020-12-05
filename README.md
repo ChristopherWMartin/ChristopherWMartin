@@ -4,8 +4,7 @@
 
 ### Add markdown files
 
-Move markdown posts to the `content` directory. The first line of each post should be a timestamp in the format `%Y-%m-%d` (for example: "2020-12-01").
-Posts titles will be automatically parsed from file's first `h1` tag.
+Move markdown files to the `content` directory. If the first line of your file is a timestamp in the format `%Y-%m-%d` (for example: "2020-12-01") it will be treated as that post's publish date. Otherwise timestamps will be generated from the file's last modification date. Posts titles will be automatically parsed from file's first `h1` tag.
 
 Here is an example post:
 ```markdown
