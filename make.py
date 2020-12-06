@@ -35,7 +35,6 @@ fg.title(SITE_NAME)
 fg.author({'name': AUTHER_NAME,'email': AUTHOR_EMAIL})
 fg.description('A blog by' + ' ' + AUTHER_NAME)
 fg.link(href=URL, rel='alternate')
-fg.link(href=URL + '/feed.atom', rel='self')
 fg.language('en')
 
 # --------------------------------------------------------------
