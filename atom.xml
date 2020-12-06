@@ -1,4 +1,53 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><id>https://chriswmartin.github.io</id><title>Textfile</title><updated>2020-12-06T14:55:46.792129+00:00</updated><author><name>Chris Martin</name><email>chrismartin@riseup.net</email></author><link href="https://chriswmartin.github.io" rel="alternate"/><link href="https://chriswmartin.github.io/feed.atom" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator><subtitle>A blog by Chris Martin</subtitle><entry><id>https://chriswmartin.github.io/./posts/hello-world.html</id><title>Hello world
-</title><updated>2020-12-05T00:00:00-05:00</updated><content>A blog post by Chris Martin</content><link href="https://chriswmartin.github.io/./posts/hello-world.html" rel="alternate"/><published>2020-12-05T00:00:00-05:00</published></entry><entry><id>https://chriswmartin.github.io/./posts/readme.html</id><title>Readme
-</title><updated>2020-12-06T00:00:00-05:00</updated><content>A blog post by Chris Martin</content><link href="https://chriswmartin.github.io/./posts/readme.html" rel="alternate"/><published>2020-12-06T00:00:00-05:00</published></entry></feed>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><id>https://chriswmartin.github.io</id><title>Textfile</title><updated>2020-12-06T20:34:54.751959+00:00</updated><author><name>Chris Martin</name><email>chrismartin@riseup.net</email></author><link href="https://chriswmartin.github.io" rel="alternate"/><link href="https://chriswmartin.github.io/feed.atom" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator><subtitle>A blog by Chris Martin</subtitle><entry><id>https://chriswmartin.github.io/./posts/hello-world.html</id><title>Hello world
+</title><updated>2020-12-05T00:00:00-05:00</updated><content type="CDATA"><![CDATA[<p>2020-12-05</p>
+
+<h1>Hello world</h1>
+
+<p>This is just a post to try out a super simple static site generator I am working on. Check out the code <a href="https://github.com/chriswmartin/chriswmartin.github.io">here</a>!</p>
+
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[]){</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
+]]></content><link href="https://chriswmartin.github.io/./posts/hello-world.html" rel="alternate"/><published>2020-12-05T00:00:00-05:00</published></entry><entry><id>https://chriswmartin.github.io/./posts/readme.html</id><title>Readme
+</title><updated>2020-12-06T00:00:00-05:00</updated><content type="CDATA"><![CDATA[<p>2020-12-06</p>
+
+<h1>Readme</h1>
+
+<h2>Usage</h2>
+
+<h3>Add markdown files</h3>
+
+<p>Move markdown files to the <code>content</code> directory. If the first line of your file is a timestamp in the format <code>%Y-%m-%d</code> (for example: "2020-12-01") it will be treated as that post's publish date. Otherwise timestamps will be generated from the file's last modification date. Posts titles will be automatically parsed from file's first <code>h1</code> tag.</p>
+
+<p>Here is an example post:</p>
+
+<pre><code>2020-12-01
+
+# Blog post title
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...
+</code></pre>
+
+<h3>Modify templates</h3>
+
+<p>If desired, modify the header, footer, and css files found in the <code>templates/</code> directory.</p>
+
+<h3>Update site variables</h3>
+
+<p>Change the global variables at the top of <code>make.py</code> to reflect your site's URL. </p>
+
+<h3>Install dependencies &amp; generate site</h3>
+
+<div class="codehilite"><pre><span></span><code>pip3 install -r requirements.txt
+python3 make.py
+</code></pre></div>
+
+<p>All generated files will be placed in the <code>public/</code> directory.</p>
+]]></content><link href="https://chriswmartin.github.io/./posts/readme.html" rel="alternate"/><published>2020-12-06T00:00:00-05:00</published></entry></feed>

@@ -113,7 +113,7 @@ for post in posts:
     fe = fg.add_entry()
     fe.id(URL + "/" + POST_DIR + "/" + post.split("/")[1].split(".")[0] + ".html")
     fe.title(posts[post]['title'])
-    fe.description('A blog post by' + ' ' + AUTHER_NAME)
+    fe.content(post_html, type='CDATA')
     fe.link({'href': URL + "/" + POST_DIR + "/" + post.split("/")[1].split(".")[0] + ".html", 'rel': 'alternate'})
     fe.published(localized_timestamp)
     fe.updated(localized_timestamp)
