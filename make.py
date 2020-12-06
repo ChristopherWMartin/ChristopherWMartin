@@ -1,9 +1,9 @@
 import os
 from collections import OrderedDict
-import time
-from datetime import datetime
 from shutil import copyfile, copytree, rmtree
+import time
 import dateutil
+from datetime import datetime
 import pytz
 import markdown2
 from feedgen.feed import FeedGenerator
@@ -13,8 +13,8 @@ SITE_NAME = "Textfile"
 AUTHER_NAME = "Chris Martin"
 AUTHOR_EMAIL = "chrismartin@riseup.net"
 
-MARKDOWN_DIR = "content"
-PUBLIC_DIR = "."
+MARKDOWN_DIR = "content" # where post markdown files live
+PUBLIC_DIR = "." # the directory your static site will be served from
 POST_DIR = PUBLIC_DIR + "/posts"
 MD_MEDIA_DIR = MARKDOWN_DIR + "/media"
 PUBLIC_MEDIA_DIR = POST_DIR + "/media"
@@ -39,59 +39,68 @@ fg.link(href=URL + '/feed.atom', rel='self')
 fg.language('en')
 
 # --------------------------------------------------------------
-# sort all markdown files by creation date (most recent first)
+# for all markdown files in content directory
+# extract their publish date and title and then
+# return them in a dictionary sorted by most recent first
 # --------------------------------------------------------------
 def create_sorted_post_dict(post_dir):
     posts = {}
     filepaths = [os.path.join(post_dir, file) for file in os.listdir(post_dir) if file.endswith(".md")]
     for file in filepaths:
         with open(file, "r") as f:
-
             for line in f:
-                if line[0] == "#":
+                if line[0] == "#": # the title will be the topmost line beginning with '#'
                     title = line.strip("#").lstrip()
                     break
 
             f.seek(0)
             first_line = f.readline().strip('\n')
-            try:
+            try: # check if the first line is a valid date
                 dateutil.parser.parse(first_line, fuzzy=True)
                 date = first_line
-            except ValueError:
+            except ValueError: # if the first line is not a date use the file's modification time
                 timestamp =  time.ctime(os.path.getmtime(file))
                 date = datetime.strptime(str(timestamp), "%a %b %d %H:%M:%S %Y").strftime('%Y-%m-%d')
 
         d = {file: { "title": title, "date": date}}
         posts.update(d)
+
     sorted_dict = dict(OrderedDict(sorted(posts.items(), key=lambda t:t[1]["date"], reverse=True)))
-    return sorted_dict
+    return sorted_dict # return a dict of files, their title, and publish date sorted by most recent first
+
 posts = create_sorted_post_dict(MARKDOWN_DIR)
 
-# ----------------------------------------------
-# assemble post & index html from markdown & templates
-# ----------------------------------------------
-posts_ul = ""
+# --------------------------------------
+# assemble index.html & each post
+# from markdown files & html templates
+# --------------------------------------
+posts_ul = "" # list of posts <ul> for index.html page
 for post in posts:
-    with open(post) as f:
-        title = posts[post]['title']
+    title = posts[post]['title']
     timestamp = posts[post]['date']
     
-    top_data = ""
+    top_data = "" # html to insert before post content
     for file in [HEAD_TEMPLATE, HEADER_TEMPLATE]:
         with open(file, 'r') as html:
             data = html.read()
         top_data += data
     
-    bottom_data = ""
+    bottom_data = "" # html to insert after post content
     for file in [FOOTER_TEMPLATE, FOOT_TEMPLATE]:
         with open(file, 'r') as html:
             data = html.read()
         bottom_data += data
-     
+    
+    # assemble each <li> for posts <ul>
     posts_ul += "<li><a href=posts/" + post.split("/")[1].split(".")[0] + ".html>" + title + "</a><small class='timestamp'><" + timestamp + "></small></li>" 
 
+    # generate html for each post
     post_html = markdown2.markdown_path(post, extras=["fenced-code-blocks"])
+
+    # assemble html post from templates and converted markdown file
     assembled_post_html = top_data + post_html + bottom_data
+
+    # save final html post
     with open(POST_DIR + "/" + post.split("/")[1].split(".")[0] + ".html", 'w') as assembled_post:
         assembled_post.write(assembled_post_html)
 
