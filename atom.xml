@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><id>https://chriswmartin.github.io</id><title>Textfile</title><updated>2020-12-06T20:41:12.183586+00:00</updated><author><name>Chris Martin</name><email>chrismartin@riseup.net</email></author><link href="https://chriswmartin.github.io" rel="alternate"/><generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator><subtitle>A blog by Chris Martin</subtitle><entry><id>https://chriswmartin.github.io/./posts/hello-world.html</id><title>Hello world
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><id>https://chriswmartin.github.io</id><title>Textfile</title><updated>2020-12-11T19:30:55.605842+00:00</updated><author><name>Chris Martin</name><email>chrismartin@riseup.net</email></author><link href="https://chriswmartin.github.io" rel="alternate"/><generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator><subtitle>A blog by Chris Martin</subtitle><entry><id>https://chriswmartin.github.io/./posts/hello-world.html</id><title>Hello world
 </title><updated>2020-12-05T00:00:00-05:00</updated><content type="CDATA"><![CDATA[<p>2020-12-05</p>
 
 <h1>Hello world</h1>
@@ -50,4 +50,124 @@ python3 make.py
 </code></pre></div>
 
 <p>All generated files will be placed in the <code>public/</code> directory.</p>
-]]></content><link href="https://chriswmartin.github.io/./posts/readme.html" rel="alternate"/><published>2020-12-06T00:00:00-05:00</published></entry></feed>
+]]></content><link href="https://chriswmartin.github.io/./posts/readme.html" rel="alternate"/><published>2020-12-06T00:00:00-05:00</published></entry><entry><id>https://chriswmartin.github.io/./posts/aoc-2020-day11.html</id><title>Advent of Code 2020 Day 11 visualization
+</title><updated>2020-12-11T00:00:00-05:00</updated><content type="CDATA"><![CDATA[<p>2020-12-11</p>
+
+<h1>Advent of Code 2020 Day 11 visualization</h1>
+
+<p><video width="100%" height="500px" controls="controls" preload="metadata">
+  <source src="media/visualization.mp4#t=0.1" type="video/mp4" />
+  Your browser does not support the video tag.
+</video></p>
+
+<p>First we generate a new, random seating layout based off of the AoC examples</p>
+
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_layout</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="p">):</span>
+    <span class="n">chars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">]</span>
+    <span class="n">layout</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rows</span><span class="p">):</span>
+        <span class="n">column</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">columns</span><span class="p">):</span>
+            <span class="n">column</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">chars</span><span class="p">))</span>
+        <span class="n">layout</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
+</code></pre></div>
+
+<p>this returns a two dimensional array like</p>
+
+<pre><code>[
+    ['.', '.', '.', 'L', '.', 'L', '.', 'L', '.', 'L'],
+    ['.', 'L', 'L', 'L', 'L', 'L', 'L', '.', '.', '.'],
+    ['.', '.', 'L', 'L', '.', 'L', 'L', 'L', 'L', 'L'],
+    ['L', 'L', 'L', '.', 'L', 'L', 'L', 'L', 'L', '.'],
+    ['.', '.', 'L', 'L', '.', 'L', '.', '.', 'L', 'L'],
+    ['L', '.', 'L', 'L', '.', 'L', 'L', '.', 'L', 'L'],
+    ['L', '.', '.', 'L', '.', 'L', '.', 'L', 'L', 'L'],
+    ['.', 'L', 'L', '.', '.', '.', '.', 'L', '.', 'L'],
+    ['.', '.', 'L', '.', 'L', 'L', 'L', '.', '.', '.'],
+    ['L', 'L', 'L', '.', 'L', 'L', '.', '.', 'L', 'L']
+]
+</code></pre>
+
+<p>next we have <code>print_layout()</code> which gives us a nicer representation of our seats</p>
+
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">print_layout</span><span class="p">(</span><span class="n">seat_array</span><span class="p">):</span>
+    <span class="n">layout</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">seat_array</span><span class="p">:</span>
+        <span class="n">txt</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">seat</span> <span class="ow">in</span> <span class="n">column</span><span class="p">:</span>
+          <span class="n">txt</span> <span class="o">+=</span> <span class="n">seat</span>
+        <span class="n">layout</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">txt</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span> 
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">...L.L.L.L</span>
+<span class="sd">.LLLLLL...</span>
+<span class="sd">..LL.LLLLL</span>
+<span class="sd">LLL.LLLLL.</span>
+<span class="sd">..LL.L..LL</span>
+<span class="sd">L.LL.LL.LL</span>
+<span class="sd">L..L.L.LLL</span>
+<span class="sd">.LL....L.L</span>
+<span class="sd">..L.LLL...</span>
+<span class="sd">LLL.LL..LL</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+
+<p>The fun thing about this function is that is gives us lot of flexibility in how we represent this data. For example we can draw our seats using <a href="https://en.wikipedia.org/wiki/Block_Elements">unicode block elements</a>.</p>
+
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">print_layout</span><span class="p">(</span><span class="n">seat_array</span><span class="p">):</span>
+    <span class="n">layout</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">seat_array</span><span class="p">:</span>
+        <span class="n">txt</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">seat</span> <span class="ow">in</span> <span class="n">column</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">seat</span> <span class="o">==</span> <span class="s1">&#39;.&#39;</span><span class="p">:</span> <span class="n">txt</span> <span class="o">+=</span> <span class="s1">&#39; &#39;</span>
+            <span class="k">if</span> <span class="n">seat</span> <span class="o">==</span> <span class="s1">&#39;#&#39;</span><span class="p">:</span> <span class="n">txt</span> <span class="o">+=</span> <span class="s1">&#39;▓&#39;</span>
+            <span class="k">if</span> <span class="n">seat</span> <span class="o">==</span> <span class="s1">&#39;L&#39;</span><span class="p">:</span> <span class="n">txt</span> <span class="o">+=</span> <span class="s1">&#39;▒&#39;</span>    
+        <span class="n">layout</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">txt</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd"> ▓ ░▓▓░▓ ▓</span>
+<span class="sd">▓ ░ ░░ ░ ▓</span>
+<span class="sd">▓ ░     ░</span>
+<span class="sd">░ ░▓ ░   ░</span>
+<span class="sd">▓░ ░░ ▓▓░▓</span>
+<span class="sd">░▓▓  ░▓░</span>
+<span class="sd"> ░░ ░ ░░▓</span>
+<span class="sd">▓▓  ░▓</span>
+<span class="sd">    ░░ ▓░░</span>
+<span class="sd">    ▓░  ░▓</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</code></pre></div>
+
+<p>Then we can create an animation of our generated layouts reaching equilibrium</p>
+
+<div class="codehilite"><pre><span></span><code><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;clear&#39;</span><span class="p">)</span>
+
+  <span class="n">rows</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="s1">&#39;stty size&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>  
+  <span class="n">layout</span> <span class="o">=</span> <span class="n">generate_layout</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">columns</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">rows</span><span class="p">))</span>
+  <span class="n">seats</span> <span class="o">=</span> <span class="n">model_seats</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
+
+  <span class="n">occupied_seat_counts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+  <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">seats</span> <span class="o">=</span> <span class="n">model_seats</span><span class="p">(</span><span class="n">seats</span><span class="p">)</span> <span class="c1"># model the next seat layout</span>
+
+    <span class="n">layout</span> <span class="o">=</span> <span class="n">print_layout</span><span class="p">(</span><span class="n">seats</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">layout</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># display our new seat layout</span>
+
+    <span class="n">occupied_seats</span> <span class="o">=</span> <span class="n">layout</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;▓&#39;</span><span class="p">)</span> <span class="c1"># this should be whichever</span>
+                                       <span class="c1"># char you use to represent</span>
+                                       <span class="c1"># occupied seats</span>
+    <span class="k">if</span> <span class="n">occupied_seats</span> <span class="o">==</span> <span class="n">occupied_seat_counts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+      <span class="k">break</span> <span class="c1"># if the number of occupied seats has not changed since</span>
+            <span class="c1"># the previous run break and start on new seating layout</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">occupied_seat_counts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">occupied_seats</span><span class="p">)</span>
+</code></pre></div>
+
+<p>You can see the full code <a href="https://gist.github.com/chriswmartin/3e0b42f64bbbbd215d72e0ee8d5100e2">here</a> and run the code live by clicking the play button below.</p>
+
+<iframe frameborder="0" width="100%" height="500px" src="https://repl.it/@0xcm/aoc2020day11part1?lite=true&outputonly=1"></iframe>
+]]></content><link href="https://chriswmartin.github.io/./posts/aoc-2020-day11.html" rel="alternate"/><published>2020-12-11T00:00:00-05:00</published></entry></feed>
