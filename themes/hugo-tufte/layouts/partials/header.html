@@ -1,0 +1,13 @@
+{{ partial "doctype.html" . }}
+<head>
+<title>{{ .Site.Title }} - {{ .Title  }}</title>
+
+  {{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{ end -}}
+
+  {{ partial "meta.html" . }}
+  {{ partial "opengraph.html" }}
+  {{ partial "header.includes.html" . }}
+
+</head>

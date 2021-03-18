@@ -1,0 +1,109 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ with .Site.Params.description -}}
+    <meta name="description" content="{{ . }}">
+    {{ end }}
+    {{ printf `<link rel="shortcut icon" href="%s">` ("favicon.ico" | absURL) | safeHTML }}
+    {{ with .OutputFormats.Get "rss" -}}
+        {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
+
+    {{ $resources := slice -}}
+
+    {{ $resources = $resources | append (resources.Get "css/rss.css") -}}
+     
+    {{ $resources = $resources | append (resources.Get "css/main.css") -}}
+
+    {{ $resources = $resources | append (resources.Get "css/min770px.css") -}}
+
+    {{ $dark := .Site.Params.dark | default "auto" -}}
+    {{ if not (eq $dark "off") -}}
+        {{ $resources = $resources | append (resources.Get "css/dark.css" | resources.ExecuteAsTemplate "dark.css" .) -}}
+    {{ end -}}
+
+    {{ if .Site.Params.highlight -}}
+        {{ $resources = $resources | append (resources.Get "css/syntax.css") -}}
+        {{ $resources = $resources | append (resources.Get "css/syntax-dark.css") -}}
+    {{ end -}}
+
+    {{ $css := $resources | resources.Concat "css/style.css" | minify }}
+    {{ printf `<link rel="stylesheet" href="%s">` $css.RelPermalink | safeHTML }}
+
+    <title>{{ .Title }}</title>
+    
+    
+<script>
+  let darkMode = false;
+
+  function toggleDarkMode() {
+    if (!darkMode) {
+      document.body.style.backgroundColor = '#121212';
+      document.body.style.color = '#fff';
+          
+      var x = document.getElementById("content").querySelectorAll("p");
+      for (var i = 0; i < x.length; i++) {
+        x[i].style.color = "#fff";
+      }
+          
+      var x = document.getElementById("banner").querySelectorAll("a");
+      for (var i = 0; i < x.length; i++) {
+        x[i].style.color = "#fff";
+      }
+          
+      toggleSwitch();
+      toggleDarkCode();
+          
+      darkMode = true;
+    } else {
+        document.body.style.backgroundColor = '#fff';
+        document.body.style.color = '#394548';
+
+        var x = document.getElementById("content").querySelectorAll("p");
+        for (var i = 0; i < x.length; i++) {
+          x[i].style.color = "#394548";
+        }
+          
+        var x = document.getElementById("banner").querySelectorAll("a");
+        for (var i = 0; i < x.length; i++) {
+          x[i].style.color = "#313a3d";
+        }
+          
+        toggleSwitch();
+        toggleDarkCode();
+
+        darkMode = false;
+      }
+  }
+
+  function toggleDarkCode() {
+    var code = document.getElementsByClassName("highlight");
+
+    for (var i = 0; i < code.length; i++) {
+      if(code[i].classList.contains("dark-code")) {
+        code[i].classList.remove("dark-code");
+      }
+      else {
+        code[i].classList.add("dark-code");
+      }
+    }
+  }
+
+  function toggleSwitch() {
+    var btn = document.getElementById("toggle-switch"); 
+    var icn = btn.getElementsByTagName("i");
+    //var x = document.getElementById("toggle-switch").getElementsByTagName("i");
+    if(icn[0].classList.contains("icon-toggle-on")) {
+      icn[0].classList.remove("icon-toggle-on");
+      icn[0].classList.add("icon-toggle-off");
+      btn.style.color = "#ffffff";
+    }
+    else {
+      icn[0].classList.add("icon-toggle-on");
+      icn[0].classList.remove("icon-toggle-off");
+      btn.style.color = "#000000";
+    }
+  }
+</script>
+
+</head>

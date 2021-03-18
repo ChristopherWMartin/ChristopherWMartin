@@ -1,0 +1,10 @@
+{{ define "main" }}
+<article>
+    <header id="post-header">
+        {{- if isset .Params "date" -}}
+            <time>{{ .Date.Format "January 2, 2006" }}</time>
+        {{- end -}}
+    </header>
+    {{- .Content -}}
+</article>
+{{ end }}
