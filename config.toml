@@ -1,4 +1,4 @@
-baseurl = "https://textfile.io"
+baseurl = "https://chriswmartin.github.io"
 pluralizeListTitles = false
 staticDir = ["static"]
 languageCode = "en-us"
