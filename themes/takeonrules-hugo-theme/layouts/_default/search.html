@@ -1,0 +1,154 @@
+{{ define "breadcrumb" }}
+  {{ partial "breadcrumb.html" . }}
+{{ end }}
+{{ define "main" }}
+  <article itemprop="mainEntity" class="h-entry" aria-labelledby="{{ anchorize .Title }}" id="skip-to-content" itemid="#skip-to-content" role="search" itemscope itemtype="http://schema.org/WebPageElement">
+    <header>
+      <link itemprop="mainEntityOfPage" href="{{ .Permalink }}#skip-to-content" />
+      <h1 itemprop="name" class="p-name" id="{{ anchorize .Title }}">{{ .Title }}</h1>
+      {{ partial "footer/image.html" . }}
+    </header>
+    <section itemprop="text" class="e-content">
+      <div class="hide-js" id="lunr-search-result-container" role="search">
+        <label for="search">Search for:</label>
+        {{ $minLength := 2 }}
+        <input minlength="{{ $minLength }}" aria-controls="results" autofocus="true" inputmode="search" id="search" aria-describedby="search-help" type="text" name="q" class="site-search-input" placeholder="Start typing&hellip;">
+        <p id="search-help">This search uses <code>Lunr.js</code>; <a rel="help external opener nofollow" href="https://lunrjs.com/guides/searching.html">Their searching documentation</a> may be useful for helping refine your search.</p>
+        <h2>Results</h2>
+        <ul aria-live="polite" id="results"></ul>
+      </div>
+      <script>
+        var container = document.getElementById('lunr-search-result-container');
+        container.setAttribute("class", "javascript-enabled");
+        var siteSearch = document.getElementById('cse-search-box');
+      </script>
+      <noscript>
+        <p>You've disabled Javascript. You'll need to use <a href="https://duckduckgo.com/?q=site:{{ .Site.Params.siteHost}}">DuckDuckGo</a> or some other Search Engine to search {{ .Site.Title }}.</p>
+      </noscript>
+
+      {{ $searchJs := resources.Get "js/search.json" | resources.ExecuteAsTemplate "search.json" . }}
+      <link rel="preload" as="script" href="/search.json" />
+      <script type="text/javascript" src="{{ $searchJs.Permalink }}" integrity="{{ $searchJs.Data.Integrity }}"></script>
+
+      {{ $secureJqueryJS := resources.Get "js/jquery-3.5.1.min.js" | resources.Minify | resources.Fingerprint "sha512" }}
+      <script type="text/javascript" src="{{ $secureJqueryJS.Permalink }}" integrity="{{ $secureJqueryJS.Data.Integrity }}"></script>
+      <link rel="preload" as="script" href="{{ $secureJqueryJS.Permalink }}" />
+
+      {{ $secureLunrJS := resources.Get "js/lunr-2.3.9.js" | resources.Minify | resources.Fingerprint "sha512"}}
+      <script type="text/javascript" src="{{ $secureLunrJS.Permalink }}" integrity="{{ $secureLunrJS.Data.Integrity }}"></script>
+      <link rel="preload" as="script" href="{{ $secureLunrJS.Permalink }}" />
+      <script type="text/javascript">
+        var lunrIndex, $results, pagesIndex;
+
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split('&');
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split('=');
+
+                if (pair[0] === variable) {
+                    return decodeURIComponent(pair[1].replace(/\+/g, '%20'));
+                }
+            }
+        }
+
+        var searchTerm = getQueryVariable('q');
+
+        // Initialize lunrjs using our generated index file
+        function initLunr() {
+            // First retrieve the index file
+            $.getJSON("/search.json")
+                .done(function(index) {
+                    pagesIndex = index;
+                    console.log("index:", pagesIndex);
+                    lunrIndex = lunr(function() {
+                        this.field("title", { boost: 20 });
+                        this.field("tags", { boost: 5 });
+                        this.field("content", { boost: 10});
+                        this.ref("uri");
+
+                        pagesIndex.forEach(function (page) {
+                            this.add(page)
+                        }, this)
+                    });
+                    initUI();
+                })
+                .fail(function(jqxhr, textStatus, error) {
+                    var err = textStatus + ", " + error;
+                    console.error("Error getting Hugo index flie:", err);
+                });
+        }
+
+        // Nothing crazy here, just hook up a listener on the input field
+        function initUI() {
+            $results = $("#results");
+
+            if (searchTerm != undefined) {
+              var results = search(searchTerm);
+              renderResults(results);
+            }
+
+            $("#search").keyup(function() {
+                $results.empty();
+
+                // Only trigger a search when 2 chars. at least have been provided
+                var query = $(this).val();
+              if (query.length < {{ $minLength }}) {
+                    return;
+                }
+
+                var results = search(query);
+
+                renderResults(results);
+            });
+        }
+
+        /**
+         * Trigger a search in lunr and transform the result
+         *
+         * @param  {String} query
+         * @return {Array}  results
+         */
+        function search(query) {
+            return lunrIndex.search(query).map(function(result) {
+                    return pagesIndex.filter(function(page) {
+                        return page.uri === result.ref;
+                    })[0];
+                });
+        }
+
+        /**
+         * Display the 10 first results
+         *
+         * @param  {Array} results to display
+         */
+        function renderResults(results) {
+            if (!results.length) {
+                return;
+            }
+            $results.empty();
+            // Only show the twenty first results
+            results.slice(0, 20).forEach(function(result) {
+                var $result = $("<li>");
+                $result.append($("<a>", {
+                    href: result.uri,
+                    text: result.title
+                }));
+                $results.append($result);
+            });
+        }
+
+        initLunr();
+
+        // Let's get started
+        $(document).ready(function() {
+          if (searchTerm != undefined) {
+            $('#search').val(searchTerm);
+            $("#results").append($("<li>Loading&hellip;</li>"));
+          }
+          $('#search').focus();
+        });
+      </script>
+    </section>
+  </article>
+{{ end }}

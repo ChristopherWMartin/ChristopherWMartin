@@ -1,0 +1,18 @@
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+{{- with $.Site.Params.webmentionUrl }}<link rel="webmention" href="{{ . }}" />{{ end }}
+{{- with $.Site.Params.pingbackUrl }}<link rel="pingback" href="{{ . }}" />{{ end }}
+<meta name="google-site-verification" content="{{ .Site.Params.googleSiteVerification }}" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+{{ with $.Site.Params.searchMySiteVerification }}<meta name="searchmysite-verification" content="{{ . }}" />{{- end }}
+
+{{ $screen := resources.Get "css/tufte.scss" | toCSS | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $screen.RelPermalink }}" integrity="{{ $screen.Data.Integrity }}" rel="preload stylesheet" as="style" media="screen, print"/>
+{{ $print := resources.Get "css/print.scss" | toCSS | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $print.RelPermalink }}" integrity="{{ $print.Data.Integrity }}" rel="preload stylesheet" as="style" media="print"/>
+
+{{ range .Site.Home.AlternativeOutputFormats -}}
+  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title | safeHTML }} {{ .Name }} Feed" />
+{{ end -}}
+{{- range .Site.Menus.me_elsewhere }}
+<link rel="me" href="{{ .URL }}" title="{{ .Name }}" />
+{{- end }}

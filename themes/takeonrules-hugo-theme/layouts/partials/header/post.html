@@ -1,0 +1,18 @@
+<h1 itemprop="headline" class="p-name" id="{{ anchorize .Title }}">{{ .Title | safeHTML }}</h1>
+<meta itemprop="name" content="{{ .Title }}" />
+{{- with .Params.headline }}
+<h2 itemprop="alternativeHeadline">{{ . }}</h2>
+{{- end }}
+{{/*
+<link itemprop="author" href="{{ $.Site.BaseURL }}#tor-author" />
+<link itemprop="publisher" href="{{ $.Site.BaseURL }}#tor-organization" />
+<link itemprop="url" href="{{ .Permalink }}" />
+<meta itemprop="wordCount" content="{{ .WordCount }}" />
+<meta itemprop="inLanguage" content="en-US" />
+<nav aria-label="Content's metadata and navigation">
+  {{ partial "postAuthorWithLink.html" . }}
+  {{ partial "postDate.html" . }}
+  {{ partial "postTags.html" . }}
+  {{ partial "postSeries.html" . }}
+</nav>
+*/}}

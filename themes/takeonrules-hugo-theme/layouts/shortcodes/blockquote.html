@@ -1,0 +1,30 @@
+{{- $game := .Get "game" }}
+{{- $cite := .Get "cite" }}
+{{- $cite_url := .Get "cite_url" }}
+{{- $scratchKey := false }}
+{{- if $game }}
+{{- $entry := index (where $.Site.Data.glossary "game" "eq" $game) 0 }}
+{{- $cite = $entry.title }}
+{{- $cite_url = $entry.offer }}
+{{- $scratchKey = printf "linkToGame-%s" $game }}
+{{- end }}
+{{- $post := .Get "post" }}
+<blockquote itemprop="citation" itemscope itemtype="http://schema.org/CreativeWork" class="h-cite {{- with .Get "epigraph" }} epigraph{{- end }}" {{- if($cite_url) }} cite="{{ $cite_url }}"{{ end }}>
+{{ if .Get "poem" }}
+<pre class="poem">{{ .Inner }}</pre>
+{{ else }}
+{{ .Inner | markdownify }}
+{{ end }}
+{{- if .IsNamedParams }}
+<footer>&mdash;
+{{- with .Get "pre" }}
+<span class="p-author h-card" itemprop="author">{{ . | markdownify }}</span>{{- if(or (or $cite $cite_url) $post) }}, {{ end }}
+{{- end }}
+
+{{- if $scratchKey }}{{- if (.Page.Scratch.Get $scratchKey) }}<cite itemprop="headline">{{- if $cite }}{{- $cite }}{{- else }}{{- $cite_url }}{{- end }}</cite><link itemprop="mainEntityOfPage" href="{{ $cite_url }}" />{{- else }}<cite><a itemprop="mainEntityOfPage" href="{{ $cite_url }}" class="u-url p-name" rel="cite">{{- if $cite }}{{- $cite }}{{- else }}{{- $cite_url }}{{- end }}</a></cite>{{- end }}
+{{- else if $cite_url }}<cite itemprop="headline"><a itemprop="mainEntityOfPage" href="{{ $cite_url }}" class="u-url p-name" rel="cite">{{- if $cite }}{{- $cite }}{{- else }}{{- $cite_url }}{{- end }}</a></cite>{{- else }}{{- if $cite }}<cite itemprop="headline">{{- $cite }}</cite>{{- end }}{{- end }}
+{{- if($post) }}{{ partial "unparagraphy.html" $post }}{{- end }}
+</footer>
+{{- end }}
+</blockquote>
+{{- if $scratchKey }}{{- .Page.Scratch.Set $scratchKey "t" }}{{- end }}

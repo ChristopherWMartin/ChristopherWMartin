@@ -1,13 +1,26 @@
+paginate = 10
+paginatePath = "page"
+
 baseurl = "https://chriswmartin.github.io"
 pluralizeListTitles = false
 staticDir = ["static"]
 languageCode = "en-us"
 title = "Textfile"
-theme = "hugo-tufte"
+theme = "takeonrules-hugo-theme"
+# theme = "hugo-tufte"
 # theme = "etch"
 enableInlineShortcodes = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
+
+builddrafts = true
+canonifyurls = true
+
+[taxonomies]
+  category = "categories"
+  group = "groups"
+  series = "series"
+  tag = "tags"
 
 [markup]
   [markup.highlight]
@@ -44,7 +57,7 @@ lastmod = ["lastmod", ":fileModTime", ":default"]
   pre = "<i class='fa fa-book fa-lg'></i> "
   weight = -100
   identifier = "posts"
-  url = "/posts"
+  url = "/post"
 [[menu.nav]]
   name = "Rss"
   pre = "<i class='fa fa-rss fa-lg'></i> "

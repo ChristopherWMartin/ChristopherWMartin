@@ -1,0 +1,16 @@
+{{- if isset .Params "licenses" }}
+{{- $licenses := .Params.licenses }}
+{{- if gt (len $licenses) 0 }}
+<section itemprop="copyrightNotice" aria-labelledby="licenses">
+  <h2 id="licenses">License(s)</h2>
+  {{ $context := . }}
+  {{ range .Params.licenses }}
+  <p class="license">
+    <small>
+      {{ with index (where $.Site.Data.licenses "Key" "eq" .) 0 }}
+        {{ partial .PartialForLicenseFooter $context }}
+      {{ end }}
+    </small>
+  </p>
+  {{ end }}
+</section>{{- end }}{{- end }}

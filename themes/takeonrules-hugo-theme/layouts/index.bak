@@ -1,0 +1,31 @@
+{{ define "breadcrumb" }}
+{{ partial "breadcrumb.html" . }}
+{{ end }}
+{{ define "main" }}
+{{- $context := . }}
+{{- $termTitle := .Title }}
+{{- $data := .Data }}
+<article itemprop="mainEntity" class="h-entry" id="skip-to-content" aria-labelledby="{{ anchorize $termTitle }}" itemid="#skip-to-content" itemscope itemtype="http://schema.org/CreativeWorkSeries">
+   {{ range .Site.RegularPages }}
+
+  <section class="e-content content">
+
+
+    <ul>
+      {{ $lastInstance := sub (len $.Site.RegularPages) 1 }}
+      {{- range $index, $entry := sort $.Site.RegularPages "Date" "asc" }}
+      {{- with $entry }}
+      <li>
+        <time {{ if (or (eq $index 0) (eq $index $lastInstance)) }}itemprop="{{ if eq $index 0 }}startDate{{ end }} {{ if eq $index $lastInstance }}endDate{{ end }}"{{ end }} datetime="{{ dateFormat .Site.Params.iso8601_format .Date }}">{{ dateFormat "2006-01-02" .Date}}</time> &middot;
+        <span itemprop="hasPart" itemscope itemtype="http://schema.org/CreativeWork">
+          <meta itemprop="position" content="{{ $index }}" />
+          <cite itemprop="name"><a itemprop="url" href="{{ .Permalink}}">{{ .Title }}</a></cite>
+        </span>
+      </li>
+      {{- end }}
+      {{- end }}
+    </ul>
+  </section>
+  {{- end }}
+</article>
+{{ end }}

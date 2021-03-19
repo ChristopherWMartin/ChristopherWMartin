@@ -1,0 +1,238 @@
+// First significant deviation from CSS on tufte.css site - variable font size as browser width expands or contracts
+
+html, body { height: 100%; }
+
+html { scroll-behavior: smooth; vertical-align: baseline; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { margin-left: auto; margin-right: auto; padding-left: 12.5%; font-family: var(--body-font); counter-reset: sidenote-counter; }
+body, .list-page ul { width: 87.5%; }
+
+// sets link style according to values in _settings.scss
+article a { text-decoration: underline; }
+a, sup a { text-decoration: none; }
+// --------- Typography stuff -----------//
+// added rational line height and margins ala http://webtypography.net/intro/
+h1, h2, h3, h4 { font-family: var(--header-font); font-weight: 400; }
+h1 { font-size: 2rem; }
+
+summary { cursor: pointer; }
+abbr { cursor: help; }
+p, summary, li {  vertical-align: baseline; }
+figure, blockquote { margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0; }
+
+.poem {
+      font-family: var(--body-font);
+      color: var(--fg);
+      padding: 0;
+}
+blockquote {
+  width: 55%;
+  padding-left: 1rem;
+  p, .group, ul, ol, h2, h3, h4, footer { width: 90%; }
+  .poem {
+      width: auto;
+      color: var(--blockquote);
+  }
+  footer {
+    text-align: right;
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+nav [role="list"] [role="listitem"] { display: inline-block; }
+
+/* BEGIN Epigraphs */
+.epigraph {
+
+  width: 45%; padding-left: 5%; margin-top: 2rem; margin-bottom: 2rem;
+  @media screen and (max-width:760px) {
+      width: 75%;
+  }
+  border-left: none;
+  font-style: italic;
+}
+
+/* END Epigraphs */
+
+.fantasy {
+    font-family: fantasy;
+}
+
+/*-- Table styling section - For Tufte-Jekyll, booktabs style is default for Markdown tables  --*/
+@import "table";
+/* -- End of Table Styling section --*/
+
+
+/* Basic Layout stuff --*/
+figure { max-width: 55%; }
+img { max-width: 100%; }
+video { max-width: 50%; }
+figcaption {
+  float: right;
+  clear: right;
+  margin-right: -50%;
+  vertical-align: baseline;
+  position: relative;
+  max-width: 40%;
+  width: 40%
+}
+
+.type-tags, .type-series, .full-width {
+    max-width: 90%;
+    section > ul, section > ol, h2, h3, h4, summary, p, footer, .table-wrapper, pre, dl { width: 85%; }
+}
+
+// Without this setting, when the header would wrap, the letters would overlap
+h2, h3, h4, summary, p, .table-wrapper, pre, dl { width: 55%; }
+
+body {
+    > header {
+        hr { display: none; }
+        &> nav {
+            &.skip-links { padding: 0rem; }
+            h1 { display: inline-block; margin: 0; }
+            padding: 1rem 0;
+            a {
+                letter-spacing: 0.15em;
+                font-style: normal;
+                font-size: 1.2rem;
+                font-family: var(--header-font);
+                text-decoration: none;
+                display: inline-block;
+                margin: 1rem 2rem 0 auto;
+                vertical-align: baseline;
+                font-variant: small-caps;
+            }
+        }
+    }
+    > footer {
+        padding-bottom: 1rem;
+        width: 85%;
+        text-align: center;
+        font-family: var(--header-font);
+    }
+}
+
+pre, pre code { font-family: var(--code-font); padding: 0 1.5%; overflow-x: auto; }
+kbd, code { font-family: var(--code-font); }
+kbd { padding: 0 2px; margin: 0 1px; border-radius: 4px; background: var(--bg-dim); }
+pre code { display: block; white-space: pre;  }
+
+.newthought { font-variant: small-caps; letter-spacing: 0.05rem; }
+
+@import "marginalia";
+
+// Printing ands screen media queries
+
+// Does not display a print-footer for screen display
+@media screen{ .print-footer { display: none; } }
+
+// BEGIN Skip Navigation
+a.offscreen {
+  position:absolute; left:-1000px; top:-1000px; width:1px; height:1px; text-align: left; overflow:hidden;
+  &:focus, &:active, &:hover {
+    position:absolute;
+    padding: 0.75rem 0.75rem;
+    margin: 1.5rem 2rem 0 0;
+    left:5px;
+    top:-20px;
+    width:auto;
+    height:auto;
+    overflow:visible; }
+}
+
+/* clearfix hack after Cederholm (group class name) */
+.group:after { display: table; clear: both; }
+.group:not(dl):after { content: "" ;}
+
+dl {
+  display: table;
+  dt { font-weight: bold; clear: left; }
+  dd { margin-left: 2rem; text-indent: -1rem; }
+  dt:after { content: ":"; }
+  dd:before { content: "· "; }
+}
+
+dl.group dd { float: left; }
+
+dd li { padding-left: 1rem; }
+
+// Helping the mark highlight extend just pass the letters
+mark {
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    margin-left: -0.1rem;
+    margin-right: -0.1rem;
+}
+
+
+article { section > ul, section > ol { width: 45%; } }
+
+// The main article has a bound region
+// Note: https://takeonrules.com/2020/12/31/a-refinement-to-the-ubiquitous-initiative-procedure/ introduced nested articles.
+main > article {
+    > header, > footer {
+        width: 85%;
+        * { width: auto; }
+    }
+}
+
+main > article > footer input { width: 80%; }
+
+// breadcrumb
+.hidden { display: none; }
+.breadcrumb, .paginator, .feeds {
+  .label { display: none; }
+  width: 85%; font-family: var(--header-font); padding-bottom: 1rem;
+}
+
+.label { display: none; }
+
+.hide-js { display: none; }
+
+@media screen and (max-width: 760px) {
+  h2, h2, h3, h4, summary, p, body > footer, .table-wrapper, pre, dl, article section > ol, article section > ul, article summary { width: 85%; }
+  figure { max-width: 90%; }
+  figcaption { margin-right: 0%; max-width: none; }
+  blockquote {
+    width: 80%;
+    > * {  width: 80%; }
+  }
+}
+
+@media (max-width: 760px) {
+  pre, pre code { width: 90%; padding: 0; }
+}
+
+sup { font-size: 51%;} /* A weird rendering error happens when this is a set height or greater than 50% */
+ins { text-decoration-line: none; }
+
+/* Hacks to better present */
+.licensed {
+    .wrapper { font-family: var(--code-font); font-variant: small-caps; }
+  padding-left: 1rem;
+}
+
+details {
+    & > *:not(details) { width: 52%; }
+}
+
+summary { margin-top: 0.83em; margin-bottom: 0.83em; }
+
+.year-summary > details {
+    > summary { width: 55% }
+
+    > ul { list-style: none; width: 87.5% }
+}
+
+@media screen and (max-width: 760px) {
+  details > *:not(summary):not([role="note"]) {
+    width: 87.5%;
+  }
+  .year-summary > details {
+      > summary { width: 87.5% }
+      > ul { width: auto; }
+  }
+}
+
+dfn { font-weight: bold; }

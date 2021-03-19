@@ -1,0 +1,19 @@
+{{ define "main" }}
+  <article itemprop="mainEntity" class="h-entry" aria-labelledby="{{ anchorize .Title }}" id="skip-to-content" itemid="#skip-to-content" itemscope itemtype="http://schema.org/WebPageElement">
+    <header>
+      <link itemprop="mainEntityOfPage" href="{{ .Permalink }}#skip-to-content" />
+      <h1 itemprop="headline" class="p-name" id="{{ anchorize .Title }}">{{ .Title }}</h1>
+    </header>
+    <section class="e-content content" itemprop="text">
+      <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject" role="note">
+        <link itemprop="url" href="/images/logo.jpg" />
+        <img src="/images/logo.jpg"  data-widht="309" data-height="250" alt="An abstract wooden chicken surveys a chessboard littered with game pieces."/>
+        <figcatpion itemprop="caption">The Chicken of Discovery has found nothing.</figcatpion>
+      </figure>
+
+      <p>Welp, it looks like we couldn't find what you requested.</p>
+
+      <p>Maybe try a site <a href="/search/">search</a>? Or <a href="/contact-me/">contacting me</a> to see if I can help you find it. <em>I did migrate my site, and while I tried to avoid broken pages, I'm not perfect.</em></p>
+    </section>
+  </article>
+{{ end }}

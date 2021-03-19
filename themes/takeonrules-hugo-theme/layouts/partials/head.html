@@ -1,0 +1,76 @@
+{{- if .Params.canonical_url }}
+  <link rel="canonical" href="{{ .Params.canonical_url }}" />
+{{- else if .RelPermalink }}
+  <link rel="canonical" href="{{ .RelPermalink }}" />
+{{- end }}
+{{ partialCached "head-duplicated-info.html" . }}
+
+{{ if .RelPermalink }}<link rel="amphtml" href="/amp{{ .RelPermalink }}" />{{ end }}
+{{- if in (slice "term" "taxonomy" "taxonomyTerm") .Kind }}
+<link rel="alternate" type="application/rss+xml" title="{{ .Site.Title}} Feed for {{ .Title }}" href="{{ .Permalink }}index.xml" />
+{{- end }}
+
+{{- range .Params.AlternativeOutputFormats }}
+  <link rel="{{ .Rel }}" type="{{ .Type }}" href="{{ .Permalink }}" title="{{ .Title }}" />
+{{- end }}
+
+{{ partial "opengraph.html" . }}
+<meta name="description" content="{{ with .Description }}{{ . | markdownify | plainify }}{{ else }}{{if .IsPage}}{{ .Summary | markdownify | plainify }}{{ else }}{{ with .Site.Params.description }}{{ . | markdownify | plainify }}{{ end }}{{ end }}{{ end }}" />
+{{ if .IsHome }}
+<meta name="dateModified" content="{{ .Site.LastChange.Format .Site.Params.iso8601_format }}" />
+<meta name="datePublished" content="{{ .Site.Params.firstPostDate }}" />
+{{ else }}
+<meta name="dateModified" content="{{ .Lastmod.Format .Site.Params.iso8601_format }}" />
+<meta name="datePublished" content="{{ .Date.Format .Site.Params.iso8601_format }}" />
+{{- end }}
+
+{{ partial "twitter_cards.html" . }}
+
+{{- if isset .Params "with_datatables" }}
+  <meta name="withDataTables" content="true" />
+  {{/*
+    See https://www.srihash.org/ for details on integrity generation. In a pinch, you can use the following:
+
+    ```shell
+    openssl dgst -sha384 -binary FILENAME.js | openssl base64 -A
+    ```
+  From https://datatables.net/download/index, I chose Semantic UI, jQuery 3, Datatables
+  */}}
+  {{ $js := resources.Get "js/semantic-ui-jquery-3.3.1-datatables-1.10.22.min.js" | resources.Minify }}
+  {{ $secureJS := $js | resources.Fingerprint "sha512" }}
+  <script type="text/javascript" src="{{ $secureJS.Permalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
+  <link rel="preload" as="script" href="{{ $secureJS.Permalink }}" />
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.data-tables').each(function() {
+        var $this = $(this);
+        $("thead th", $this).each( function() {
+          var title = $(this).text();
+          $(this).html( '<label for="' + title + '">' + title + '</label><br /><input role="search" name="'+ title +'" type="text" placeholder="Search '+title+'" />');
+        });
+        table = $this.DataTable({
+          "paging": false,
+          "info": true // Default is true, prints "Showing x of y entries"
+        });
+        table.columns().every( function () {
+          var that = this;
+          $('input', this.header()).on( 'keyup change clear', function (ev) {
+            if ( that.search() !== this.value ) {
+              that.search( this.value ).draw();
+            }
+          });
+        });
+      });
+    });
+  </script>
+{{- end }}
+
+{{- if eq hugo.Environment "development" }}
+  <meta name="hugoPageKind" content="{{ .Kind }}" />
+  <meta name="hugoPageType" content="{{ .Type }}" />
+  {{- with .Section }}
+  <meta name="hugoSection" content="{{ . }}" />
+  {{- end }}
+  <meta name="hugoSections" content="{{ delimit .Site.Sections ", " }}" />
+{{- end }}

@@ -1,0 +1,170 @@
+////////////////////////////////////////////////////////////////////////////////
+// BEGIN Light Color Definition
+//
+// When you need to edit colors, make changes within this region.
+// Then look to the Dark Color Definition instructions.
+body { background-color:  var(--bg); color:   var(--fg); }
+
+h1 { color: var(--h1); }
+h2 { color: var(--h2); }
+h3 { color: var(--h3); }
+h4 { color: var(--h4); }
+
+table {
+    border-top: 2px solid   var(--table-bg-thead);
+    border-bottom: 2px solid   var(--table-bg-thead);
+
+    &.unstriped tbody tr, .unstriped .subbody {
+        background-color:   var(--table-bg-thead);
+    }
+
+    thead {
+        th { border-bottom: 1px solid var(--table-bg-thead); }
+        tr { background-color:   var(--table-bg-thead); }
+    }
+    th { font-weight: bold; color: var(--table-th-fg); }
+    caption, td { color:   var(--table-td-fg); }
+    tbody {
+        th { text-align: left; }
+        tr:nth-child(odd), &.subhead { background-color: var(--table-bg-tr-alt); }
+    }
+    tfoot td { border-top-color: var(--table-bg-thead); }
+}
+
+blockquote { border-left: 1px dotted   var(--blockquote); }
+blockquote, .license, blockquote p { color:   var(--blockquote); }
+article aside {
+    &.margin { color: var(--aside); }
+    color: var(--aside);
+}
+
+.disclaimer {
+    background-color: var(--disclaimer);
+    padding: 1rem;
+}
+
+.licensed {
+    .wrapper { color: var(--code) ; }
+    border-left: 1px dotted   var(--code);
+}
+
+dt { color:   var(--dt); }
+dfn { color:   var(--dfn); }
+
+.sidenote-number:hover *, [role=note]:hover { background: var(--bg-special-warm); }
+abbr {
+    color:   var(--abbr);
+    &:hover, &:focus, &:active {
+        background: var(--abbr) !important;
+        color: var(--bg) !important;
+    }
+}
+
+a, [role="note"], dfn, abbr, code, time, summary {
+    transition: all 300ms;
+}
+
+a, .contrast {
+    color:   var(--a);
+    &:hover, &:focus, &:active {
+        * { color: var(--bg) !important; }
+        time {
+            background: var(--time) !important;
+        }
+        code {
+            background: var(--code) !important;
+        }
+        abbr {
+            background: var(--abbr) !important;
+        }
+        background: var(--a) !important;
+        color: var(--bg) !important;
+    }
+}
+
+a[href^=https]:not([href^="https://takeonrules.com"]) {
+    color: var(--a-external);
+    &:visited {
+        &:hover, &:focus, &:active {
+            background: var(--a-external-visited) !important;
+        }
+
+        color: var(--a-external-visited); }
+    &:hover, &:focus, &:active {
+        background: var(--a) !important;
+    }
+}
+
+a:visited {
+    color:   var(--a-visited);
+    &:hover, &:focus, &:active {
+        background: var(--a-visited) !important;
+        color: var(--bg) !important;
+    }
+}
+
+
+a.offscreen {
+    &:focus, &:active, &:hover {
+        background:  var(--a) !important;
+        color:   var(--bg) !important;
+    }
+}
+
+article em { color: var(--em); }
+article cite { color: var(--cite); }
+article cite:hover { border-bottom: thin dotted var(--cite); }
+
+pre, code { color:  var(--code); }
+kbd { color: var(--kbd); }
+
+// BEGIN COMMENTARY TYPE MARKS
+s, del, ins {
+    color:   var(--commentary);
+    p { color:   var(--commentary); }
+}
+
+.margin, .side, .update {
+    color:  var(--margin);
+}
+ins[role=note] { border-color:   var(--commentary); }
+
+@media screen and (max-width: 760px) {
+    ins[role="note"] {
+        border-left: thin dotted   var(--commentary);
+    }
+}
+s, del {
+    text-decoration-thickness: 1px; text-decoration-color:   var(--commentary);
+    &:hover, &:focus { text-decoration: none; }
+}
+// END COMMENTARY
+
+
+time { color:   var(--time); }
+mark { color:   var(--mark-fg); background-color:   var(--mark-bg); }
+
+summary {
+    color:   var(--summary);
+    &:hover {
+        > * { color: var(--bg) !important; }
+        time {
+            background: var(--summary) !important;
+        }
+        code {
+            background: var(--code) !important;
+        }
+        a {
+            &:hover { background: var(--summary) !important; }
+            background: var(--summary) !important;
+        }
+        background: var(--summary) !important;
+        color: var(--bg) !important;
+    }
+}
+
+.sidenote-number:after, .side[role="note"]:before {
+    color:   var(--sidenote-number);
+}
+// END Light Color Definition
+////////////////////////////////////////////////////////////////////////////////
