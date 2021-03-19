@@ -79,7 +79,7 @@ If you save this file and drag it into your browser you will see a blank webpage
 
 Now lets add a couple more elements to our `index.html` file
 
-{{< highlight HTML "hl_lines=4 8" >}}
+{{< highlight HTML>}}
 <html>
 
   <head>
@@ -136,7 +136,7 @@ CSS has a bunch of built in properties aside from color and background-color tha
 
 Before we can see these colors on our web page we need to link this `styles.css` file to our `index.html` file from earlier by adding a new line telling the HTML file where it can find our CSS file. 
 
-{{< highlight HTML "hl_lines=4" >}}
+{{< highlight HTML >}}
 <html>
 
   <head>
@@ -169,7 +169,7 @@ At this point you have your own website that uses the `<h1>` HTML tag for a page
 
 Let's add two new lines to our HTML file. This time we’ll use the `<p>` (paragraph) tag. The paragraph tag is the standard tag for most text on a website. In general, all text other than titles and subtitles should be placed inside of a `<p>` tag.
 
-{{< highlight HTML "hl_lines=10-11" >}}
+{{< highlight HTML >}}
 <html>
 
   <head>
@@ -194,7 +194,7 @@ Save your `index.html` file and open up your `styles.css` file.
 
 To target a specific class in CSS write the class name with a period ( `.` ) in front of it. Then you can apply styles to it the same way you would for a tag.
 
-{{< highlight CSS "hl_lines=10-14" >}}
+{{< highlight CSS >}}
 body {
   background-color: black;
   color: white;
@@ -213,7 +213,7 @@ h1 {
 
 While we have the `styles.css` file open we can add a few more CSS attributes to make our page look a bit nicer.
 
-{{< highlight CSS "hl_lines=4-7 12 19-20" >}}
+{{< highlight CSS>}}
 body {
   background-color: black;
   color: white;
@@ -253,7 +253,7 @@ The H in HTML stands for hypertext (dynamic, interactive text). This is one of t
 
 To add a link to our web page we can use the `<a>` tag. The `<a>` tag takes an `href` attribute where you can specify the URL (link) you would like to attach. Any text that you add before the closing `</a>` tag will turn into a hyperlinked text. Try adding this new line to your `index.html` file.
 
-{{< highlight HTML "hl_lines=11-12" >}}
+{{< highlight HTML>}}
 <html>
 
   <head>
@@ -279,7 +279,7 @@ To add an image to your website first create a new folder named `images` inside 
 
 _Note: make sure your image’s filename doesn’t contain a space. If it does, web browsers will not be able to load your image correctly._
 
-{{< highlight HTML "hl_lines=13" >}}
+{{< highlight HTML >}}
 <html>
 
   <head>
@@ -302,7 +302,7 @@ The `<img>` tag takes two attributes. The first is `src` which is the location o
 
 To wrap things up let's add a new section to our `styles.css` file to resize and center our image on the page.
 
-{{< highlight CSS "hl_lines=15-19" >}}
+{{< highlight CSS >}}
 body {
   background-color: black;
   color: white;
@@ -356,7 +356,7 @@ To get started with P5.js we need to import the framework from our `index.html` 
 <video muted playsinline controls poster="/media/add-script-js.png" src="/media/add-script-js.mp4"></video>
 {{< / rawhtml >}}
 
-{{< highlight HTML "hl_lines=5-6" >}}
+{{< highlight HTML>}}
 <html>
 
   <head>
@@ -379,7 +379,7 @@ To get started with P5.js we need to import the framework from our `index.html` 
 
 Additionally, let’s add a new section to our `styles.css` file to center our javascript canvas on the web page just like we did for our image.
 
-{{< highlight CSS "hl_lines=21-26" >}}
+{{< highlight CSS >}}
 body {
   background-color: black;
   color: white;
@@ -433,7 +433,7 @@ function draw() {
 
 The first thing we need to do is create a canvas that will store and display our project. This is done using the `createCanvas()` function which takes `width` and `height` arguments. For these arguments we can use a built in variable from the P5.js framework - `windowWidth` which is automatically set to the current width of your browser window. While we’re at it, let’s add a new function to resize our canvas whenever the browser window is resized.
 
-{{< highlight javascript "hl_lines=2 9-11" >}}
+{{< highlight javascript >}}
 function setup() {
   createcanvas(windowWidth/2, windowWidth/2);
 }
@@ -464,7 +464,7 @@ First, let's set the background color of our javascript canvas so that we can se
 
 Choose your favorite color and set the background to it.
 
-{{< highlight javascript "hl_lines=6 11" >}}
+{{< highlight js >}}
 function setup() {
   createCanvas(windowWidth/2, windowWidth/2);
 }
@@ -505,7 +505,7 @@ In P5.js, coordinate (0, 0) is the top left corner of the canvas and the bottom 
 
 In your `script.js` file add the following two lines to draw a rectangle and an ellipse on your screen.
 
-{{< highlight javascript "hl_lines=8-9" >}}
+{{< highlight javascript >}}
 function setup() {
   createCanvas(windowWidth/2, windowWidth/2);
 }
@@ -533,7 +533,7 @@ The ellipse will stay the same size relative to the canvas whenever it is resize
 
 To change the fill and outline color of shapes we can use the functions `fill()` and `stroke()` which both take RGB color values.
 
-{{< highlight javascript "hl_lines=8-9 12-13" >}}
+{{< highlight javascript >}}
 function setup() {
   createCanvas(windowWidth/2, windowWidth/2);
 }
@@ -582,7 +582,7 @@ Congratulations, you’ve just made your own simple drawing program! This opens 
 
 To do this we are going to need to learn a little bit about __variables__, __arrays__, and __if statements__. Let’s make some changes to our `script.js` file.
 
-{{< highlight javascript "hl_lines=1-2 8-9 11 15-16 25-29" >}}
+{{< highlight javascript >}}
 let penColor;
 let allColors;
 
@@ -614,7 +614,7 @@ function keyPressed() {
 }
 {{< / highlight >}}
 
-On the first two lines, before our `setup()` function, we are defining some __global variables__ - `penColor` and `allColors`. Inside of our `setup()` function we assigned `penColor` to the initial color we want to draw with and we assigned `allColors` to an __array__ of all of the colors we want to randomly pick from later on. An array can be thought of as a __list of values or variables__. At the end of our script we added a new function that is called every time you press any key on your keyboard. Since we would only like to change the pen’s color when the spacebar key is pressed we need to use an __if statement__. `KeyCode 32` is the signal your computer sends to the web browser when you press the spacebar key on your keyboard[^3] so inside of the if statement we can check if the spacebar key is pressed and, if so, we’ll set the pen color to a random color chosen from our `allColors` array.
+On the first two lines, before our `setup()` function, we are defining some __global variables__ - `penColor` and `allColors`. Inside of our `setup()` function we assigned `penColor` to the initial color we want to draw with and we assigned `allColors` to an __array__ of all of the colors we want to randomly pick from later on. An array can be thought of as a __list of values or variables__. At the end of our script we added a new function that is called every time you press any key on your keyboard. Since we would only like to change the pen’s color when the spacebar key is pressed we need to use an __if statement__. `KeyCode 32` is the signal your computer sends to the web browser when you press the spacebar key on your keyboard{{<sidenote>}}You can use [keycode.info](https://keycode.info) to check what value is sent for each key on your keyboard.{{</sidenote>}} so inside of the if statement we can check if the spacebar key is pressed and, if so, we’ll set the pen color to a random color chosen from our `allColors` array.
 
 {{< rawhtml >}}
 <video muted playsinline controls poster="/media/random-color.png" src="/media/random-color.mp4"></video>
@@ -650,7 +650,7 @@ For example, if you have a variable `input` that has the value of __5__ `map(inp
 
 In a new `script.js` file we can try all of this out.
 
-{{< highlight javascript "hl_lines=6-17" >}}
+{{< highlight javascript >}}
 function setup() {
   createCanvas(windowWidth/2, windowWidth/2);
 }
@@ -691,7 +691,7 @@ let myHeight = 100+(sin(frameCount/15)*50)+
               (map(mouseY, 0, height, height/4, height/2));
 ```
 
-You should also try changing the magic numbers[^4] in these lines. For example the number we are adding to the entire result (100 in this case), the number we are dividing `frameCount` by, and the number that we are multiplying the result of the `sin()` function by. I only chose these specific numbers because I think it makes the result look interesting but that is totally subjective! Making changes to these values will drastically change the animation in a way that might be even more interesting.
+You should also try changing the magic numbers{{<sidenote>}}In general, it isn't a great idea to use plain numbers that aren't assigned variable names in your code because it makes your code more difficult to understand when it's read by others. You can learn more about "magic numbers" [here](https://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_constants).{{</sidenote>}} in these lines. For example the number we are adding to the entire result (100 in this case), the number we are dividing `frameCount` by, and the number that we are multiplying the result of the `sin()` function by. I only chose these specific numbers because I think it makes the result look interesting but that is totally subjective! Making changes to these values will drastically change the animation in a way that might be even more interesting.
 
 {{< rawhtml >}}
 <video muted playsinline controls poster="/media/change-shape.png" src="/media/change-shape.mp4"></video>
@@ -707,7 +707,7 @@ P5.js becomes even more powerful when you start exploring the vast world of java
 
 Before we can get started we need to import the library and a face tracking model in our `index.html` file.
 
-{{< highlight HTML "hl_lines=7-9" >}}
+{{< highlight HTML >}}
 <html>
 
   <head>
@@ -1024,10 +1024,3 @@ Throughout course we covered the basics of building your own website from scratc
 <!-- ![dev-tools](/media/dev-tools.png) -->
 
  This is an incredibly valuable resource because you can learn how __every website on the entire internet__ was put together. So go forward and learn from the billions of pages on the internet and then use that knowledge to make something even better.
-
-----
-
-## Notes
-
-[^3]: You can use [keycode.info](https://keycode.info) to check what value is sent for each key on your keyboard.
-[^4]: In general, it isn't a great idea to use plain numbers that aren't assigned variable names in your code because it makes your code more difficult to understand when it's read by others. You can learn more about "magic numbers" [here](https://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_constants).
