@@ -65,17 +65,17 @@ lastmod = ["lastmod", ":fileModTime", ":default"]
   name = "github.com/chriswmartin"
   url = "https://github.com/chriswmartin"
 
-[[menu.topnav]]
-  identifier = "p"
-  name = "Archive"
-  title = "Posts"
-  url = "/post/"
+# [[menu.topnav]]
+#   identifier = "p"
+#   name = "Archive"
+#   title = "Posts"
+#   url = "/post/"
 
 [[menu.topnav]]
   identifier = "r"
   name = "RSS"
   title = "RSS feed"
-  url = "/index.xml/"
+  url = "/index.xml"
 
 [[menu.nav]]
   name = "Home"
