@@ -482,7 +482,7 @@ function windowResized() {
 We can use a few built in functions to draw shapes on the canvas. Two of the most useful shape functions are `rect()` and `ellipse()` which both take four arguments - `X position`, `Y position`, `width`, and `height`.
 Before we can use these functions it helps to understand the coordinates system of the canvas.
 
-```
+{{< highlight text >}}
     +-------------->  X increases
             
 +   +---------------------------+
@@ -499,7 +499,7 @@ Before we can use these functions it helps to understand the coordinates system 
 v   +---------------------------+
     
 Y increases
-```
+{{< / highlight >}}
 
 In P5.js, coordinate (0, 0) is the top left corner of the canvas and the bottom right corner of the canvas is the full width and full height value (in our case this would be `windowWidth/2` for both X and Y).
 
@@ -632,7 +632,7 @@ In P5.js you have a lot of power and flexibility to program your own animations.
 
 Additionally, we can use the `mouseX` and `mouseY` variables with the `map()` function to change the background color of our canvas depending on where our mouse is positioned inside of the canvas. The `map()` function takes five arguments: an input variable, the current minimum and maximum value for the input, and a new minimum and maximum value that you would like to translate your variable to.
 
-```
+{{< highlight text >}}
   input var   input max   new max
           ^        ^      ^
           |        |      |
@@ -644,7 +644,7 @@ Additionally, we can use the `mouseX` and `mouseY` variables with the `map()` fu
                |      |
                v      v
        input min.     new min.
-```
+{{< / highlight >}}
 
 For example, if you have a variable `input` that has the value of __5__ `map(input, 0, 10, 0, 20)` would output the number __10__. This is especially useful for keeping variables constrained to specific ranges like `0-255` for RGB colors and `0-width` or `0-height` in order to keep shapes contained inside of the canvas. In this case we will be using the `map()` function to translate the variables `mouseX` and `mouseY`, which originally can be any number from `0-width` and `0-height`, to a number between `0-255` so that it can be used as an RGB color.
 
@@ -733,14 +733,15 @@ Before we can get started we need to import the library and a face tracking mode
 
 Once the library and model are imported we can start building our program in the `script.js` file. Firstly, we need to define two global variables: one to define a `button` element that will active the webcam when it is clicked and a __boolean__ variable (a boolean is a variable type that can have the value of either `true` or `false`) named `videoStarted` which will keep track of whether or not our button was pressed. 
 
-```javascript
+{{< highlight JS >}}
 let button;
 let videoStarted = false;
-```
+{{< / highlight >}}
+
 
 Next we can start writing our `setup()` function. Just like in our previous scripts we are going to create a canvas to display the output of our program. Additionally, we'll create an HTML button that is attached to our `button` variable and apply some CSS style options to it. On the last line we're going to define the name of a function we would like to call when this button is pressed.
 
-```javascript
+{{< highlight JS >}}
 function setup() {
   canvas = createCanvas(windowWidth/2, windowWidth/2);
 
@@ -757,11 +758,11 @@ function setup() {
 
   button.mousePressed(startVideo);
 }
-```
+{{< / highlight >}}
 
 When the button is pressed it will call the `startVideo()` function which first sets the `videoStarted` variable to `true` then it hides the HTML button so that it can't be pressed again. Once this is complete we start capturing video from the webcam, hide it from the webpage, and connect it to our `clmtrackr` object. 
 
-```javascript
+{{< highlight JS >}}
 function startVideo(){
   videoStarted = true;
 
@@ -781,11 +782,11 @@ function startVideo(){
   ctracker.init(pModel);
   ctracker.start(videoInput.elt);
 }
-```
+{{< / highlight >}}
 
 Our `draw()` function is pretty simple. All we need to do is check if the `videoStarted` variable is `true` and, if so, clear the screen and re-draw the background. All of the face tracking logic is handled by the `getPositions()` function which is built into the `clmtrackr` library. All that's left for us to do is to draw with the data `clmtrackr` provides us which we'll do in the `drawElements()` function.
 
-```javascript
+{{< highlight JS >}}
 function draw() {
   if (videoStarted == true){
     clear();
@@ -795,11 +796,11 @@ function draw() {
     drawElements();
   }
 }
-```
+{{< / highlight >}}
 
 The `drawElements()` is where we will do most of our work. After checking that `clmtrackr` has supplied its `positions` array with a list of points we can start creating __vector__ variable for different facial features. You can think of vectors as arrays that allow us to store both the X and Y positions of the features we would like to track. 
 
-```javascript
+{{< highlight JS >}}
 function drawElements() {
   if (positions.length > 0) {
     var eye1pos = createVector(positions[27][0], positions[27][1]);
@@ -807,11 +808,11 @@ function drawElements() {
     var nosepos = createVector(positions[41][0], positions[41][1]);
     var mouthpos = createVector(positions[57][0], positions[57][1]);
   }
-```
+{{< / highlight >}}
 
 Once we have these variables defined it would be helpful to draw the basic shape of our face which we'll do in the `drawFaceOutline()` function. We can calculate the size, position, and rotation of our head using the list of positions `clmtrackr` gives us. 
 
-```javascript
+{{< highlight JS >}}
 function drawFaceOutline() {
   stroke(255, 0, 0);
 
@@ -827,11 +828,11 @@ function drawFaceOutline() {
   ellipse(0, -10, mSize * 1.3, mSize * 1.5);
   pop();
 }
-```
+{{< / highlight >}}
 
 Back in the `drawElements()` function all that's left to do is draw some interesting shapes for each feature we would like to represent.
 
-```javascript
+{{< highlight JS >}}
 // eyes
 fill(0, 255, 0);
 ellipse(eye1pos.x, eye1pos.y, 15, 20);
@@ -854,11 +855,11 @@ triangle(
 // mouth
 fill(255, 255, 0);
 ellipse(mouthpos.x, mouthpos.y, 20, 10);
-```
+{{< / highlight >}}
 
 We can even draw features that we don't have specific variables for by approximating their location based off of known points.
 
-```javascript
+{{< highlight JS >}}
 // hair
 fill(255, 0, 0);
 bezier(
@@ -871,13 +872,13 @@ bezier(
   eye2pos.x + (eye2pos.x - eye1pos.x),
   eye2pos.y - (eye2pos.x - eye1pos.x) / 2
 );
-```
+{{< / highlight >}}
 
 All of this is just experimentation with a lot of trial and error but that is where a lot of the fun comes from! For an exercise try drawing really wacky hair with the [curve() function](https://p5js.org/reference/#/p5/curve) or try to draw ears. For an extra challenge you can even draw a mouth that changes its shape when you smile or frown.
 
 Here is our complete `script.js` file.
 
-```javascript
+{{< highlight JS >}}
 let button;
 let videoStarted = false;
 
@@ -1003,7 +1004,7 @@ function windowResized() {
   resizeCanvas(windowWidth/2, windowWidth/2);
   background(255, 213, 135);
 }
-```
+{{< / highlight >}}
 
 
 {{< rawhtml >}}

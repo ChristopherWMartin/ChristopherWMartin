@@ -1,6 +1,6 @@
 {{/*
 NOTE SPACING MATTERS
-*/}}{{- $date := .Get "date" }}{{- $date_for_attr := dateFormat "2006-01-02" $date }}{{- $date_for_display := dateFormat "Jan 2, 2006" $date }}{{ $mode := default "marginnote" (.Get "mode") }}{{- $headingLevel := default "h2" (.Get "headingLevel") }}{{- $domId := default (printf "section-update-%s" $date_for_attr) (.Get "domId") }}
+*/}}{{- $date := .Get "date" }}{{- $date_for_attr := dateFormat "2006-01-02" $date }}{{- $date_for_display := dateFormat "Jan 2, 2006" $date }}{{ $mode := default "inline" (.Get "mode") }}{{- $headingLevel := default "h2" (.Get "headingLevel") }}{{- $domId := default (printf "section-update-%s" $date_for_attr) (.Get "domId") }}
 {{- if eq $mode "inline" }}<ins class="update" datetime="{{ $date_for_attr }}"><em><strong><time datetime="{{ $date_for_attr }}">{{ $date_for_display }}</time> update:</strong></em> {{ partial "unparagraphy" .Inner }}</ins>
 {{- else if eq $mode "paragraph" }}<ins class="update" datetime="{{ $date_for_attr }}"><p><em><strong><time datetime="{{ $date_for_attr }}">{{ $date_for_display }}</time> update:</strong></em> {{ partial "unparagraphy" .Inner }}</p></ins>
 {{- else if eq $mode "sidenote" }}<span class="sidenote-number"><ins class="update side" role="note" datetime="{{ $date_for_attr }}"><small><em><strong><time datetime="{{ $date_for_attr }}">{{ $date_for_display }}</time> update:</strong></em> {{ partial "unparagraphy" .Inner }}</small></ins></span>

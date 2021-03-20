@@ -1,5 +1,5 @@
 paginate = 10
-paginatePath = "page"
+paginatedSections = [ "post" ]
 
 baseurl = "https://chriswmartin.github.io"
 pluralizeListTitles = false
@@ -16,22 +16,35 @@ pygmentsUseClasses = true
 builddrafts = true
 canonifyurls = true
 
-[taxonomies]
-  category = "categories"
-  group = "groups"
-  series = "series"
-  tag = "tags"
-
 [markup]
+  defaultMarkdownHandler = "goldmark"
+
+  [markup.goldmark.extensions]
+    definitionList = true
+    footnote = true
+    linkify = true
+    strikethrough = true
+    table = true
+    taskList = true
+    typographer = true
+
+  [markup.goldmark.parser]
+    attribute = true
+    autoHeadingID = true
+
+  [markup.goldmark.renderer]
+    hardWraps = false
+    unsafe = true
+    xHTML = false
+
   [markup.highlight]
-    anchorLineNos = false
-    codeFences = true
-    guessSyntax = true
+    codeFences = false
+    hl_Lines = ""
     lineNoStart = 1
     lineNos = false
-    lineNumbersInTable = true
-    noClasses = false
-    style = "pygments"
+    lineNumbersInTable = false
+    noClasses = true
+    style = "tango"
     tabWidth = 2
 
 [params]
@@ -46,6 +59,23 @@ canonifyurls = true
 
 [frontmatter]
 lastmod = ["lastmod", ":fileModTime", ":default"]
+
+[[menu.me_elsewhere]]
+  identifier = "github"
+  name = "github.com/chriswmartin"
+  url = "https://github.com/chriswmartin"
+
+[[menu.topnav]]
+  identifier = "p"
+  name = "Archive"
+  title = "Posts"
+  url = "/post/"
+
+[[menu.topnav]]
+  identifier = "r"
+  name = "RSS"
+  title = "RSS feed"
+  url = "/index.xml/"
 
 [[menu.nav]]
   name = "Home"
@@ -65,4 +95,19 @@ lastmod = ["lastmod", ":fileModTime", ":default"]
   weight = -100
   identifier = "rss"
   url = "/index.xml"
+
+[outputs]
+  home = [ "HTML", "JSON", "RSS", "ATOM" ]
+  page = [ "HTML" ]
+  section = [ "HTML" ]
+  taxonomies = [ "HTML", "XML" ]
+
+[mediaTypes."application/atom"]
+  suffixes = [ "atom" ]
+
+[outputFormats.Atom]
+  mediaType = "application/atom"
+  baseName = "index"
+  isPlainText = false
+
 

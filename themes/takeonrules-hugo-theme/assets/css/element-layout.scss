@@ -124,7 +124,7 @@ body {
 pre, pre code { font-family: var(--code-font); padding: 0 1.5%; overflow-x: auto; }
 kbd, code { font-family: var(--code-font); }
 kbd { padding: 0 2px; margin: 0 1px; border-radius: 4px; background: var(--bg-dim); }
-pre code { display: block; white-space: pre;  }
+pre code { display: block; white-space: pre; margin-top: 1em; margin-bottom:1em; margin-left: 0.5em;}
 
 .newthought { font-variant: small-caps; letter-spacing: 0.05rem; }
 
@@ -206,6 +206,8 @@ main > article > footer input { width: 80%; }
     width: 80%;
     > * {  width: 80%; }
   }
+
+  video { max-width: 85%; }
 }
 
 @media (max-width: 760px) {
