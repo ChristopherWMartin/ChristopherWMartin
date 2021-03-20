@@ -107,7 +107,7 @@ body {
                 font-family: var(--header-font);
                 text-decoration: none;
                 display: inline-block;
-                margin: 1rem 2rem 0 auto;
+                margin: 1rem 1rem 0 auto;
                 vertical-align: baseline;
                 font-variant: small-caps;
             }
@@ -121,10 +121,22 @@ body {
     }
 }
 
+.nav-item { font-size: 1rem; }
+.nav-divider { margin-right: 1rem; }
+
 pre, pre code { font-family: var(--code-font); padding: 0 1.5%; overflow-x: auto; }
 kbd, code { font-family: var(--code-font); }
 kbd { padding: 0 2px; margin: 0 1px; border-radius: 4px; background: var(--bg-dim); }
 pre code { display: block; white-space: pre; margin-top: 1em; margin-bottom:1em; margin-left: 0.5em;}
+
+.chroma {background: none !important}
+
+pre > code {
+    border-top: 0.07rem solid grey;
+    border-bottom: 0.07rem solid grey;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
 
 .newthought { font-variant: small-caps; letter-spacing: 0.05rem; }
 
@@ -199,7 +211,7 @@ main > article > footer input { width: 80%; }
 .hide-js { display: none; }
 
 @media screen and (max-width: 760px) {
-  h2, h2, h3, h4, summary, p, body > footer, .table-wrapper, pre, dl, article section > ol, article section > ul, article summary { width: 85%; }
+  h2, h2, h3, h4, summary, p, body > footer, .table-wrapper, pre, dl, article section > ol, article section > ul, article summary { width: 95%;  padding-left: 0px;}
   figure { max-width: 90%; }
   figcaption { margin-right: 0%; max-width: none; }
   blockquote {
