@@ -1,4 +1,88 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Textfile</title><link>https://chriswmartin.github.io</link><description>Recent content for Textfile</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright 2021,</copyright><language>en-us</language><lastBuildDate>Tue, 25 Aug 2020 15:25:09 -0400</lastBuildDate><atom:link href="https://chriswmartin.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Introduction to the Web</title><link>https://chriswmartin.github.io/post/introduction-to-the-web/</link><pubDate>Tue, 25 Aug 2020 15:25:09 -0400</pubDate><guid isPermaLink="true">https://chriswmartin.github.io/post/introduction-to-the-web/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Textfile</title><link>https://chriswmartin.github.io</link><description>Recent content for Textfile</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright 2021,</copyright><language>en-us</language><lastBuildDate>Sat, 12 Dec 2020 12:25:09 -0400</lastBuildDate><atom:link href="https://chriswmartin.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Advent of Code 2020 Day 11</title><link>https://chriswmartin.github.io/post/aoc-2020-day-11/</link><pubDate>Sat, 12 Dec 2020 12:25:09 -0400</pubDate><guid isPermaLink="true">https://chriswmartin.github.io/post/aoc-2020-day-11/</guid><description>
+&lt;p>This year&amp;rsquo;s Advent of Code&amp;rsquo;s day 11 challenge &amp;ndash; &lt;a href="https://adventofcode.com/2020/day/11">Seating System&lt;/a> was a type of &lt;a href="https://en.wikipedia.org/wiki/Cellular_automaton">cellular automata&lt;/a> task where one needed to model the eventual seating positions of individuals who are waiting to board a ferry.&lt;/p>
+&lt;p>To create our visualizations first we generate a new, random initial seating layout based off of the AoC examples&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="k">def&lt;/span> &lt;span class="nf">generate_layout&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">rows&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">columns&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;span class="n">chars&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;L&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;.&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="n">layout&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[]&lt;/span>
+&lt;span class="k">for&lt;/span> &lt;span class="n">_&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="nb">range&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">rows&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;span class="n">column&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[]&lt;/span>
+&lt;span class="k">for&lt;/span> &lt;span class="n">_&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="nb">range&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">columns&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;span class="n">column&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">random&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">choice&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">chars&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;span class="n">layout&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">row&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="k">return&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">layout&lt;/span>&lt;span class="p">)&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>this returns a two dimensional array like&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-text" data-lang="text">[
+[&amp;#39;.&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;L&amp;#39;],
+[&amp;#39;.&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;.&amp;#39;],
+[&amp;#39;.&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;],
+[&amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;.&amp;#39;],
+[&amp;#39;.&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;],
+[&amp;#39;L&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;],
+[&amp;#39;L&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;],
+[&amp;#39;.&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;L&amp;#39;],
+[&amp;#39;.&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;.&amp;#39;],
+[&amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;L&amp;#39;, &amp;#39;L&amp;#39;]
+]&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>next we have &lt;code>print_layout()&lt;/code> which gives us a nicer representation of our seats&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="k">def&lt;/span> &lt;span class="nf">print_layout&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">seat_array&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;span class="n">layout&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>
+&lt;span class="k">for&lt;/span> &lt;span class="n">column&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">seat_array&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;span class="n">c&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>
+&lt;span class="k">for&lt;/span> &lt;span class="n">seat&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">column&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;span class="n">c&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="n">seat&lt;/span>
+&lt;span class="n">layout&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">c&lt;/span>
+&lt;span class="k">return&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">layout&lt;/span>&lt;span class="p">)&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-text" data-lang="text">...L.L.L.L
+.LLLLLL...
+..LL.LLLLL
+LLL.LLLLL.
+..LL.L..LL
+L.LL.LL.LL
+L..L.L.LLL
+.LL....L.L
+..L.LLL...
+LLL.LL..LL&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>The fun thing about this function is that is gives us lot of flexibility in how we represent this data. For example we can draw our seats using &lt;a href="https://en.wikipedia.org/wiki/Block_Elements">unicode block elements&lt;/a>.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="k">def&lt;/span> &lt;span class="nf">print_layout&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">seat_array&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;span class="n">layout&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>
+&lt;span class="k">for&lt;/span> &lt;span class="n">column&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">seat_array&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;span class="n">c&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>
+&lt;span class="k">for&lt;/span> &lt;span class="n">seat&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">column&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="n">seat&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s1">&amp;#39;.&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">c&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="s1">&amp;#39; &amp;#39;&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="n">seat&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s1">&amp;#39;#&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">c&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="s1">&amp;#39;▓&amp;#39;&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="n">seat&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s1">&amp;#39;L&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">c&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="s1">&amp;#39;▒&amp;#39;&lt;/span>
+&lt;span class="n">layout&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">c&lt;/span>
+&lt;span class="k">return&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">layout&lt;/span>&lt;span class="p">)&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-text" data-lang="text"> ▓ ░▓▓░▓ ▓
+▓ ░ ░░ ░ ▓
+▓ ░ ░
+░ ░▓ ░ ░
+▓░ ░░ ▓▓░▓
+░▓▓ ░▓░
+░░ ░ ░░▓
+▓▓ ░▓
+░░ ▓░░
+▓░ ░▓&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>Then we can create an animation of our generated layouts reaching equilibrium&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="k">while&lt;/span> &lt;span class="bp">True&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">system&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;clear&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="n">rows&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">columns&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">popen&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;stty size&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">read&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">split&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;span class="n">layout&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">generate_layout&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">int&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">columns&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nb">int&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">rows&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;span class="n">seats&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">model_seats&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">layout&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="n">occupied_seat_counts&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;span class="k">while&lt;/span> &lt;span class="bp">True&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;span class="n">seats&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">model_seats&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">seats&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># model the next seat layout&lt;/span>
+&lt;span class="n">layout&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">print_layout&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">seats&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;span class="k">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">layout&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">flush&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="bp">True&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># display our new seat layout&lt;/span>
+&lt;span class="n">occupied_seats&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">layout&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">count&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;▓&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># this should be whichever&lt;/span>
+&lt;span class="c1"># char you use to represent&lt;/span>
+&lt;span class="c1"># occupied seats&lt;/span>
+&lt;span class="k">if&lt;/span> &lt;span class="n">occupied_seats&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="n">occupied_seat_counts&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">]:&lt;/span>
+&lt;span class="k">break&lt;/span> &lt;span class="c1"># if the number of occupied seats has not changed since&lt;/span>
+&lt;span class="c1"># the previous run break and start on new seating layout&lt;/span>
+&lt;span class="k">else&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;span class="n">occupied_seat_counts&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">occupied_seats&lt;/span>&lt;span class="p">)&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>You can see &lt;a href="https://gist.github.com/chriswmartin/3e0b42f64bbbbd215d72e0ee8d5100e2">the full code&lt;/a> and &lt;a href="https://repl.it/@0xcm/aoc2020day11part1?lite=true&amp;amp;outputonly=1">run it in your browser&lt;/a>.&lt;/p></description><source url="https://chriswmartin.github.ioindex.xml">Textfile</source></item><item><title>Introduction to the Web</title><link>https://chriswmartin.github.io/post/introduction-to-the-web/</link><pubDate>Tue, 25 Aug 2020 15:25:09 -0400</pubDate><guid isPermaLink="true">https://chriswmartin.github.io/post/introduction-to-the-web/</guid><description>
 &lt;p>&lt;img src="https://chriswmartin.github.io/media/header.png" alt="header image">&lt;/p>
 &lt;h1 id="introduction-to-the-web">Introduction to the Web&lt;/h1>
 &lt;h2 id="overview">Overview&lt;/h2>
@@ -286,7 +370,7 @@ Google has an interactive color picker that allows you to copy the RGB value of 
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;p>We can use a few built in functions to draw shapes on the canvas. Two of the most useful shape functions are &lt;code>rect()&lt;/code> and &lt;code>ellipse()&lt;/code> which both take four arguments - &lt;code>X position&lt;/code>, &lt;code>Y position&lt;/code>, &lt;code>width&lt;/code>, and &lt;code>height&lt;/code>.
 Before we can use these functions it helps to understand the coordinates system of the canvas.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback"> +--------------&amp;gt; X increases
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-text" data-lang="text"> +--------------&amp;gt; X increases
 + +---------------------------+
 | | X = 0 Y = 0 |
 | | Y = 0 X = width |
@@ -299,8 +383,8 @@ Before we can use these functions it helps to understand the coordinates system 
 | | X = 0 X = width |
 | | Y = height Y = height |
 v +---------------------------+
-Y increases
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>In P5.js, coordinate (0, 0) is the top left corner of the canvas and the bottom right corner of the canvas is the full width and full height value (in our case this would be &lt;code>windowWidth/2&lt;/code> for both X and Y).&lt;/p>
+Y increases&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>In P5.js, coordinate (0, 0) is the top left corner of the canvas and the bottom right corner of the canvas is the full width and full height value (in our case this would be &lt;code>windowWidth/2&lt;/code> for both X and Y).&lt;/p>
 &lt;p>In your &lt;code>script.js&lt;/code> file add the following two lines to draw a rectangle and an ellipse on your screen.&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kd">function&lt;/span> &lt;span class="nx">setup&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="nx">createCanvas&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">windowWidth&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">windowWidth&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">);&lt;/span>
@@ -316,8 +400,9 @@ Y increases
 &lt;span class="p">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;p>You should see a square in the upper left of your canvas and a circle in the center of your canvas. You might also have noticed that when drawing the ellipse we used &lt;code>width/2&lt;/code> and &lt;code>height/2&lt;/code> for the X and Y position values. These variables are automatically set to the current width and height of your canvas and are updated when the browser window changes size. Try resizing your window and you’ll notice that the circle always stays in the center. Similarly, if you were to change the ellipse function to&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="nx">ellipse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">width&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">width&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">15&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">15&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The ellipse will stay the same size relative to the canvas whenever it is resized.&lt;/p>
+&lt;pre>&lt;code class="language-javascript">ellipse(width/2, height/2, width/15, height/15);
+&lt;/code>&lt;/pre>
+&lt;p>The ellipse will stay the same size relative to the canvas whenever it is resized.&lt;/p>
 &lt;p>To change the fill and outline color of shapes we can use the functions &lt;code>fill()&lt;/code> and &lt;code>stroke()&lt;/code> which both take RGB color values.&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kd">function&lt;/span> &lt;span class="nx">setup&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="nx">createCanvas&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">windowWidth&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">windowWidth&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">);&lt;/span>
@@ -337,14 +422,15 @@ Y increases
 &lt;span class="p">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;p>What if we wanted to be able to interact with the shapes we drew? That is totally possible and it’s one of the things that makes P5.js exciting to use. Try changing your &lt;code>ellipse()&lt;/code> line to&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="nx">ellipse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">mouseX&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">mouseY&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">width&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">15&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">15&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The ellipse should now follow your mouse as you move it around the canvas!&lt;/p>
+&lt;pre>&lt;code class="language-javascript">ellipse(mouseX, mouseY, width/15, height/15);
+&lt;/code>&lt;/pre>
+&lt;p>The ellipse should now follow your mouse as you move it around the canvas!&lt;/p>
 &lt;video muted playsinline controls poster="/media/interactive.png" src="https://chriswmartin.github.io/media/interactive.mp4">&lt;/video>
 &lt;hr>
 &lt;h2 id="chapter-eight">Chapter Eight&lt;/h2>
 &lt;h3 id="draw">Draw!&lt;/h3>
 &lt;p>Currently, the background color of the canvas is redrawn every frame before we draw our shapes. Can you guess what would happen if we only drew the background once? Move your &lt;code>background()&lt;/code> call out of the &lt;code>draw()&lt;/code> function and into the &lt;code>setup()&lt;/code> function then refresh your page.&lt;/p>
-&lt;p>&lt;!-- raw HTML omitted -->&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;p>&lt;video controls loop src="media/draw.mp4">&lt;/video>&lt;/p>
 &lt;p>Congratulations, you’ve just made your own simple drawing program! This opens up a whole new world of possibilities. For example, what if you wanted to change your pen color to a new, random, color every time we pressed the spacebar key.&lt;/p>
 &lt;p>To do this we are going to need to learn a little bit about &lt;strong>variables&lt;/strong>, &lt;strong>arrays&lt;/strong>, and &lt;strong>if statements&lt;/strong>. Let’s make some changes to our &lt;code>script.js&lt;/code> file.&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kd">let&lt;/span> &lt;span class="nx">penColor&lt;/span>&lt;span class="p">;&lt;/span>
@@ -381,7 +467,7 @@ so inside of the if statement we can check if the spacebar key is pressed and, i
 &lt;h3 id="animate-it">Animate it&lt;/h3>
 &lt;p>In P5.js you have a lot of power and flexibility to program your own animations. In this script we will use the &lt;code>sin()&lt;/code> function with a constantly increasing variable (&lt;code>frameCount&lt;/code>) in order to make an animation that loops fluidly.&lt;/p>
 &lt;p>Additionally, we can use the &lt;code>mouseX&lt;/code> and &lt;code>mouseY&lt;/code> variables with the &lt;code>map()&lt;/code> function to change the background color of our canvas depending on where our mouse is positioned inside of the canvas. The &lt;code>map()&lt;/code> function takes five arguments: an input variable, the current minimum and maximum value for the input, and a new minimum and maximum value that you would like to translate your variable to.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback"> input var input max new max
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-text" data-lang="text"> input var input max new max
 ^ ^ ^
 | | |
 | | |
@@ -391,8 +477,8 @@ map(input, 0, 20, 0, 10);
 | |
 | |
 v v
-input min. new min.
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>For example, if you have a variable &lt;code>input&lt;/code> that has the value of &lt;strong>5&lt;/strong> &lt;code>map(input, 0, 10, 0, 20)&lt;/code> would output the number &lt;strong>10&lt;/strong>. This is especially useful for keeping variables constrained to specific ranges like &lt;code>0-255&lt;/code> for RGB colors and &lt;code>0-width&lt;/code> or &lt;code>0-height&lt;/code> in order to keep shapes contained inside of the canvas. In this case we will be using the &lt;code>map()&lt;/code> function to translate the variables &lt;code>mouseX&lt;/code> and &lt;code>mouseY&lt;/code>, which originally can be any number from &lt;code>0-width&lt;/code> and &lt;code>0-height&lt;/code>, to a number between &lt;code>0-255&lt;/code> so that it can be used as an RGB color.&lt;/p>
+input min. new min.&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>For example, if you have a variable &lt;code>input&lt;/code> that has the value of &lt;strong>5&lt;/strong> &lt;code>map(input, 0, 10, 0, 20)&lt;/code> would output the number &lt;strong>10&lt;/strong>. This is especially useful for keeping variables constrained to specific ranges like &lt;code>0-255&lt;/code> for RGB colors and &lt;code>0-width&lt;/code> or &lt;code>0-height&lt;/code> in order to keep shapes contained inside of the canvas. In this case we will be using the &lt;code>map()&lt;/code> function to translate the variables &lt;code>mouseX&lt;/code> and &lt;code>mouseY&lt;/code>, which originally can be any number from &lt;code>0-width&lt;/code> and &lt;code>0-height&lt;/code>, to a number between &lt;code>0-255&lt;/code> so that it can be used as an RGB color.&lt;/p>
 &lt;p>In a new &lt;code>script.js&lt;/code> file we can try all of this out.&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kd">function&lt;/span> &lt;span class="nx">setup&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="nx">createCanvas&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">windowWidth&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">windowWidth&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">);&lt;/span>
@@ -416,11 +502,12 @@ input min. new min.
 &lt;p>Once you refresh your page you should see an ellipse in the center of the canvas that constantly warps and changes shape. As you move your mouse around the canvas you should also see that the background color changes accordingly.&lt;/p>
 &lt;video muted playsinline controls poster="/media/change-color.png" src="https://chriswmartin.github.io/media/change-color.mp4">&lt;/video>
 &lt;p>To take this further you can even combine your shape-changing animation code with your mouse tracking code from earlier in order to have the ellipse both constantly animate while also changing shape based off of where your mouse is on the web page. If you want to try this out change your &lt;code>myWidth&lt;/code> and &lt;code>myHeight&lt;/code> variables to the following code.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kd">let&lt;/span> &lt;span class="nx">myWidth&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">100&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">sin&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">frameCount&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">25&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="mi">70&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">+&lt;/span>
-&lt;span class="p">(&lt;/span>&lt;span class="nx">map&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">mouseX&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">width&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">width&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">width&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">));&lt;/span>
-&lt;span class="kd">let&lt;/span> &lt;span class="nx">myHeight&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">100&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">sin&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">frameCount&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">15&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="mi">50&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">+&lt;/span>
-&lt;span class="p">(&lt;/span>&lt;span class="nx">map&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">mouseY&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">));&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>You should also try changing the magic numbers&lt;span class="sidenote-number">&lt;small class="side" role="note">
+&lt;pre>&lt;code class="language-javascript">let myWidth = 100+(sin(frameCount/25)*70)+
+(map(mouseX, 0, width, width/4, width/2));
+let myHeight = 100+(sin(frameCount/15)*50)+
+(map(mouseY, 0, height, height/4, height/2));
+&lt;/code>&lt;/pre>
+&lt;p>You should also try changing the magic numbers&lt;span class="sidenote-number">&lt;small class="side" role="note">
 In general, it isn&amp;rsquo;t a great idea to use plain numbers that aren&amp;rsquo;t assigned variable names in your code because it makes your code more difficult to understand when it&amp;rsquo;s read by others. You can learn more about &amp;ldquo;magic numbers&amp;rdquo; &lt;a href="https://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_constants">here&lt;/a>.
 &lt;/small>&lt;/span>
 in these lines. For example the number we are adding to the entire result (100 in this case), the number we are dividing &lt;code>frameCount&lt;/code> by, and the number that we are multiplying the result of the &lt;code>sin()&lt;/code> function by. I only chose these specific numbers because I think it makes the result look interesting but that is totally subjective! Making changes to these values will drastically change the animation in a way that might be even more interesting.&lt;/p>
@@ -449,10 +536,11 @@ in these lines. For example the number we are adding to the entire result (100 i
 &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">html&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>Once the library and model are imported we can start building our program in the &lt;code>script.js&lt;/code> file. Firstly, we need to define two global variables: one to define a &lt;code>button&lt;/code> element that will active the webcam when it is clicked and a &lt;strong>boolean&lt;/strong> variable (a boolean is a variable type that can have the value of either &lt;code>true&lt;/code> or &lt;code>false&lt;/code>) named &lt;code>videoStarted&lt;/code> which will keep track of whether or not our button was pressed.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kd">let&lt;/span> &lt;span class="nx">button&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-JS" data-lang="JS">&lt;span class="kd">let&lt;/span> &lt;span class="nx">button&lt;/span>&lt;span class="p">;&lt;/span>
 &lt;span class="kd">let&lt;/span> &lt;span class="nx">videoStarted&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Next we can start writing our &lt;code>setup()&lt;/code> function. Just like in our previous scripts we are going to create a canvas to display the output of our program. Additionally, we&amp;rsquo;ll create an HTML button that is attached to our &lt;code>button&lt;/code> variable and apply some CSS style options to it. On the last line we&amp;rsquo;re going to define the name of a function we would like to call when this button is pressed.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kd">function&lt;/span> &lt;span class="nx">setup&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>Next we can start writing our &lt;code>setup()&lt;/code> function. Just like in our previous scripts we are going to create a canvas to display the output of our program. Additionally, we&amp;rsquo;ll create an HTML button that is attached to our &lt;code>button&lt;/code> variable and apply some CSS style options to it. On the last line we&amp;rsquo;re going to define the name of a function we would like to call when this button is pressed.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-JS" data-lang="JS">&lt;span class="kd">function&lt;/span> &lt;span class="nx">setup&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="nx">canvas&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">createCanvas&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">windowWidth&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">windowWidth&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;span class="nx">noStroke&lt;/span>&lt;span class="p">();&lt;/span>
 &lt;span class="nx">background&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">213&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">135&lt;/span>&lt;span class="p">);&lt;/span>
@@ -465,8 +553,9 @@ in these lines. For example the number we are adding to the entire result (100 i
 &lt;span class="nx">button&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">style&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;font-size&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;15px&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;span class="nx">button&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">mousePressed&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">startVideo&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>When the button is pressed it will call the &lt;code>startVideo()&lt;/code> function which first sets the &lt;code>videoStarted&lt;/code> variable to &lt;code>true&lt;/code> then it hides the HTML button so that it can&amp;rsquo;t be pressed again. Once this is complete we start capturing video from the webcam, hide it from the webpage, and connect it to our &lt;code>clmtrackr&lt;/code> object.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kd">function&lt;/span> &lt;span class="nx">startVideo&lt;/span>&lt;span class="p">(){&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>When the button is pressed it will call the &lt;code>startVideo()&lt;/code> function which first sets the &lt;code>videoStarted&lt;/code> variable to &lt;code>true&lt;/code> then it hides the HTML button so that it can&amp;rsquo;t be pressed again. Once this is complete we start capturing video from the webcam, hide it from the webpage, and connect it to our &lt;code>clmtrackr&lt;/code> object.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-JS" data-lang="JS">&lt;span class="kd">function&lt;/span> &lt;span class="nx">startVideo&lt;/span>&lt;span class="p">(){&lt;/span>
 &lt;span class="nx">videoStarted&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="p">;&lt;/span>
 &lt;span class="nx">button&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">remove&lt;/span>&lt;span class="p">();&lt;/span>
 &lt;span class="nx">videoInput&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">createCapture&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">VIDEO&lt;/span>&lt;span class="p">);&lt;/span>
@@ -480,8 +569,9 @@ in these lines. For example the number we are adding to the entire result (100 i
 &lt;span class="nx">ctracker&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">init&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">pModel&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;span class="nx">ctracker&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">start&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">videoInput&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">elt&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Our &lt;code>draw()&lt;/code> function is pretty simple. All we need to do is check if the &lt;code>videoStarted&lt;/code> variable is &lt;code>true&lt;/code> and, if so, clear the screen and re-draw the background. All of the face tracking logic is handled by the &lt;code>getPositions()&lt;/code> function which is built into the &lt;code>clmtrackr&lt;/code> library. All that&amp;rsquo;s left for us to do is to draw with the data &lt;code>clmtrackr&lt;/code> provides us which we&amp;rsquo;ll do in the &lt;code>drawElements()&lt;/code> function.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kd">function&lt;/span> &lt;span class="nx">draw&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>Our &lt;code>draw()&lt;/code> function is pretty simple. All we need to do is check if the &lt;code>videoStarted&lt;/code> variable is &lt;code>true&lt;/code> and, if so, clear the screen and re-draw the background. All of the face tracking logic is handled by the &lt;code>getPositions()&lt;/code> function which is built into the &lt;code>clmtrackr&lt;/code> library. All that&amp;rsquo;s left for us to do is to draw with the data &lt;code>clmtrackr&lt;/code> provides us which we&amp;rsquo;ll do in the &lt;code>drawElements()&lt;/code> function.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-JS" data-lang="JS">&lt;span class="kd">function&lt;/span> &lt;span class="nx">draw&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">videoStarted&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="p">){&lt;/span>
 &lt;span class="nx">clear&lt;/span>&lt;span class="p">();&lt;/span>
 &lt;span class="nx">background&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">213&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">135&lt;/span>&lt;span class="p">);&lt;/span>
@@ -489,16 +579,18 @@ in these lines. For example the number we are adding to the entire result (100 i
 &lt;span class="nx">drawElements&lt;/span>&lt;span class="p">();&lt;/span>
 &lt;span class="p">}&lt;/span>
 &lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The &lt;code>drawElements()&lt;/code> is where we will do most of our work. After checking that &lt;code>clmtrackr&lt;/code> has supplied its &lt;code>positions&lt;/code> array with a list of points we can start creating &lt;strong>vector&lt;/strong> variable for different facial features. You can think of vectors as arrays that allow us to store both the X and Y positions of the features we would like to track.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kd">function&lt;/span> &lt;span class="nx">drawElements&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>The &lt;code>drawElements()&lt;/code> is where we will do most of our work. After checking that &lt;code>clmtrackr&lt;/code> has supplied its &lt;code>positions&lt;/code> array with a list of points we can start creating &lt;strong>vector&lt;/strong> variable for different facial features. You can think of vectors as arrays that allow us to store both the X and Y positions of the features we would like to track.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-JS" data-lang="JS">&lt;span class="kd">function&lt;/span> &lt;span class="nx">drawElements&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">positions&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">length&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="kd">var&lt;/span> &lt;span class="nx">eye1pos&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">createVector&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">positions&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">27&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="nx">positions&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">27&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">]);&lt;/span>
 &lt;span class="kd">var&lt;/span> &lt;span class="nx">eye2pos&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">createVector&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">positions&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">32&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="nx">positions&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">32&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">]);&lt;/span>
 &lt;span class="kd">var&lt;/span> &lt;span class="nx">nosepos&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">createVector&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">positions&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">41&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="nx">positions&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">41&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">]);&lt;/span>
 &lt;span class="kd">var&lt;/span> &lt;span class="nx">mouthpos&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">createVector&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">positions&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">57&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="nx">positions&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">57&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">]);&lt;/span>
 &lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once we have these variables defined it would be helpful to draw the basic shape of our face which we&amp;rsquo;ll do in the &lt;code>drawFaceOutline()&lt;/code> function. We can calculate the size, position, and rotation of our head using the list of positions &lt;code>clmtrackr&lt;/code> gives us.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kd">function&lt;/span> &lt;span class="nx">drawFaceOutline&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>Once we have these variables defined it would be helpful to draw the basic shape of our face which we&amp;rsquo;ll do in the &lt;code>drawFaceOutline()&lt;/code> function. We can calculate the size, position, and rotation of our head using the list of positions &lt;code>clmtrackr&lt;/code> gives us.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-JS" data-lang="JS">&lt;span class="kd">function&lt;/span> &lt;span class="nx">drawFaceOutline&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="nx">stroke&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;span class="nx">push&lt;/span>&lt;span class="p">();&lt;/span>
 &lt;span class="kd">var&lt;/span> &lt;span class="nx">p1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">createVector&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">positions&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">7&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="nx">positions&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">7&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">]);&lt;/span>
@@ -510,8 +602,9 @@ in these lines. For example the number we are adding to the entire result (100 i
 &lt;span class="nx">ellipse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="mi">10&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">mSize&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mf">1.3&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">mSize&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mf">1.5&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;span class="nx">pop&lt;/span>&lt;span class="p">();&lt;/span>
 &lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Back in the &lt;code>drawElements()&lt;/code> function all that&amp;rsquo;s left to do is draw some interesting shapes for each feature we would like to represent.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="c1">// eyes
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>Back in the &lt;code>drawElements()&lt;/code> function all that&amp;rsquo;s left to do is draw some interesting shapes for each feature we would like to represent.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-JS" data-lang="JS">&lt;span class="c1">// eyes
 &lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="nx">fill&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;span class="nx">ellipse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">eye1pos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">eye1pos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">y&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">15&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">20&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;span class="nx">ellipse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">eye2pos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">eye2pos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">y&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">15&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">20&lt;/span>&lt;span class="p">);&lt;/span>
@@ -531,8 +624,9 @@ in these lines. For example the number we are adding to the entire result (100 i
 &lt;span class="c1">// mouth
 &lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="nx">fill&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;span class="nx">ellipse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">mouthpos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">mouthpos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">y&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">20&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">10&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>We can even draw features that we don&amp;rsquo;t have specific variables for by approximating their location based off of known points.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="c1">// hair
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>We can even draw features that we don&amp;rsquo;t have specific variables for by approximating their location based off of known points.&lt;/p>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-JS" data-lang="JS">&lt;span class="c1">// hair
 &lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="nx">fill&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;span class="nx">bezier&lt;/span>&lt;span class="p">(&lt;/span>
 &lt;span class="nx">eye1pos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">x&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">eye2pos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">x&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="nx">eye1pos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="p">),&lt;/span>
@@ -544,9 +638,10 @@ in these lines. For example the number we are adding to the entire result (100 i
 &lt;span class="nx">eye2pos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">x&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">eye2pos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">x&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="nx">eye1pos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="p">),&lt;/span>
 &lt;span class="nx">eye2pos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">y&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">eye2pos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">x&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="nx">eye1pos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="mi">2&lt;/span>
 &lt;span class="p">);&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>All of this is just experimentation with a lot of trial and error but that is where a lot of the fun comes from! For an exercise try drawing really wacky hair with the &lt;a href="https://p5js.org/reference/#/p5/curve">curve() function&lt;/a> or try to draw ears. For an extra challenge you can even draw a mouth that changes its shape when you smile or frown.&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>All of this is just experimentation with a lot of trial and error but that is where a lot of the fun comes from! For an exercise try drawing really wacky hair with the &lt;a href="https://p5js.org/reference/#/p5/curve">curve() function&lt;/a> or try to draw ears. For an extra challenge you can even draw a mouth that changes its shape when you smile or frown.&lt;/p>
 &lt;p>Here is our complete &lt;code>script.js&lt;/code> file.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kd">let&lt;/span> &lt;span class="nx">button&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-JS" data-lang="JS">&lt;span class="kd">let&lt;/span> &lt;span class="nx">button&lt;/span>&lt;span class="p">;&lt;/span>
 &lt;span class="kd">let&lt;/span> &lt;span class="nx">videoStarted&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">;&lt;/span>
 &lt;span class="kd">function&lt;/span> &lt;span class="nx">setup&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="nx">canvas&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">createCanvas&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">windowWidth&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">windowWidth&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">);&lt;/span>
@@ -649,6 +744,6 @@ in these lines. For example the number we are adding to the entire result (100 i
 &lt;hr>
 &lt;h2 id="moving-forward">Moving forward&lt;/h2>
 &lt;p>Throughout course we covered the basics of building your own website from scratch and creating interactive programs using javascript but there is still so much more to learn if you are interested. In my opinion the most incredible thing about the internet is that everything is completely open to freely learn from. In any web browser all you need to do is right click on a web page and click &lt;code>inspect&lt;/code> and then you can see all of the code that was written to create that website.&lt;/p>
-&lt;!-- raw HTML omitted -->
-&lt;!-- raw HTML omitted -->
+&lt;!-- ![inspect](/media/inspect.png) -->
+&lt;!-- ![dev-tools](/media/dev-tools.png) -->
 &lt;p>This is an incredibly valuable resource because you can learn how &lt;strong>every website on the entire internet&lt;/strong> was put together. So go forward and learn from the billions of pages on the internet and then use that knowledge to make something even better.&lt;/p></description><source url="https://chriswmartin.github.ioindex.xml">Textfile</source></item></channel></rss>

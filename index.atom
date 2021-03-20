@@ -1,0 +1,10 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Textfile</title>
+  <link rel="self" href="https://chriswmartin.github.io/index.atom" hreflang="en-us"/>
+  <link href="https://chriswmartin.github.io/" hreflang="en-us"/>
+  <updated>2020-12-12T12:25:09-0400</updated>
+  <author>
+    <uri>https://chriswmartin.github.io/</uri>
+  </author>
+  <id>https://chriswmartin.github.io/</id>
+</feed>
