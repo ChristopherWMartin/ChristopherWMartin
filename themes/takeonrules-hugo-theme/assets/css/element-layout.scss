@@ -129,14 +129,16 @@ kbd, code { font-family: var(--code-font); }
 kbd { padding: 0 2px; margin: 0 1px; border-radius: 4px; background: var(--bg-dim); }
 pre code { display: block; white-space: pre; margin-top: 1em; margin-bottom:1em; margin-left: 0.5em;}
 
-.chroma {background: none !important}
-
+.chroma{ border-radius: 0.15rem; }
+/*
+.chroma { background: none !important }
 pre > code {
-    border-top: 0.07rem solid grey;
-    border-bottom: 0.07rem solid grey;
+    border-top: 0.05rem solid grey;
+    border-bottom: 0.05rem solid grey;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+*/
 
 .newthought { font-variant: small-caps; letter-spacing: 0.05rem; }
 
@@ -224,6 +226,15 @@ main > article > footer input { width: 80%; }
 
 @media (max-width: 760px) {
   pre, pre code { width: 90%; padding: 0; }
+
+  /*
+  pre > code {
+    border-top: 0.05rem solid grey;
+    border-bottom: 0.05rem solid grey;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  */
 }
 
 sup { font-size: 51%;} /* A weird rendering error happens when this is a set height or greater than 50% */

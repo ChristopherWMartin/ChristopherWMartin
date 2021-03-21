@@ -6,7 +6,7 @@
     <span role="listitem" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
       <span itemprop="name"><a itemprop="item" href="{{ .Site.BaseURL }}">Home</a></span>
       <meta itemprop="position" content="1" />
-    </span> /
+    </span> / 
     {{ with .Site.GetPage (printf "/%s" $year) }}
     <span role="listitem" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
       <span itemprop="name"><a itemprop="item" rel="up" href="{{ .Permalink }}" id="{{ .Permalink}}">{{ .Title }}</a></span>
