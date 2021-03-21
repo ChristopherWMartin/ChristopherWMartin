@@ -7,14 +7,14 @@
       {{/*
       <span itemprop="name"><a itemprop="item" href="{{ .Site.BaseURL }}">Home</a></span>
       */}}
-      <span itemprop="name"> > <a class="header-path" itemprop="item" href="{{ .Site.BaseURL }}">~</a></span>
+      <span itemprop="name"> >    <a class="header-path" itemprop="item" href="{{ .Site.BaseURL }}">~</a></span>
       <meta itemprop="position" content="1" />
     </span>/
     {{ with .Site.GetPage (printf "/%s" $year) }}
     <span role="listitem" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
       <span itemprop="name"><a itemprop="item" rel="up" href="{{ .Permalink }}" id="{{ .Permalink}}">{{ .Title }}</a></span>
       <meta itemprop="position" content="2" />
-    </span> /
+    </span>/
     {{ end }}
     <cite id="{{ .Permalink}}" class="header-path" aria-current="page">{{ replaceRE "(\\s)" "_" .Title }}.txt</cite>
     {{/*
