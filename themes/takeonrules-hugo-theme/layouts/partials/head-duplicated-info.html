@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 {{ with $.Site.Params.searchMySiteVerification }}<meta name="searchmysite-verification" content="{{ . }}" />{{- end }}
 
-{{ $screen := resources.Get "css/tufte.scss" | toCSS | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $screen.RelPermalink }}" integrity="{{ $screen.Data.Integrity }}" rel="preload stylesheet" as="style" media="screen, print"/>
-{{ $print := resources.Get "css/print.scss" | toCSS | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $print.RelPermalink }}" integrity="{{ $print.Data.Integrity }}" rel="preload stylesheet" as="style" media="print"/>
+{{ $screen := resources.Get "css/tufte.scss" | toCSS | minify }}
+<link rel="stylesheet" href="{{ $screen.RelPermalink }}" rel="preload stylesheet" as="style" media="screen, print"/>
+{{ $print := resources.Get "css/print.scss" | toCSS | minify }}
+<link rel="stylesheet" href="{{ $print.RelPermalink }}" rel="preload stylesheet" as="style" media="print"/>
 
-{{ $syntax := resources.Get "css/syntax.css" | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $syntax.RelPermalink }}" integrity="{{ $syntax.Data.Integrity }}" rel="preload stylesheet" as="style" media="screen, print"/>
+{{ $syntax := resources.Get "css/syntax.css" | minify }}
+<link rel="stylesheet" href="{{ $syntax.RelPermalink }}" rel="preload stylesheet" as="style" media="screen, print"/>
 
 {{ range .Site.Home.AlternativeOutputFormats -}}
   <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title | safeHTML }} {{ .Name }} Feed" />
