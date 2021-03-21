@@ -1,7 +1,7 @@
 paginate = 10
 paginatedSections = [ "post" ]
 
-baseurl = "https://chriswmartin.github.io"
+baseurl = "https://textfile.io"
 pluralizeListTitles = false
 staticDir = ["static"]
 languageCode = "en-us"
