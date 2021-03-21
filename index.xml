@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Textfile</title><link>https://chriswmartin.github.io</link><description>Recent content for Textfile</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright 2021,</copyright><language>en-us</language><lastBuildDate>Sat, 12 Dec 2020 12:25:09 -0400</lastBuildDate><atom:link href="https://chriswmartin.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Advent of Code 2020 Day 11</title><link>https://chriswmartin.github.io/post/aoc-2020-day-11/</link><pubDate>Sat, 12 Dec 2020 12:25:09 -0400</pubDate><guid isPermaLink="true">https://chriswmartin.github.io/post/aoc-2020-day-11/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Textfile</title><link>https://textfile.io</link><description>Recent content for Textfile</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright 2021,</copyright><language>en-us</language><lastBuildDate>Sat, 12 Dec 2020 12:25:09 -0400</lastBuildDate><atom:link href="https://textfile.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Advent of Code 2020 Day 11</title><link>https://textfile.io/post/aoc-2020-day-11/</link><pubDate>Sat, 12 Dec 2020 12:25:09 -0400</pubDate><guid isPermaLink="true">https://textfile.io/post/aoc-2020-day-11/</guid><description>
 &lt;p>This year&amp;rsquo;s Advent of Code&amp;rsquo;s day 11 challenge &amp;ndash; &lt;a href="https://adventofcode.com/2020/day/11">Seating System&lt;/a> was a type of &lt;a href="https://en.wikipedia.org/wiki/Cellular_automaton">cellular automata&lt;/a> task where one needed to model the eventual seating positions of individuals who are waiting to board a ferry.&lt;/p>
 &lt;p>To create our visualizations first we generate a new, random initial seating layout based off of the AoC examples&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="k">def&lt;/span> &lt;span class="nf">generate_layout&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">rows&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">columns&lt;/span>&lt;span class="p">):&lt;/span>
@@ -82,8 +82,8 @@ LLL.LL..LL&lt;/code>&lt;/pre>&lt;/div>
 &lt;span class="c1"># the previous run break and start on new seating layout&lt;/span>
 &lt;span class="k">else&lt;/span>&lt;span class="p">:&lt;/span>
 &lt;span class="n">occupied_seat_counts&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">occupied_seats&lt;/span>&lt;span class="p">)&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;p>You can see &lt;a href="https://gist.github.com/chriswmartin/3e0b42f64bbbbd215d72e0ee8d5100e2">the full code&lt;/a> and &lt;a href="https://repl.it/@0xcm/aoc2020day11part1?lite=true&amp;amp;outputonly=1">run it in your browser&lt;/a>.&lt;/p></description><source url="https://chriswmartin.github.ioindex.xml">Textfile</source></item><item><title>Introduction to the Web</title><link>https://chriswmartin.github.io/post/introduction-to-the-web/</link><pubDate>Tue, 25 Aug 2020 15:25:09 -0400</pubDate><guid isPermaLink="true">https://chriswmartin.github.io/post/introduction-to-the-web/</guid><description>
-&lt;p>&lt;img src="https://chriswmartin.github.io/media/header.png" alt="header image">&lt;/p>
+&lt;p>You can see &lt;a href="https://gist.github.com/chriswmartin/3e0b42f64bbbbd215d72e0ee8d5100e2">the full code&lt;/a> and &lt;a href="https://repl.it/@0xcm/aoc2020day11part1?lite=true&amp;amp;outputonly=1">run it in your browser&lt;/a>.&lt;/p></description><source url="https://textfile.ioindex.xml">Textfile</source></item><item><title>Introduction to the Web</title><link>https://textfile.io/post/introduction-to-the-web/</link><pubDate>Tue, 25 Aug 2020 15:25:09 -0400</pubDate><guid isPermaLink="true">https://textfile.io/post/introduction-to-the-web/</guid><description>
+&lt;p>&lt;img src="https://textfile.io/media/header.png" alt="header image">&lt;/p>
 &lt;h1 id="introduction-to-the-web">Introduction to the Web&lt;/h1>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>Throughout this course you will learn how to build a website from scratch using standard web frameworks including HTML, CSS, and Javascript. To create content for your website we will add text, images, and other assets though HTML and an interactive program (for example, a game, drawing program, weather forecaster, neural network bot) using the P5.js Javascript framework.&lt;/p>
@@ -104,8 +104,8 @@ LLL.LL..LL&lt;/code>&lt;/pre>&lt;/div>
 &lt;h2 id="chapter-two">Chapter Two&lt;/h2>
 &lt;h3 id="creating-a-basic-webpage">Creating a basic webpage&lt;/h3>
 &lt;p>Create a folder on your computer and name it &lt;code>my-website&lt;/code>. Inside of this folder create a file named &lt;code>index.html&lt;/code>.&lt;/p>
-&lt;video preload muted playsinline controls poster="/media/create-my-website-folder.png" src="https://chriswmartin.github.io/media/create-my-website-folder.mp4">&lt;/video>
-&lt;video preload muted playsinline controls poster="/media/create-index-html.png" src="https://chriswmartin.github.io/media/create-index-html.mp4">&lt;/video>
+&lt;video preload muted playsinline controls poster="/media/create-my-website-folder.png" src="https://textfile.io/media/create-my-website-folder.mp4">&lt;/video>
+&lt;video preload muted playsinline controls poster="/media/create-index-html.png" src="https://textfile.io/media/create-index-html.mp4">&lt;/video>
 &lt;p>Your &lt;code>index.html&lt;/code> file is the centerpiece of your website. It is where you link your &lt;code>styles.css&lt;/code> and &lt;code>script.js&lt;/code> files together with the main content of your website.&lt;/p>
 &lt;p>The &lt;code>index.html&lt;/code> file contains two main sections: the &lt;strong>head&lt;/strong> where we store metadata about our website like it’s title and the location of our .css and .js files and the &lt;strong>body&lt;/strong> where all of the website’s main content lives (the text, images, buttons, navigation bars, etc.)&lt;/p>
 &lt;p>To get started open your blank &lt;code>index.html&lt;/code> file and type the following.&lt;/p>
@@ -117,7 +117,7 @@ LLL.LL..LL&lt;/code>&lt;/pre>&lt;/div>
 &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">html&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>You will notice that each tag (&lt;code>&amp;lt;html&amp;gt;&lt;/code>) has a corresponding closing tag with a backslash at the beginning (&lt;code>&amp;lt;/html&amp;gt;&lt;/code>). This is important to remember as that is how your web browser will know where one tag ends and another starts.&lt;/p>
 &lt;p>If you save this file and drag it into your browser you will see a blank webpage. You can keep this page open and any changes you make to your &lt;code>index.html&lt;/code> file will automatically appear as soon as you refresh the page.&lt;/p>
-&lt;video muted playsinline controls poster="/media/drag-index-to-browser.png" src="https://chriswmartin.github.io/media/drag-index-to-browser.mp4">&lt;/video>
+&lt;video muted playsinline controls poster="/media/drag-index-to-browser.png" src="https://textfile.io/media/drag-index-to-browser.mp4">&lt;/video>
 &lt;p>Now lets add a couple more elements to our &lt;code>index.html&lt;/code> file&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-HTML" data-lang="HTML">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">html&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
@@ -129,13 +129,13 @@ LLL.LL..LL&lt;/code>&lt;/pre>&lt;/div>
 &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">html&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>You should notice that the text that you added to the body of your file showed up on the webpage! We put this text inside of &lt;code>&amp;lt;h1&amp;gt;&lt;/code> tags. The &lt;code>&amp;lt;h1&amp;gt;&lt;/code> tag is the largest of the heading tags but there are also &lt;code>&amp;lt;h2&amp;gt;&lt;/code>, &lt;code>&amp;lt;h3&amp;gt;&lt;/code>, &lt;code>&amp;lt;h4&amp;gt;&lt;/code>, &lt;code>&amp;lt;h5&amp;gt;&lt;/code>, and &lt;code>&amp;lt;h6&amp;gt;&lt;/code> tags which all decrease in size as the numbers get larger. These tags should be used to create titles and other important text on your webpage.&lt;/p>
 &lt;p>You might have also noticed that the browser tab your website is opened in now displays “&lt;em>My new website&lt;/em>”. You can change this by changing the text inside of the &lt;code>&amp;lt;title&amp;gt;&lt;/code> tags.&lt;/p>
-&lt;p>&lt;img src="https://chriswmartin.github.io/media/my-new-website.png" alt="new website preview">&lt;/p>
+&lt;p>&lt;img src="https://textfile.io/media/my-new-website.png" alt="new website preview">&lt;/p>
 &lt;hr>
 &lt;h2 id="chapter-three">Chapter Three&lt;/h2>
 &lt;h3 id="make-it-stylish">Make it stylish&lt;/h3>
 &lt;p>Now that you have a simple website started lets add a &lt;code>styles.css&lt;/code> file so that we can start tweaking the design of the site.&lt;/p>
 &lt;p>In your &lt;code>my-website&lt;/code> folder create a new blank file named &lt;code>styles.css&lt;/code> and open it up in your text editor.&lt;/p>
-&lt;video muted playsinline controls poster="/media/create-styles-css.png" src="https://chriswmartin.github.io/media/create-styles-css.mp4">&lt;/video>
+&lt;video muted playsinline controls poster="/media/create-styles-css.png" src="https://textfile.io/media/create-styles-css.mp4">&lt;/video>
 &lt;p>To tweak the design of a specific element of your web page using CSS you can select it using the tag name without angle brackets ( &lt;code>&amp;lt; &amp;gt;&lt;/code> ).&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-CSS" data-lang="CSS">&lt;span class="nt">body&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="k">background-color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">black&lt;/span>&lt;span class="p">;&lt;/span>
@@ -158,7 +158,7 @@ LLL.LL..LL&lt;/code>&lt;/pre>&lt;/div>
 &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">html&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>Once you’ve added this new line save the file and refresh your web page in the browser. You should see that your website has updated to use your new color scheme!&lt;/p>
-&lt;video muted playsinline controls poster="/media/link-styles.png" src="https://chriswmartin.github.io/media/link-styles.mp4">&lt;/video>
+&lt;video muted playsinline controls poster="/media/link-styles.png" src="https://textfile.io/media/link-styles.mp4">&lt;/video>
 &lt;hr>
 &lt;h2 id="chapter-four">Chapter Four&lt;/h2>
 &lt;h3 id="give-it-some-class">Give it some class&lt;/h3>
@@ -212,7 +212,7 @@ LLL.LL..LL&lt;/code>&lt;/pre>&lt;/div>
 &lt;span class="p">}&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>The &lt;code>margin&lt;/code> attributes add &lt;strong>space between&lt;/strong> HTML elements and the edges of the web page. Moving web page content away from the far edges of the screen typically makes your site easier to read. The &lt;code>text-align&lt;/code> attribute can be set to either left, right, or center and this determines where &lt;strong>text is placed&lt;/strong> on the web page. Lastly, the &lt;code>padding&lt;/code> attribute is very similar to margin except that this adds &lt;strong>space inside&lt;/strong> of an HTML element. In this case this makes the background section of our &lt;code>warning&lt;/code> element larger.&lt;/p>
 &lt;p>Save your files and refresh your web page to see all of the changes!&lt;/p>
-&lt;p>&lt;img src="https://chriswmartin.github.io/media/added-class.png" alt="html web page preview">&lt;/p>
+&lt;p>&lt;img src="https://textfile.io/media/added-class.png" alt="html web page preview">&lt;/p>
 &lt;hr>
 &lt;h2 id="chapter-five">Chapter Five&lt;/h2>
 &lt;h3 id="hypertext">Hypertext&lt;/h3>
@@ -231,7 +231,7 @@ LLL.LL..LL&lt;/code>&lt;/pre>&lt;/div>
 &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">html&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>To add an image to your website first create a new folder named &lt;code>images&lt;/code> inside of your &lt;code>my-website&lt;/code> folder. Any image that you would like to add to your website should be downloaded and placed in this folder. Once you’ve found an image you like you can add it to your website using the &lt;code>&amp;lt;img&amp;gt;&lt;/code> tag.&lt;/p>
-&lt;video muted playsinline controls poster="/media/create-images-folder.png" src="https://chriswmartin.github.io/media/create-images-folder.mp4">&lt;/video>
+&lt;video muted playsinline controls poster="/media/create-images-folder.png" src="https://textfile.io/media/create-images-folder.mp4">&lt;/video>
 &lt;p>&lt;em>Note: make sure your image’s filename doesn’t contain a space. If it does, web browsers will not be able to load your image correctly.&lt;/em>&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-HTML" data-lang="HTML">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">html&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
@@ -276,14 +276,14 @@ As long as you follow all of the best practices when creating your website (like
 &lt;span class="k">padding&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="kt">%&lt;/span>&lt;span class="p">;&lt;/span>
 &lt;span class="p">}&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>The &lt;code>width&lt;/code> attribute allows us to resize the image to a specific percentage of our screen size. In this case we are resizing our image to fill up half of the screen. Displaying the image as a &lt;code>block&lt;/code> element gives us the ability to align it horizontally. Finally, setting the image’s &lt;code>margin&lt;/code> to &lt;code>auto&lt;/code> will position the image in the center of the screen horizontally.&lt;/p>
-&lt;video muted playsinline controls poster="/media/add-image.png" src="https://chriswmartin.github.io/media/add-image.mp4">&lt;/video>
+&lt;video muted playsinline controls poster="/media/add-image.png" src="https://textfile.io/media/add-image.mp4">&lt;/video>
 &lt;hr>
 &lt;h2 id="chapter-six">Chapter Six&lt;/h2>
 &lt;h3 id="introduction-to-javascript-programming">Introduction to Javascript Programming&lt;/h3>
 &lt;p>Up until now we’ve been writing HTML and CSS code which are both &lt;strong>markup languages&lt;/strong>. From this point forward we will be learning Javascript which is a full blown &lt;strong>programming language&lt;/strong>. This will increase the complexity of the code slightly as we now have access to variables, loops, conditional statements, and more but this also means that we will have the power to create much more powerful programs.&lt;/p>
 &lt;p>To write Javascript for our website we will be using the P5.js framework. This allows us to easily create animations and interactive games.&lt;/p>
 &lt;p>To get started with P5.js we need to import the framework from our &lt;code>index.html&lt;/code> file just like we did with our CSS file. Create a new file named &lt;code>script.js&lt;/code> in your &lt;code>my-website&lt;/code> folder and then add these two new lines to the &lt;code>head&lt;/code> of your HTML file.&lt;/p>
-&lt;video muted playsinline controls poster="/media/add-script-js.png" src="https://chriswmartin.github.io/media/add-script-js.mp4">&lt;/video>
+&lt;video muted playsinline controls poster="/media/add-script-js.png" src="https://textfile.io/media/add-script-js.mp4">&lt;/video>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-HTML" data-lang="HTML">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">html&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">link&lt;/span> &lt;span class="na">href&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;styles.css&amp;#34;&lt;/span> &lt;span class="na">rel&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;stylesheet&amp;#34;&lt;/span> &lt;span class="na">type&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;text/css&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
@@ -348,7 +348,7 @@ As long as you follow all of the best practices when creating your website (like
 &lt;span class="p">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;p>Now we have a Javascript canvas using P5.js that is automatically resized to a square that is half the width of our browser window and is automatically centered on our screen using CSS.&lt;/p>
-&lt;p>&lt;img src="https://chriswmartin.github.io/media/add-canvas.png" alt="added javascript canvas to website">&lt;/p>
+&lt;p>&lt;img src="https://textfile.io/media/add-canvas.png" alt="added javascript canvas to website">&lt;/p>
 &lt;hr>
 &lt;h2 id="chapter-seven">Chapter Seven&lt;/h2>
 &lt;h3 id="interactivity">Interactivity&lt;/h3>
@@ -425,7 +425,7 @@ Y increases&lt;/code>&lt;/pre>&lt;/div>
 &lt;pre>&lt;code class="language-javascript">ellipse(mouseX, mouseY, width/15, height/15);
 &lt;/code>&lt;/pre>
 &lt;p>The ellipse should now follow your mouse as you move it around the canvas!&lt;/p>
-&lt;video muted playsinline controls poster="/media/interactive.png" src="https://chriswmartin.github.io/media/interactive.mp4">&lt;/video>
+&lt;video muted playsinline controls poster="/media/interactive.png" src="https://textfile.io/media/interactive.mp4">&lt;/video>
 &lt;hr>
 &lt;h2 id="chapter-eight">Chapter Eight&lt;/h2>
 &lt;h3 id="draw">Draw!&lt;/h3>
@@ -461,7 +461,7 @@ Y increases&lt;/code>&lt;/pre>&lt;/div>
 You can use &lt;a href="https://keycode.info">keycode.info&lt;/a> to check what value is sent for each key on your keyboard.
 &lt;/small>&lt;/span>
 so inside of the if statement we can check if the spacebar key is pressed and, if so, we’ll set the pen color to a random color chosen from our &lt;code>allColors&lt;/code> array.&lt;/p>
-&lt;video muted playsinline controls poster="/media/random-color.png" src="https://chriswmartin.github.io/media/random-color.mp4">&lt;/video>
+&lt;video muted playsinline controls poster="/media/random-color.png" src="https://textfile.io/media/random-color.mp4">&lt;/video>
 &lt;hr>
 &lt;h2 id="chapter-nine">Chapter Nine&lt;/h2>
 &lt;h3 id="animate-it">Animate it&lt;/h3>
@@ -500,7 +500,7 @@ input min. new min.&lt;/code>&lt;/pre>&lt;/div>
 &lt;span class="p">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;p>Once you refresh your page you should see an ellipse in the center of the canvas that constantly warps and changes shape. As you move your mouse around the canvas you should also see that the background color changes accordingly.&lt;/p>
-&lt;video muted playsinline controls poster="/media/change-color.png" src="https://chriswmartin.github.io/media/change-color.mp4">&lt;/video>
+&lt;video muted playsinline controls poster="/media/change-color.png" src="https://textfile.io/media/change-color.mp4">&lt;/video>
 &lt;p>To take this further you can even combine your shape-changing animation code with your mouse tracking code from earlier in order to have the ellipse both constantly animate while also changing shape based off of where your mouse is on the web page. If you want to try this out change your &lt;code>myWidth&lt;/code> and &lt;code>myHeight&lt;/code> variables to the following code.&lt;/p>
 &lt;pre>&lt;code class="language-javascript">let myWidth = 100+(sin(frameCount/25)*70)+
 (map(mouseX, 0, width, width/4, width/2));
@@ -511,7 +511,7 @@ let myHeight = 100+(sin(frameCount/15)*50)+
 In general, it isn&amp;rsquo;t a great idea to use plain numbers that aren&amp;rsquo;t assigned variable names in your code because it makes your code more difficult to understand when it&amp;rsquo;s read by others. You can learn more about &amp;ldquo;magic numbers&amp;rdquo; &lt;a href="https://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_constants">here&lt;/a>.
 &lt;/small>&lt;/span>
 in these lines. For example the number we are adding to the entire result (100 in this case), the number we are dividing &lt;code>frameCount&lt;/code> by, and the number that we are multiplying the result of the &lt;code>sin()&lt;/code> function by. I only chose these specific numbers because I think it makes the result look interesting but that is totally subjective! Making changes to these values will drastically change the animation in a way that might be even more interesting.&lt;/p>
-&lt;video muted playsinline controls poster="/media/change-shape.png" src="https://chriswmartin.github.io/media/change-shape.mp4">&lt;/video>
+&lt;video muted playsinline controls poster="/media/change-shape.png" src="https://textfile.io/media/change-shape.mp4">&lt;/video>
 &lt;hr>
 &lt;h2 id="chapter-ten">Chapter Ten&lt;/h2>
 &lt;h3 id="neural-networks">Neural networks&lt;/h3>
@@ -740,10 +740,10 @@ in these lines. For example the number we are adding to the entire result (100 i
 &lt;span class="nx">background&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">213&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">135&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;span class="p">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>
-&lt;video muted playsinline controls poster="/media/face-tracking.png" src="https://chriswmartin.github.io/media/face-tracking.mp4">&lt;/video>
+&lt;video muted playsinline controls poster="/media/face-tracking.png" src="https://textfile.io/media/face-tracking.mp4">&lt;/video>
 &lt;hr>
 &lt;h2 id="moving-forward">Moving forward&lt;/h2>
 &lt;p>Throughout course we covered the basics of building your own website from scratch and creating interactive programs using javascript but there is still so much more to learn if you are interested. In my opinion the most incredible thing about the internet is that everything is completely open to freely learn from. In any web browser all you need to do is right click on a web page and click &lt;code>inspect&lt;/code> and then you can see all of the code that was written to create that website.&lt;/p>
 &lt;!-- ![inspect](/media/inspect.png) -->
 &lt;!-- ![dev-tools](/media/dev-tools.png) -->
-&lt;p>This is an incredibly valuable resource because you can learn how &lt;strong>every website on the entire internet&lt;/strong> was put together. So go forward and learn from the billions of pages on the internet and then use that knowledge to make something even better.&lt;/p></description><source url="https://chriswmartin.github.ioindex.xml">Textfile</source></item></channel></rss>
+&lt;p>This is an incredibly valuable resource because you can learn how &lt;strong>every website on the entire internet&lt;/strong> was put together. So go forward and learn from the billions of pages on the internet and then use that knowledge to make something even better.&lt;/p></description><source url="https://textfile.ioindex.xml">Textfile</source></item></channel></rss>
