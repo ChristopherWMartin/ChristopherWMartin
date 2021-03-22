@@ -12,6 +12,7 @@ body, .list-page ul { width: 87.5%; }
   width: 1rem;
   top: 0.15rem;
   position: relative;
+  margin-right: 0.25rem;
 }
 
 // sets link style according to values in _settings.scss
@@ -123,7 +124,7 @@ body {
 
 .nav-item { margin-left: 0.5rem; font-size: 1rem; }
 .nav-divider { margin-right: 1rem; }
-.header-path { font-family: var(--code-font); font-size: 0.60rem; }
+.header-path { font-family: var(--code-font); font-size: 0.80rem; }
 
 code { font-size: 0.85rem; }
 pre, pre code { font-family: var(--code-font); padding: 0 1.5%; overflow-x: auto; }
