@@ -48,8 +48,8 @@
  {{ range .Site.RegularPages }}
 
         <li>
-          <span><h3 style="font-style: normal;"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-            <time>{{ .Date.Format "2006-01-02" }}</time></span>
+          <span ><h3 style="margin-bottom: 0.5rem; font-style: normal;"><a href="{{ .Permalink }}">{{ .Title }}</a> // <small><time>{{ .Date.Format "2006-01-02" }}</time></small></h3>
+            {{/* <time style="margin-left: 0.2rem;"> </time></span> */}}
         </li>
             {{ end }}
   {{/*

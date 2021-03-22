@@ -3,21 +3,23 @@
     <span id="breadcrumbs-label" itemprop="name" class="label">Breadcrumb </span>
     {{- if eq .Type "post" }}
     {{- $year := .Date.Format "2006" }}
-    <span role="listitem" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <span itemprop="name"></span>
+    <span class='header-path' style="display: inline; margin-right: 1rem;" role="listitem" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      .rw-r--r-- 571 chris {{ .PublishDate.Format "2 Jan" }}
       {{/*
       <span itemprop="name"><a itemprop="item" href="{{ .Site.BaseURL }}">Home</a></span>
+        <span itemprop="name">
+        <a class="header-path" itemprop="item" href="{{ .Site.BaseURL }}">~&#160;</a></span>
       */}}
-      <span itemprop="name">
-      <a class="header-path" itemprop="item" href="{{ .Site.BaseURL }}">~</a></span>
       <meta itemprop="position" content="1" />
-    </span>/
+    </span> {{/*  /  */}}
     {{ with .Site.GetPage (printf "/%s" $year) }}
     <span role="listitem" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
       <span itemprop="name"><a itemprop="item" rel="up" href="{{ .Permalink }}" id="{{ .Permalink}}">{{ .Title }}</a></span>
       <meta itemprop="position" content="2" />
     </span> /
     {{ end }}
-    <cite id="{{ .Permalink}}" class="header-path" aria-current="page">{{ replaceRE "(\\s)" "_" .Title }}.txt</cite>
+    <cite style="font-style: normal;" id="{{ .Permalink}}" class="header-path" aria-current="page">{{ replaceRE "(\\s)" "_" .Title }}.txt</cite>
     {{/*
     <cite id="{{ .Permalink}}" aria-current="page">{{ .Title }}</cite>
     */}}

@@ -684,12 +684,12 @@ Once you refresh your page you should see an ellipse in the center of the canvas
 
 To take this further you can even combine your shape-changing animation code with your mouse tracking code from earlier in order to have the ellipse both constantly animate while also changing shape based off of where your mouse is on the web page. If you want to try this out change your `myWidth` and `myHeight` variables to the following code.
 
-```javascript
+{{< highlight javascript >}}
 let myWidth = 100+(sin(frameCount/25)*70)+
               (map(mouseX, 0, width, width/4, width/2));
 let myHeight = 100+(sin(frameCount/15)*50)+
               (map(mouseY, 0, height, height/4, height/2));
-```
+{{< / highlight >}}
 
 You should also try changing the magic numbers{{<sidenote>}}In general, it isn't a great idea to use plain numbers that aren't assigned variable names in your code because it makes your code more difficult to understand when it's read by others. You can learn more about "magic numbers" [here](https://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_constants).{{</sidenote>}} in these lines. For example the number we are adding to the entire result (100 in this case), the number we are dividing `frameCount` by, and the number that we are multiplying the result of the `sin()` function by. I only chose these specific numbers because I think it makes the result look interesting but that is totally subjective! Making changes to these values will drastically change the animation in a way that might be even more interesting.
 
