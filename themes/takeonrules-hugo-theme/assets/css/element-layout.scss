@@ -123,6 +123,7 @@ body {
 
 .nav-item { font-size: 1rem; }
 .nav-divider { margin-right: 1rem; }
+.header-path { font-family: var(--code-font); font-size: 0.7rem; }
 
 code { font-size: 0.85rem; }
 pre, pre code { font-family: var(--code-font); padding: 0 1.5%; overflow-x: auto; }
@@ -140,8 +141,6 @@ pre > code {
     padding-bottom: 1rem;
 }
 */
-
-.header-path { font-family: var(--code-font); font-size: 0.80rem; }
 
 .newthought { font-variant: small-caps; letter-spacing: 0.05rem; }
 
@@ -262,6 +261,8 @@ summary { margin-top: 0.83em; margin-bottom: 0.83em; }
 }
 
 @media screen and (max-width: 760px) {
+  body { width: 95%; margin-left: auto; margin-right: auto; padding-left: 1rem; }
+
   details > *:not(summary):not([role="note"]) {
     width: 87.5%;
   }
