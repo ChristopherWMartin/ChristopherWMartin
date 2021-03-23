@@ -84,7 +84,6 @@ LLL.LL..LL&lt;/code>&lt;/pre>&lt;/div>
 &lt;span class="n">occupied_seat_counts&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">occupied_seats&lt;/span>&lt;span class="p">)&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>You can see &lt;a href="https://gist.github.com/chriswmartin/3e0b42f64bbbbd215d72e0ee8d5100e2">the full code&lt;/a> and &lt;a href="https://repl.it/@0xcm/aoc2020day11part1?lite=true&amp;amp;outputonly=1">run it in your browser&lt;/a>.&lt;/p></description><source url="https://textfile.ioindex.xml">Textfile</source></item><item><title>Introduction to the Web</title><link>https://textfile.io/post/introduction-to-the-web/</link><pubDate>Tue, 25 Aug 2020 15:25:09 -0400</pubDate><guid isPermaLink="true">https://textfile.io/post/introduction-to-the-web/</guid><description>
 &lt;p>&lt;img src="https://textfile.io/media/header.png" alt="header image">&lt;/p>
-&lt;h1 id="introduction-to-the-web">Introduction to the Web&lt;/h1>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>Throughout this course you will learn how to build a website from scratch using standard web frameworks including HTML, CSS, and Javascript. To create content for your website we will add text, images, and other assets though HTML and an interactive program (for example, a game, drawing program, weather forecaster, neural network bot) using the P5.js Javascript framework.&lt;/p>
 &lt;h2 id="tools">Tools&lt;/h2>
