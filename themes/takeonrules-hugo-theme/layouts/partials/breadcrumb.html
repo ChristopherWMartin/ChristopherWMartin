@@ -4,7 +4,7 @@
     {{- if eq .Type "post" }}
     {{- $year := .Date.Format "2006" }}
         
-        <span>
+        <div>
         
         <span itemprop="name"></span>
     <span class='header-path' style="display: inline; margin-right: 1rem;" role="listitem" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
@@ -24,7 +24,7 @@
     {{ end }}
     <cite style="font-style: normal;" id="{{ .Permalink}}" class="header-path" aria-current="page">{{ replaceRE "(\\s)" "_" .Title }}.txt</cite>
     
-    </span>
+    </div>
     
     {{/*
     <cite id="{{ .Permalink}}" aria-current="page">{{ .Title }}</cite>
