@@ -4,7 +4,7 @@
     {{- if eq .Type "post" }}
     {{- $year := .Date.Format "2006" }}
         <span itemprop="name"></span>
-    <span class='header-path' style="display: inline; margin-right: 1rem;" role="listitem" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <span class='header-path' style="margin-right: 1rem;" role="listitem" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
       <span class="perm-dot">.</span><span class="perm-read">r</span><span class="perm-write">w</span><span class="perm-dash">-</span><span class="perm-read">r</span><span class="perm-dash">--</span><span class="perm-read">r</span><span class="perm-dash">--</span> <span class=perm-number>571</span> <span class="perm-name">chris</span> <span class="perm-date">{{ .PublishDate.Format "2 Jan" }}</span>
       {{/* .rw-r--r-- 571 chris {{ .PublishDate.Format "2 Jan" }} */}}
       {{/*
