@@ -3,6 +3,9 @@
     <span id="breadcrumbs-label" itemprop="name" class="label">Breadcrumb </span>
     {{- if eq .Type "post" }}
     {{- $year := .Date.Format "2006" }}
+        
+        <span>
+        
         <span itemprop="name"></span>
     <span class='header-path' style="display: inline; margin-right: 1rem;" role="listitem" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
       .rw-r--r-- 571 chris {{ .PublishDate.Format "2 Jan" }}
@@ -20,6 +23,9 @@
     </span> /
     {{ end }}
     <cite style="font-style: normal;" id="{{ .Permalink}}" class="header-path" aria-current="page">{{ replaceRE "(\\s)" "_" .Title }}.txt</cite>
+    
+    </span>
+    
     {{/*
     <cite id="{{ .Permalink}}" aria-current="page">{{ .Title }}</cite>
     */}}
