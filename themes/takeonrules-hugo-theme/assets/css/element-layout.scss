@@ -125,6 +125,14 @@ body {
 .nav-divider { margin-right: 1rem; }
 .header-path { font-family: var(--code-font); font-size: 0.7rem; }
 
+.perm-dot { color: var(--white-alt) }
+.perm-read { color: var(--yellow-faint) }
+.perm-write { color: var(--red-alt) }
+.perm-dash { color: var(--white-alt) }
+.perm-number { color: var(--cyan) }
+.perm-name { color: var(--yellow-faint) }
+.perm-date { color: var(--blue-alt-faint) }
+
 code { font-size: 0.85rem; }
 pre, pre code { font-family: var(--code-font); padding: 0 1.5%; overflow-x: auto; }
 kbd, code { font-family: var(--code-font); }
