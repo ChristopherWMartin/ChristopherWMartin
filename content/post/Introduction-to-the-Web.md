@@ -6,8 +6,6 @@ draft: false
 
 ![header image](/media/header.png)
 
-# Introduction to the Web
-
 ## Overview
 
 Throughout this course you will learn how to build a website from scratch using standard web frameworks including HTML, CSS, and Javascript. To create content for your website we will add text, images, and other assets though HTML and an interactive program (for example, a game, drawing program, weather forecaster, neural network bot) using the P5.js Javascript framework.
