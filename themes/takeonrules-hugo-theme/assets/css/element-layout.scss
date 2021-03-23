@@ -12,7 +12,7 @@ body, .list-page ul { width: 87.5%; }
   width: 1rem;
   top: 0.15rem;
   position: relative;
-  margin-right: 0.25rem;
+  margin-right: 0.5rem;
 }
 
 // sets link style according to values in _settings.scss
@@ -263,6 +263,8 @@ summary { margin-top: 0.83em; margin-bottom: 0.83em; }
 
 @media screen and (max-width: 760px) {
   body { width: 95%; margin-left: auto; margin-right: auto; padding-left: 1rem; }
+
+  .header-path { font-size: 0.40rem; }
 
   details > *:not(summary):not([role="note"]) {
     width: 87.5%;
