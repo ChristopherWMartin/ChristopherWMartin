@@ -25,7 +25,7 @@
       <nav class="group" role="list" aria-label="Site navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
         <meta itemprop="name" content="Site navigation" />
         <a href="#skip-to-content"  itemprop="hasPart" class="offscreen">Skip to Main Content</a>
-        <h1><a role="listitem" itemprop="hasPart" rel="home" href="{{ .Site.BaseURL }}" {{ if eq (string $.Page.Permalink) (string .Site.BaseURL) }}aria-current="page" {{end}} title="Homepage of {{ .Site.Title }}">{{if not .IsHome}}🏠 {{end}}{{ .Site.Title }}</a></h1>
+        <h1 role="listitem"> <a itemprop="hasPart" rel="home" href="{{ .Site.BaseURL }}" {{ if eq (string $.Page.Permalink) (string .Site.BaseURL) }}aria-current="page" {{end}} title="Homepage of {{ .Site.Title }}">{{if not .IsHome}}🏠 {{end}}{{ .Site.Title }}</a></h1>
         {{- range $idx, $item := .Site.Menus.topnav }}
           <span class="nav-divider">//</span>
             <a class="nav-item" role="listitem" itemprop="hasPart" href="{{ $item.URL }}" {{ if eq $.Page.RelPermalink $item.URL }}aria-current="page" {{ end }} title="{{ if $item.Title }}{{ $item.Title }}{{ else }}{{ $item.Name }} page{{ end }}">
