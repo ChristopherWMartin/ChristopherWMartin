@@ -12,6 +12,7 @@ theme = "takeonrules-hugo-theme"
 enableInlineShortcodes = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
+enableGitInfo = true
 
 builddrafts = true
 canonifyurls = true
@@ -58,7 +59,8 @@ canonifyurls = true
 
 
 [frontmatter]
-lastmod = ["lastmod", ":fileModTime", ":default"]
+date = ["date", "publishDate", "lastmod"]
+lastmod = [":git", "lastmod", ":fileModTime", "date", ":default"]
 
 [[menu.me_elsewhere]]
   identifier = "github"

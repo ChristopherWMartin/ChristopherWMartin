@@ -124,7 +124,7 @@ body {
 
 .nav-item { margin-left: 0.5rem; font-size: 1rem; }
 .nav-divider { margin-right: 1rem; }
-.header-path { font-family: var(--code-font); font-size: 0.80rem; }
+.header-path { line-height: 1.125rem; font-family: var(--code-font); color: var(--white-alt); font-size: 0.80rem; }
 
 .perm-dot { color: var(--white-alt) }
 .perm-read { color: var(--yellow-faint) }
@@ -133,6 +133,8 @@ body {
 .perm-number { color: var(--cyan) }
 .perm-name { color: var(--yellow-faint) }
 .perm-date { color: var(--blue-alt-faint) }
+.perm-dir { color: var(--blue-alt-faint) }
+.perm-exe { color: var(--cyan) }
 
 code { font-size: 0.85rem; }
 pre, pre code { font-family: var(--code-font); padding: 0 1.5%; overflow-x: auto; }
@@ -216,7 +218,7 @@ main > article > footer input { width: 80%; }
 .hidden { display: none; }
 .breadcrumb, .paginator, .feeds {
   .label { display: none; }
-  width: 85%; font-family: var(--header-font); padding-bottom: 1rem;
+  width: 100%; font-family: var(--header-font); padding-bottom: 1rem;
 }
 
 .label { display: none; }
@@ -273,7 +275,7 @@ summary { margin-top: 0.83em; margin-bottom: 0.83em; }
   body { width: 95%; margin-left: auto; margin-right: auto; padding-left: 1rem; }
   ul { margin-left: 1rem; }
 
-  .header-path { font-size: 0.50rem; }
+  .header-path { font-size: 0.40rem; }
 
   details > *:not(summary):not([role="note"]) {
     width: 87.5%;

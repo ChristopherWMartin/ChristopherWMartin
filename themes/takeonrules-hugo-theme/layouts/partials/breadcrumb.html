@@ -5,7 +5,27 @@
     {{- $year := .Date.Format "2006" }}
         <span itemprop="name"></span>
     <span class='header-path' style="margin-right: 1rem;" role="listitem" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <span class="perm-dot">.</span><span class="perm-read">r</span><span class="perm-write">w</span><span class="perm-dash">-</span><span class="perm-read">r</span><span class="perm-dash">--</span><span class="perm-read">r</span><span class="perm-dash">--</span> <span class=perm-number>571</span> <span class="perm-name">chris</span> <span class="perm-date">{{ .PublishDate.Format "2 Jan" }}</span>
+
+
+      <span class="perm-dir">d</span><span class="perm-read">r</span><span class="perm-write">w</span><span class="perm-exe">x</span><span class="perm-read">r</span><span class="perm-dash">-</span><span class="perm-exe">x</span><span class="perm-read">r</span><span class="perm-dash">-</span><span class="perm-exe">x</span> <span class="perm-name">chris</span> <span class="perm-date">{{ .Site.Home.Lastmod.Format "2 Jan" }}</span>
+
+      <span class="header-path"><a href="{{ .Site.BaseURL }}">./</a></span>
+      <br>
+
+{{ if ne .File.Dir "" }}
+{{ $stat := os.Stat .File.Dir }}
+<span class="perm-dir">d</span><span class="perm-read">r</span><span class="perm-write">w</span><span class="perm-exe">x</span><span class="perm-read">r</span><span class="perm-dash">-</span><span class="perm-exe">x</span><span class="perm-read">r</span><span class="perm-dash">-</span><span class="perm-exe">x</span> <span class="perm-name">chris</span> <span class="perm-date">{{ $stat.ModTime.Format "2 Jan" }}</span>
+
+      <span class="header-path"> └──  <a href="{{ .Site.BaseURL }}/{{ .File.Dir }}">{{.File.Dir}}</a></span>
+      <br>
+{{end}}
+
+
+      <span class="perm-dot">.</span><span class="perm-read">r</span><span class="perm-write">w</span><span class="perm-dash">-</span><span class="perm-read">r</span><span class="perm-dash">--</span><span class="perm-read">r</span><span class="perm-dash">--</span> <span class="perm-name">chris</span> <span class="perm-date">{{ .Page.Lastmod.Format "2 Jan" }}</span>
+      
+          <span class="header-path" {{if ne .File.Dir ""}}style="margin-left: 1rem;"{{end}} > └──  <a href="{{ .Permalink }}">{{ replaceRE "(\\s)" "_" .Title }}.txt</a></span>
+          
+      
       {{/* .rw-r--r-- 571 chris {{ .PublishDate.Format "2 Jan" }} */}}
       {{/*
       <span itemprop="name"><a itemprop="item" href="{{ .Site.BaseURL }}">Home</a></span>
@@ -20,7 +40,10 @@
       <meta itemprop="position" content="2" />
     </span> /
     {{ end }}
-    <cite style="font-style: normal;" id="{{ .Permalink}}" class="header-path" aria-current="page">{{ replaceRE "(\\s)" "_" .Title }}.txt</cite>
+
+          {{/*
+    <cite style="font-style: normal;" id="{{ .Permalink}}" class="header-path" aria-current="page">├── {{ replaceRE "(\\s)" "_" .Title }}.txt</cite>
+    */}}
     
     {{/*
     <cite id="{{ .Permalink}}" aria-current="page">{{ .Title }}</cite>
