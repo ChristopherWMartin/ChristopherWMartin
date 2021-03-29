@@ -31,72 +31,21 @@
   {{ .Content }}
 </section>
 <article itemprop="mainEntity" aria-labelledby="blog-posts" id="skip-to-content" itemid="#skip-to-content" itemscope itemtype="http://schema.org/Blog">
-  {{- $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.paginatedSections) .Site.Params.pagination_size }}
-  <link itemprop="mainEntityOfPage" href="{{ .Permalink }}#skip-to-content" />
-  <h1 id="blog-posts">Posts</h1>
-  <nav aria-labelledby="blog-pagination-label" class="paginator">
-    <span class="label" id="blog-pagination-label">Blog posts pagination </span>
-    {{/*
-    {{- with $paginator }}
-    {{- if .HasNext }}<a href="{{ .Next.URL }}" rel="prev">Previous posts</a>{{- end }}{{- if and .HasNext .HasPrev}}&nbsp;&middot;&nbsp;{{- end }}{{- if .HasPrev }}<a href="{{ .Prev.URL }}" rel="next">Next posts</a>{{- end }}<small> Page {{ .PageNumber }} of {{ .TotalPages }}</small>
-      {{- end }}
-      */}}
-  </nav>
+
+
+
+{{ range .Sections.Reverse}}
+<h1 id="blog-posts">{{.Section  | pluralize}}</h1>
   <ol aria-labelledby="blog-posts">
 
- {{ range .Site.RegularPages }}
-
+ {{ range .RegularPages }}
         <li>
           <span ><h3 style="margin-bottom: 0.5rem; font-style: normal;"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
              <small><time>{{ .Date.Format "2006-01-02" }}</time></small></span>
-            {{/* <time> </time></span> */}}
         </li>
-            {{ end }}
-  {{/*
-  {{ range $index, $object := $paginator.Pages }}
-  {{ with $object }}
-  <li aria-labelledby="{{ anchorize .Title }}">
-  <section itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" aria-labelledby="{{ anchorize .Title }}">
-    <h2 id="{{ anchorize .Title }}">
-      <cite itemprop="headline">
-        <a itemprop="mainEntityOfPage" href="{{ .RelPermalink }}" rel="bookmark">
-          {{ .Title }}
-        </a>
-      </cite>
-    </h2>
-    {{- if isset .Params "headline" }}
-    <h3 itemprop="alternateHeadline">{{- .Params.headline | markdownify }}</h3>
-    {{- end }}
-    <meta itemprop="wordCount" content="{{ .WordCount }}" />
-    <link itemprop="author" href="{{ $.Site.BaseURL }}#tor-author" />
-    <link itemprop="publisher" href="{{ $.Site.BaseURL }}#tor-organization" />
-    <nav aria-label="Content's metadata and navigation">
-      {{ partial "postAuthorWithoutLink.html" . }}
-      {{ partial "postDate.html" . }}
-      {{ partial "postTags.html" . }}
-      {{ partial "postSeries.html" . }}
-    </nav>
-    {{ with .Params.images }}
-    {{ range . }}
-    <link itemprop="image" href="{{ .src }}" />
-    {{ end }}
-    {{ else }}
-    {{ partial "footer/image.html" . }}
-    {{ end }}
-  </section>
-  </li>
-  {{- end }}
+ {{end}}
+   </ol>
+ {{end}}
 
-
-  {{- end }}
-  </ol>
-  <footer aria-hidden  aria-labelledby="blog-pagination-label">
-    <nav class="paginator" aria-labelledby="blog-pagination-label">
-      {{- with $paginator }}
-      {{- if .HasNext }}<a href="{{ .Next.URL }}" rel="prev">Previous posts</a>{{- end }}{{- if and .HasNext .HasPrev}}&nbsp;&middot;&nbsp;{{- end }}{{- if .HasPrev }}<a href="{{ .Prev.URL }}" rel="next">Next posts</a>{{- end }}<small> Page {{ .PageNumber }} of {{ .TotalPages }}</small>
-      {{- end }}
-    </nav>
-  </footer>
 </article>
-  */}}
 {{ end }}
