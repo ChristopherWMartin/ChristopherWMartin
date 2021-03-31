@@ -1,0 +1,20 @@
+{{ $id := delimit (shuffle (seq 1 9)) "" }}
+{{ $url := .Get "url" }}
+{{ $text := .Get "text" }}
+
+<div id="{{$id}}_hover", >
+  <a onmouseover="this.firstElementChild.style.display = 'block'" href="{{$url}}">{{$text}}</a>
+  <div id="{{$id}}_modal" style="display: none;">
+    <a href='#',
+       style="position: absolute;
+              float:right;
+              display:inline-block;
+              padding:2px 5px;
+              background:#ccc;
+              color: black;
+              text-decoration: none;",
+       onclick="this.parentNode.style.display = 'none';">X</a>
+
+    <iframe src="{{$url}}"></iframe>
+  </div>
+</div>
