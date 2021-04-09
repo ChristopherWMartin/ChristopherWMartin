@@ -399,8 +399,8 @@ Y increases&lt;/code>&lt;/pre>&lt;/div>
 &lt;span class="p">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;p>You should see a square in the upper left of your canvas and a circle in the center of your canvas. You might also have noticed that when drawing the ellipse we used &lt;code>width/2&lt;/code> and &lt;code>height/2&lt;/code> for the X and Y position values. These variables are automatically set to the current width and height of your canvas and are updated when the browser window changes size. Try resizing your window and you’ll notice that the circle always stays in the center. Similarly, if you were to change the ellipse function to&lt;/p>
-&lt;pre>&lt;code class="language-javascript">ellipse(width/2, height/2, width/15, height/15);
-&lt;/code>&lt;/pre>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="nx">ellipse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">width&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">width&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">15&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">15&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>The ellipse will stay the same size relative to the canvas whenever it is resized.&lt;/p>
 &lt;p>To change the fill and outline color of shapes we can use the functions &lt;code>fill()&lt;/code> and &lt;code>stroke()&lt;/code> which both take RGB color values.&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kd">function&lt;/span> &lt;span class="nx">setup&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
@@ -421,15 +421,15 @@ Y increases&lt;/code>&lt;/pre>&lt;/div>
 &lt;span class="p">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;p>What if we wanted to be able to interact with the shapes we drew? That is totally possible and it’s one of the things that makes P5.js exciting to use. Try changing your &lt;code>ellipse()&lt;/code> line to&lt;/p>
-&lt;pre>&lt;code class="language-javascript">ellipse(mouseX, mouseY, width/15, height/15);
-&lt;/code>&lt;/pre>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="nx">ellipse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">mouseX&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">mouseY&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">width&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">15&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">15&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>The ellipse should now follow your mouse as you move it around the canvas!&lt;/p>
 &lt;video muted playsinline controls poster="/media/interactive.png" src="https://textfile.io/media/interactive.mp4">&lt;/video>
 &lt;hr>
 &lt;h2 id="chapter-eight">Chapter Eight&lt;/h2>
 &lt;h3 id="draw">Draw!&lt;/h3>
 &lt;p>Currently, the background color of the canvas is redrawn every frame before we draw our shapes. Can you guess what would happen if we only drew the background once? Move your &lt;code>background()&lt;/code> call out of the &lt;code>draw()&lt;/code> function and into the &lt;code>setup()&lt;/code> function then refresh your page.&lt;/p>
-&lt;p>&lt;video controls loop src="media/draw.mp4">&lt;/video>&lt;/p>
+&lt;!--&lt;video controls loop src="media/draw.mp4">&lt;/video>-->
 &lt;p>Congratulations, you’ve just made your own simple drawing program! This opens up a whole new world of possibilities. For example, what if you wanted to change your pen color to a new, random, color every time we pressed the spacebar key.&lt;/p>
 &lt;p>To do this we are going to need to learn a little bit about &lt;strong>variables&lt;/strong>, &lt;strong>arrays&lt;/strong>, and &lt;strong>if statements&lt;/strong>. Let’s make some changes to our &lt;code>script.js&lt;/code> file.&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kd">let&lt;/span> &lt;span class="nx">penColor&lt;/span>&lt;span class="p">;&lt;/span>
