@@ -1,0 +1,10 @@
+<footer>
+  <hr>
+  {{ partial "fontawesome.html" "rss" }}
+  {{ with .Site.Home.AlternativeOutputFormats }}
+    {{ range $i, $e := . }}
+      {{ if $i }}/ {{ end }}
+      <a href="{{ .Permalink }}">{{ .Name | lower }}</a>
+    {{ end }}
+  {{ end }}
+</footer>

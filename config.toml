@@ -6,7 +6,8 @@ pluralizeListTitles = false
 staticDir = ["static"]
 languageCode = "en-us"
 title = "Textfile"
-theme = "takeonrules-hugo-theme"
+theme = "simple"
+# theme = "takeonrules-hugo-theme"
 # theme = "hugo-tufte"
 # theme = "etch"
 enableInlineShortcodes = true
@@ -99,7 +100,7 @@ lastmod = [":git", "lastmod", ":fileModTime", "date", ":default"]
   url = "/index.xml"
 
 [outputs]
-  home = [ "HTML", "JSON", "RSS", "ATOM" ]
+  home = [ "HTML", "RSS", "ATOM" ]
   page = [ "HTML" ]
   section = [ "HTML" ]
   taxonomies = [ "HTML", "XML" ]

@@ -523,9 +523,9 @@ function windowResized() {
 
 You should see a square in the upper left of your canvas and a circle in the center of your canvas. You might also have noticed that when drawing the ellipse we used `width/2` and `height/2` for the X and Y position values. These variables are automatically set to the current width and height of your canvas and are updated when the browser window changes size. Try resizing your window and you’ll notice that the circle always stays in the center. Similarly, if you were to change the ellipse function to
 
-```javascript
+{{< highlight javascript >}}
 ellipse(width/2, height/2, width/15, height/15);
-```
+{{< / highlight >}}
 
 The ellipse will stay the same size relative to the canvas whenever it is resized.
 
@@ -556,9 +556,9 @@ function windowResized() {
 
 What if we wanted to be able to interact with the shapes we drew? That is totally possible and it’s one of the things that makes P5.js exciting to use. Try changing your `ellipse()` line to
 
-```javascript
+{{< highlight javascript >}}
 ellipse(mouseX, mouseY, width/15, height/15);
-```
+{{< / highlight >}}
 
 The ellipse should now follow your mouse as you move it around the canvas!
 
@@ -574,7 +574,7 @@ The ellipse should now follow your mouse as you move it around the canvas!
 
 Currently, the background color of the canvas is redrawn every frame before we draw our shapes. Can you guess what would happen if we only drew the background once? Move your `background()` call out of the `draw()` function and into the `setup()` function then refresh your page.
 
-<video controls loop src="media/draw.mp4"></video>
+<!--<video controls loop src="media/draw.mp4"></video>-->
 
 Congratulations, you’ve just made your own simple drawing program! This opens up a whole new world of possibilities. For example, what if you wanted to change your pen color to a new, random, color every time we pressed the spacebar key.
 

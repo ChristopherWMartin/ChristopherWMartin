@@ -1,0 +1,15 @@
+{{ define "main" }}
+  <h1 class="title">{{ partial "fontawesome.html" "file-alt-regular" }} {{ .Site.Title }}</h1>
+
+  <ul>
+    {{ range .Site.RegularPages.ByPublishDate.Reverse }}
+      <li>
+        <p>
+        <a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <time class="date">{{ .PublishDate.Format "2006-02-01" }}</time>
+        </p>
+      </li>
+  {{ end }}
+  </ul>
+{{ end }}
+
