@@ -8,10 +8,14 @@
 */
 
 	body {
+    color: #444;
+    background-color: #EEEEEE;
 		margin:1em auto;
 		max-width:40em;
 		padding:0 .62em;
-		font:1.2em/1.62 sans-serif;
+		font-size:1.125em;
+    line-height: 1.62em;
+    font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     counter-reset: sidenote-counter;
 	}
 
@@ -174,7 +178,7 @@ figure[role="note"] {
 
     .side[role="note"] {
         padding: 1rem;
-        background: #f0f0f0;
+        background: #d6d6d6;
         clear: both;
         margin: 1rem 0;
         width: 97.5%;
