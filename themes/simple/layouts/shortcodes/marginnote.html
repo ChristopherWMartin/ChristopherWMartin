@@ -1,0 +1,9 @@
+{{- $tag := default "div" (.Get "tag") }}
+{{- $hidden := "" }}
+{{- if .Get "hidden" }}{{- $hidden = "aria-hidden=\"true\"" }}{{- end }}
+{{- $inner := partial "smallParagraphy.html" .Inner }}
+<details>
+  <summary>note</summary>
+{{ printf "<%s %s role=\"note\" class=\"margin\">%s</%s>" $tag $hidden $inner $tag | safeHTML }}
+
+</details>
