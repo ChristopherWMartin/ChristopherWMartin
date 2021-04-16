@@ -1,4 +1,36 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Textfile</title><link>https://textfile.io</link><description>Recent content for Textfile</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright 2021,</copyright><language>en-us</language><lastBuildDate>Sat, 12 Dec 2020 12:25:09 -0400</lastBuildDate><atom:link href="https://textfile.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Advent of Code 2020 Day 11</title><link>https://textfile.io/post/aoc-2020-day-11/</link><pubDate>Sat, 12 Dec 2020 12:25:09 -0400</pubDate><guid isPermaLink="true">https://textfile.io/post/aoc-2020-day-11/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Textfile</title><link>https://textfile.io</link><description>Recent content for Textfile</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright 2021,</copyright><language>en-us</language><lastBuildDate>Fri, 16 Apr 2021 12:00:00 -0400</lastBuildDate><atom:link href="https://textfile.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Experiments with Cyanotypes</title><link>https://textfile.io/post/experiments-with-cyanotypes/</link><pubDate>Fri, 16 Apr 2021 12:00:00 -0400</pubDate><guid isPermaLink="true">https://textfile.io/post/experiments-with-cyanotypes/</guid><description>
+&lt;p>&lt;img src="https://textfile.io/media/cyanotype_1.jpg" alt="">&lt;/p>
+&lt;h2 id="background">Background&lt;/h2>
+&lt;p>Cyanotype is an image-making process that uses two chemicals, ammonium ferric citrate and potassium ferricyanide. When these two compounds are mixed together and applied to a surface (such as paper) the surface becomes photosensitive and can be used for contact printing. One of the great things about the cyanotype process is that images can be created in sunlight and developed with plain water. Cyanotypes were also the original technique &lt;a href="https://en.wikipedia.org/wiki/Blueprint#The_blueprint_process">for producing blueprints&lt;/a>.&lt;/p>
+&lt;p>This page is intended to be a living document cataloging various approaches I have personally tried in respect to the cyanotype process.&lt;/p>
+&lt;details>
+&lt;summary>note&lt;/summary>
+&lt;div role="note" class="margin">
+&lt;p>&lt;small>this page was last updated April 16, 2021&lt;/small>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h2 id="experiments">Experiments&lt;/h2>
+&lt;h3 id="1-development">1. Development&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>When cyanotypes are developed in plain water the print will darken dramatically as it dries. You can get a sneak peek at the final color by soaking your print in a roughly 10:1 mixure of water and hydrogen peroxide after the initial wash. You should see rich blues emerge instantly.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Rinsing your print in a potassium ferricyanide and water bath &lt;a href="https://www.digitaltruth.com/products/photoformulary_tech/Formulary%20Cyanotype%20%5B07-0090%5D.pdf">has been said to&lt;/a> increase contrast and result in richer blues. I haven&amp;rsquo;t found much success in this, however.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="2-toning">2. Toning&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Toning in general can be more successful if you first &amp;lsquo;bleach&amp;rsquo; your print in a borax or soda ash bath. Further testing is needed to determine appropriate concentrations and timings.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Soaking your print in coffee after the initial wash can darken your blues to dark navy or black.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Green tea can tone your print to a dark magenta.&lt;/p>
+&lt;/li>
+&lt;/ul></description><source url="https://textfile.ioindex.xml">Textfile</source></item><item><title>Advent of Code 2020 Day 11</title><link>https://textfile.io/post/aoc-2020-day-11/</link><pubDate>Sat, 12 Dec 2020 12:25:09 -0400</pubDate><guid isPermaLink="true">https://textfile.io/post/aoc-2020-day-11/</guid><description>
 &lt;p>This year&amp;rsquo;s Advent of Code&amp;rsquo;s day 11 challenge &amp;ndash; &lt;a href="https://adventofcode.com/2020/day/11">Seating System&lt;/a> was a type of &lt;a href="https://en.wikipedia.org/wiki/Cellular_automaton">cellular automata&lt;/a> task where one needed to model the eventual seating positions of individuals who are waiting to board a ferry.&lt;/p>
 &lt;p>To create our visualizations first we generate a new, random initial seating layout based off of the AoC examples&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="k">def&lt;/span> &lt;span class="nf">generate_layout&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">rows&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">columns&lt;/span>&lt;span class="p">):&lt;/span>
@@ -245,7 +277,8 @@ LLL.LL..LL&lt;/code>&lt;/pre>&lt;/div>
 &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">img&lt;/span> &lt;span class="na">src&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;images/grumpy-cat.jpg&amp;#34;&lt;/span> &lt;span class="na">alt&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;a picture of a frowning cat&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">html&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;p>The &lt;code>&amp;lt;img&amp;gt;&lt;/code> tag takes two attributes. The first is &lt;code>src&lt;/code> which is the location of your image in relation to your &lt;code>index.html&lt;/code> file. The second attribute is &lt;code>alt&lt;/code> which is a description of your image that will be shown in the event your image can’t be loaded. The &lt;code>alt&lt;/code> attribute also allows those that are blind or that have impaired vision to effectively navigate your website using a screen reader! &lt;span class="sidenote-number">&lt;small class="side" role="note">
+&lt;p>The &lt;code>&amp;lt;img&amp;gt;&lt;/code> tag takes two attributes. The first is &lt;code>src&lt;/code> which is the location of your image in relation to your &lt;code>index.html&lt;/code> file. The second attribute is &lt;code>alt&lt;/code> which is a description of your image that will be shown in the event your image can’t be loaded. The &lt;code>alt&lt;/code> attribute also allows those that are blind or that have impaired vision to effectively navigate your website using a screen reader!
+&lt;span class="sidenote-number">&lt;small class="side" role="note">
 As long as you follow all of the best practices when creating your website (like adding &lt;code>alt&lt;/code> attributes to your images) &lt;a href="https://en.wikipedia.org/wiki/Screen_reader">screen readers&lt;/a> can even turn your website into braille!
 &lt;/small>&lt;/span>
 &lt;/p>
@@ -351,7 +384,8 @@ As long as you follow all of the best practices when creating your website (like
 &lt;hr>
 &lt;h2 id="chapter-seven">Chapter Seven&lt;/h2>
 &lt;h3 id="interactivity">Interactivity&lt;/h3>
-&lt;p>First, let&amp;rsquo;s set the background color of our javascript canvas so that we can see it more clearly. To do this we can use the built-in function &lt;code>background()&lt;/code>. The background function takes an &lt;strong>RGB&lt;/strong> color which is made up of three numbers, each between 0 and 255. The first number determines how much &lt;strong>red&lt;/strong> is in the color, the second number determines how much &lt;strong>green&lt;/strong> is in the color, and the third number determines how much &lt;strong>blue&lt;/strong> is in the color. For example 0, 0, 0 is black, 255, 255, 255 is white, 0, 0, 255 is blue, and 238, 130, 238 is a nice shade of purple. &lt;span class="sidenote-number">&lt;small class="side" role="note">
+&lt;p>First, let&amp;rsquo;s set the background color of our javascript canvas so that we can see it more clearly. To do this we can use the built-in function &lt;code>background()&lt;/code>. The background function takes an &lt;strong>RGB&lt;/strong> color which is made up of three numbers, each between 0 and 255. The first number determines how much &lt;strong>red&lt;/strong> is in the color, the second number determines how much &lt;strong>green&lt;/strong> is in the color, and the third number determines how much &lt;strong>blue&lt;/strong> is in the color. For example 0, 0, 0 is black, 255, 255, 255 is white, 0, 0, 255 is blue, and 238, 130, 238 is a nice shade of purple.
+&lt;span class="sidenote-number">&lt;small class="side" role="note">
 Google has an interactive color picker that allows you to copy the RGB value of any color you choose. You can access it by googling &amp;ldquo;&lt;a href="https://www.google.com/search?q=color+picker">Color Picker&lt;/a>&amp;rdquo;.
 &lt;/small>&lt;/span>
 &lt;/p>
@@ -456,7 +490,8 @@ Y increases&lt;/code>&lt;/pre>&lt;/div>
 &lt;span class="p">}&lt;/span>
 &lt;span class="p">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>
-&lt;p>On the first two lines, before our &lt;code>setup()&lt;/code> function, we are defining some &lt;strong>global variables&lt;/strong> - &lt;code>penColor&lt;/code> and &lt;code>allColors&lt;/code>. Inside of our &lt;code>setup()&lt;/code> function we assigned &lt;code>penColor&lt;/code> to the initial color we want to draw with and we assigned &lt;code>allColors&lt;/code> to an &lt;strong>array&lt;/strong> of all of the colors we want to randomly pick from later on. An array can be thought of as a &lt;strong>list of values or variables&lt;/strong>. At the end of our script we added a new function that is called every time you press any key on your keyboard. Since we would only like to change the pen’s color when the spacebar key is pressed we need to use an &lt;strong>if statement&lt;/strong>. &lt;code>KeyCode 32&lt;/code> is the signal your computer sends to the web browser when you press the spacebar key on your keyboard&lt;span class="sidenote-number">&lt;small class="side" role="note">
+&lt;p>On the first two lines, before our &lt;code>setup()&lt;/code> function, we are defining some &lt;strong>global variables&lt;/strong> - &lt;code>penColor&lt;/code> and &lt;code>allColors&lt;/code>. Inside of our &lt;code>setup()&lt;/code> function we assigned &lt;code>penColor&lt;/code> to the initial color we want to draw with and we assigned &lt;code>allColors&lt;/code> to an &lt;strong>array&lt;/strong> of all of the colors we want to randomly pick from later on. An array can be thought of as a &lt;strong>list of values or variables&lt;/strong>. At the end of our script we added a new function that is called every time you press any key on your keyboard. Since we would only like to change the pen’s color when the spacebar key is pressed we need to use an &lt;strong>if statement&lt;/strong>. &lt;code>KeyCode 32&lt;/code> is the signal your computer sends to the web browser when you press the spacebar key on your keyboard
+&lt;span class="sidenote-number">&lt;small class="side" role="note">
 You can use &lt;a href="https://keycode.info">keycode.info&lt;/a> to check what value is sent for each key on your keyboard.
 &lt;/small>&lt;/span>
 so inside of the if statement we can check if the spacebar key is pressed and, if so, we’ll set the pen color to a random color chosen from our &lt;code>allColors&lt;/code> array.&lt;/p>
@@ -506,7 +541,8 @@ input min. new min.&lt;/code>&lt;/pre>&lt;/div>
 &lt;span class="kd">let&lt;/span> &lt;span class="nx">myHeight&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">100&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">sin&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">frameCount&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">15&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="mi">50&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">+&lt;/span>
 &lt;span class="p">(&lt;/span>&lt;span class="nx">map&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">mouseY&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">));&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>
-&lt;p>You should also try changing the magic numbers&lt;span class="sidenote-number">&lt;small class="side" role="note">
+&lt;p>You should also try changing the magic numbers
+&lt;span class="sidenote-number">&lt;small class="side" role="note">
 In general, it isn&amp;rsquo;t a great idea to use plain numbers that aren&amp;rsquo;t assigned variable names in your code because it makes your code more difficult to understand when it&amp;rsquo;s read by others. You can learn more about &amp;ldquo;magic numbers&amp;rdquo; &lt;a href="https://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_constants">here&lt;/a>.
 &lt;/small>&lt;/span>
 in these lines. For example the number we are adding to the entire result (100 in this case), the number we are dividing &lt;code>frameCount&lt;/code> by, and the number that we are multiplying the result of the &lt;code>sin()&lt;/code> function by. I only chose these specific numbers because I think it makes the result look interesting but that is totally subjective! Making changes to these values will drastically change the animation in a way that might be even more interesting.&lt;/p>
