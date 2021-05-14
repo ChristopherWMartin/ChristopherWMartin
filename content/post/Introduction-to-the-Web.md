@@ -2,6 +2,7 @@
 title: "Introduction to the Web"
 date: 2020-08-25T15:25:09-04:00
 draft: false
+toc: true
 ---
 
 ![header image](/media/header.png)

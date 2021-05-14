@@ -4,6 +4,7 @@ math: false
 meta: true
 title: "Experiments with Cyanotypes"
 date: 2021-04-16T12:00:00-04:00
+toc: true
 draft: false
 ---
 
@@ -23,7 +24,7 @@ This page is intended to be a living document cataloging various approaches I ha
 
 * When cyanotypes are developed in plain water the print will darken dramatically as it dries. You can get a sneak peek at the final color by soaking your print in a roughly 10:1 mixure of water and hydrogen peroxide after the initial wash. You should see rich blues emerge instantly. 
 
-* Rinsing your print in a potassium ferricyanide and water bath [has been said to](https://www.digitaltruth.com/products/photoformulary_tech/Formulary%20Cyanotype%20[07-0090].pdf) increase contrast and result in richer blues. I haven't found much success in this, however.
+* Rinsing your print in a potassium ferricyanide and water bath [has been said to](https://www.digitaltruth.com/products/photoformulary_tech/Formulary%20Cyanotype%20[07-0090].pdf) increase contrast and result in darker blues. I haven't found much success in this, however.
 
 ### 2. Toning
 

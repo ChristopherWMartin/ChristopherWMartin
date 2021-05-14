@@ -61,7 +61,7 @@ video {
   
 ul {
   list-style-position: inside;
-  padding-left: 0;
+  /* padding-left: 0; */
 }
 
 .inline-svg {
@@ -105,8 +105,22 @@ details > summary {
   cursor: pointer;
 }
 
+#TableOfContents {
+  padding: 0.1rem;
+  margin-top: 1rem;
+  width: 25em;
+  background-color: #ddd;
+  padding: 0.125rem;
+  box-shadow: 3px 3px 4px black;
+}
+
+@media screen and (max-width: 760px) {
+  #TableOfContents {
+    width: 15em;
+  }
+}
+
 details > p {
-  border-radius: 0 0 10px 10px;
   background-color: #ddd;
   padding: 2px 6px;
   margin: 0;
@@ -115,6 +129,32 @@ details > p {
 
 details[open] > summary {
   background-color: #ccf;
+}
+
+.abstract {
+  background-color: #5c5c5c;
+  color: white;
+  padding: 2px 6px;
+  margin: 0;
+  box-shadow: 3px 3px 4px #000;
+
+}
+
+blockquote {
+  background-color: #ddd;
+  padding: 2px 6px;
+  margin: 0;
+  box-shadow: 3px 3px 4px black;
+}
+
+.alert {
+  text-align: center;
+  background-color: #ED3B4D;
+  color: #EEE;
+  font-size: 1.25rem;
+  padding: 2px 6px;
+  margin: 2rem;
+  box-shadow: 3px 3px 4px #5e171e;
 }
 
 /* ------------------------------------- */
@@ -237,4 +277,3 @@ figure[role="note"] {
         margin-left: 0;
         padding-left: 0;
     }
-

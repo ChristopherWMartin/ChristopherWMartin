@@ -1,5 +1,7 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
 <br>
+{{ partial "toc.html" . }}
+<br>
 {{ .Content }}
 {{ end }}
