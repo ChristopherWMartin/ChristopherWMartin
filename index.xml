@@ -1,4 +1,65 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Textfile</title><link>https://textfile.io</link><description>Recent content for Textfile</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright 2021,</copyright><language>en-us</language><lastBuildDate>Fri, 16 Apr 2021 12:00:00 -0400</lastBuildDate><atom:link href="https://textfile.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Experiments with Cyanotypes</title><link>https://textfile.io/post/experiments-with-cyanotypes/</link><pubDate>Fri, 16 Apr 2021 12:00:00 -0400</pubDate><guid isPermaLink="true">https://textfile.io/post/experiments-with-cyanotypes/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Textfile</title><link>https://textfile.io</link><description>Recent content for Textfile</description><generator>Hugo -- gohugo.io</generator><copyright>Copyright 2021,</copyright><language>en-us</language><lastBuildDate>Tue, 20 Apr 2021 12:00:00 -0400</lastBuildDate><atom:link href="https://textfile.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Hypermedia Environments</title><link>https://textfile.io/post/hypermedia-environments/</link><pubDate>Tue, 20 Apr 2021 12:00:00 -0400</pubDate><guid isPermaLink="true">https://textfile.io/post/hypermedia-environments/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>Most of us are comfortable with and accustomed to navigating &lt;a href="https://en.wikipedia.org/wiki/Hypertext">hypertext&lt;/a> and &lt;a href="https://en.wikipedia.org/wiki/Hypermedia">hypermedia&lt;/a> interfaces through our computers.
+&lt;a href="http://manovich.net/content/04-projects/054-alan-kay-s-universal-media-machine/51_article_2006.pdf">Alan Kay’s 1972 Dynabook concept&lt;/a> has materialized as our smartphones. This has resulted in not just an extension or translation of old media but an entirely new information paradigm &amp;ndash; where one can simultaneously read a journalistic account of an ongoing protest, watch a livestream of the event, and view &lt;a href="https://carto.com/blog/us-protest-map-visualizing-police-violence/#mapping-social-media-response">a map detailing the global response&lt;/a> updated in real-time.&lt;/p>
+&lt;p>As technology has evolved the borders between digital information and the wider world has shrank. Nearly all of our digital media, however, has remained two dimensional, screen based, which imposes a limit on technology&amp;rsquo;s fluidity and flexibility throughout our lives. What happens when the borders disappear altogether?&lt;/p>
+&lt;p>&lt;img src="https://textfile.io/media/phone_history.jpg" alt="a compilation of images detailing how phones have changed over time">&lt;/p>
+&lt;blockquote>
+&lt;p>But how could anyone think it could be over? The internet is now more potent than ever. It has not only sparked but fully captured the imagination, attention and productivity of more people than at any other point before. Never before have more people been dependent on, embedded into, surveilled by, and exploited by the web. It seems overwhelming, bedazzling and without immediate alternative. The internet is probably not dead. It has rather gone all-out. Or more precisely: it is all over!&lt;/p>
+&lt;p>&amp;ndash; &lt;cite>&lt;a href="https://www.e-flux.com/journal/49/60004/too-much-world-is-the-internet-dead/">Too Much World: Is the Internet Dead?&lt;/a>, Hito Steyerl 2013&lt;/cite>&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="moving-forward">Moving forward&lt;/h2>
+&lt;p>What does a three dimensional hypermedia interface look like? One can imagine &lt;a href="https://dl.acm.org/doi/pdf/10.1145/3287066">room-wide wireless power&lt;/a> supplied to voice assistants and IoT devices alongside holograms controlled by a &lt;a href="https://journal.utem.edu.my/index.php/jtec/article/viewFile/687/504">3D touchless capacitive sensing&lt;/a> interface all adapting to the changing needs of the surrounding environment.&lt;/p>
+&lt;p>This can be thought of as an extension of &amp;ldquo;roomware&amp;rdquo; as described by Streitz et al in the 1999 paper &lt;em>i-LAND: An interactive Landscape for Creativity and Innovation&lt;/em>&lt;/p>
+&lt;blockquote>
+&lt;p>Our approach to meet the requirements of flexible configuration and dynamic allocation of resources in integrated physical and information environments is based on the concept we call roomware. By roomware, we mean computer-augmented objects resulting from the integration of room elements, e.g., walls, doors, furniture (tables, chairs, etc.) with computer-based information devices. The general goal of developing roomware is to make progress towards the design of integrated real architectural spaces and virtual information spaces from the perspective of augmenting reality.&lt;/p>
+&lt;p>&amp;ndash; &lt;cite>&lt;a href="https://dl.acm.org/doi/pdf/10.1145/302979.303010">I-LAND&lt;/a>, Streitz et al 1999&lt;/cite>&lt;/p>
+&lt;/blockquote>
+&lt;div class='alert'>
+&lt;p> to be continued... &lt;/p>
+&lt;/div>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>What does a three dimensional hypermedia interface look like?&lt;/p>
+&lt;ul>
+&lt;li>Virtual reality and augmented reality, while innovative, are still two dimentional screens that contextually respond to three dimensional inputs&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>What novel interaction methods would be afforded to us in a three dimensionally native interface?&lt;/p>
+&lt;ul>
+&lt;li>Computer mice and traditional capacitive touchscreens are designed for 2D environments.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="further-reading">Further Reading&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://lucian.uchicago.edu/blogs/mediatheory/keywords/hypermedia/">Hypermedia&lt;/a>, Kara Schoonmaker 2007&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://dl.acm.org/doi/pdf/10.1145/302979.303010">I-LAND: An interactive Landscape for Creativity and Innovation&lt;/a>, Streitz et al 1999&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.researchgate.net/profile/Peter-Tandler/publication/2332718_Roomware_Towards_the_Next_Generation_of_Human-Computer_Interaction_based_on_an_Integrated_Design_of_Real_and_Virtual_Worlds/links/09e41510c5ba328cee000000/Roomware-Towards-the-Next-Generation-of-Human-Computer-Interaction-based-on-an-Integrated-Design-of-Real-and-Virtual-Worlds.pdf">Roomware: Towards the next generation of human-computer interaction based on an integrated design of real and virtual worlds&lt;/a>, Streitz et al 2000&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.15.9036&amp;amp;rep=rep1&amp;amp;type=pdf">Reactive environments&lt;/a>, Cooperstock et al 1997&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="http://manovich.net/content/04-projects/036-key-texts-on-new-media-art/33_article_2002.pdf">10 Key Texts on New Media Art, 1970-2000&lt;/a>, Manovich 2002&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="http://manovich.net/content/04-projects/054-alan-kay-s-universal-media-machine/51_article_2006.pdf">Alan Kay’s Universal Media Machine&lt;/a>, Manovich 2006&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.e-flux.com/books/66665/the-internet-does-not-exist/">The Internet Does Not Exist&lt;/a>, Sternberg Press 2015&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://en.wikipedia.org/wiki/Aspen_Movie_Map">Andrew Lippman&amp;rsquo;s 1978 Aspen Movie Map&lt;/a>, Wikipedia&lt;/p>
+&lt;/li>
+&lt;/ul></description><source url="https://textfile.ioindex.xml">Textfile</source></item><item><title>Experiments with Cyanotypes</title><link>https://textfile.io/post/experiments-with-cyanotypes/</link><pubDate>Fri, 16 Apr 2021 12:00:00 -0400</pubDate><guid isPermaLink="true">https://textfile.io/post/experiments-with-cyanotypes/</guid><description>
 &lt;p>&lt;img src="https://textfile.io/media/cyanotype_1.jpg" alt="">&lt;/p>
 &lt;h2 id="background">Background&lt;/h2>
 &lt;p>Cyanotype is an image-making process that uses two chemicals, ammonium ferric citrate and potassium ferricyanide. When these two compounds are mixed together and applied to a surface (such as paper) the surface becomes photosensitive and can be used for contact printing. One of the great things about the cyanotype process is that images can be created in sunlight and developed with plain water. Cyanotypes were also the original technique &lt;a href="https://en.wikipedia.org/wiki/Blueprint#The_blueprint_process">for producing blueprints&lt;/a>.&lt;/p>
@@ -6,7 +67,7 @@
 &lt;details>
 &lt;summary>note&lt;/summary>
 &lt;div role="note" class="margin">
-&lt;p>&lt;small>this page was last updated April 16, 2021&lt;/small>&lt;/p>
+&lt;p>&lt;small>this page was last updated May 14, 2021&lt;/small>&lt;/p>
 &lt;/div>
 &lt;/details>
 &lt;h2 id="experiments">Experiments&lt;/h2>
@@ -16,7 +77,7 @@
 &lt;p>When cyanotypes are developed in plain water the print will darken dramatically as it dries. You can get a sneak peek at the final color by soaking your print in a roughly 10:1 mixure of water and hydrogen peroxide after the initial wash. You should see rich blues emerge instantly.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Rinsing your print in a potassium ferricyanide and water bath &lt;a href="https://www.digitaltruth.com/products/photoformulary_tech/Formulary%20Cyanotype%20%5B07-0090%5D.pdf">has been said to&lt;/a> increase contrast and result in richer blues. I haven&amp;rsquo;t found much success in this, however.&lt;/p>
+&lt;p>Rinsing your print in a potassium ferricyanide and water bath &lt;a href="https://www.digitaltruth.com/products/photoformulary_tech/Formulary%20Cyanotype%20%5B07-0090%5D.pdf">has been said to&lt;/a> increase contrast and result in darker blues. I haven&amp;rsquo;t found much success in this, however.&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;h3 id="2-toning">2. Toning&lt;/h3>
@@ -377,8 +438,7 @@ As long as you follow all of the best practices when creating your website (like
 &lt;span class="p">}&lt;/span>
 &lt;span class="kd">function&lt;/span> &lt;span class="nx">windowResized&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="nx">resizeCanvas&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">windowWidth&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">windowWidth&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;span class="p">}&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>Now we have a Javascript canvas using P5.js that is automatically resized to a square that is half the width of our browser window and is automatically centered on our screen using CSS.&lt;/p>
 &lt;p>&lt;img src="https://textfile.io/media/add-canvas.png" alt="added javascript canvas to website">&lt;/p>
 &lt;hr>
@@ -399,8 +459,7 @@ Google has an interactive color picker that allows you to copy the RGB value of 
 &lt;span class="kd">function&lt;/span> &lt;span class="nx">windowResized&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="nx">resizeCanvas&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">windowWidth&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">windowWidth&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;span class="nx">background&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">238&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">130&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">238&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;span class="p">}&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>We can use a few built in functions to draw shapes on the canvas. Two of the most useful shape functions are &lt;code>rect()&lt;/code> and &lt;code>ellipse()&lt;/code> which both take four arguments - &lt;code>X position&lt;/code>, &lt;code>Y position&lt;/code>, &lt;code>width&lt;/code>, and &lt;code>height&lt;/code>.
 Before we can use these functions it helps to understand the coordinates system of the canvas.&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-text" data-lang="text"> +--------------&amp;gt; X increases
@@ -430,11 +489,9 @@ Y increases&lt;/code>&lt;/pre>&lt;/div>
 &lt;span class="kd">function&lt;/span> &lt;span class="nx">windowResized&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="nx">resizeCanvas&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">windowWidth&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">windowWidth&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;span class="nx">background&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">238&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">130&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">238&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;span class="p">}&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>You should see a square in the upper left of your canvas and a circle in the center of your canvas. You might also have noticed that when drawing the ellipse we used &lt;code>width/2&lt;/code> and &lt;code>height/2&lt;/code> for the X and Y position values. These variables are automatically set to the current width and height of your canvas and are updated when the browser window changes size. Try resizing your window and you’ll notice that the circle always stays in the center. Similarly, if you were to change the ellipse function to&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="nx">ellipse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">width&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">width&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">15&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">15&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="nx">ellipse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">width&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">width&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">15&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">15&lt;/span>&lt;span class="p">);&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>The ellipse will stay the same size relative to the canvas whenever it is resized.&lt;/p>
 &lt;p>To change the fill and outline color of shapes we can use the functions &lt;code>fill()&lt;/code> and &lt;code>stroke()&lt;/code> which both take RGB color values.&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kd">function&lt;/span> &lt;span class="nx">setup&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
@@ -452,11 +509,9 @@ Y increases&lt;/code>&lt;/pre>&lt;/div>
 &lt;span class="kd">function&lt;/span> &lt;span class="nx">windowResized&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="nx">resizeCanvas&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">windowWidth&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">windowWidth&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;span class="nx">background&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">238&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">130&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">238&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;span class="p">}&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>What if we wanted to be able to interact with the shapes we drew? That is totally possible and it’s one of the things that makes P5.js exciting to use. Try changing your &lt;code>ellipse()&lt;/code> line to&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="nx">ellipse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">mouseX&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">mouseY&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">width&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">15&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">15&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="nx">ellipse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">mouseX&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">mouseY&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">width&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">15&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">15&lt;/span>&lt;span class="p">);&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>The ellipse should now follow your mouse as you move it around the canvas!&lt;/p>
 &lt;video muted playsinline controls poster="/media/interactive.png" src="https://textfile.io/media/interactive.mp4">&lt;/video>
 &lt;hr>
@@ -488,8 +543,7 @@ Y increases&lt;/code>&lt;/pre>&lt;/div>
 &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">keyCode&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="mi">32&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="nx">penColor&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">random&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">allColors&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;span class="p">}&lt;/span>
-&lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;span class="p">}&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>On the first two lines, before our &lt;code>setup()&lt;/code> function, we are defining some &lt;strong>global variables&lt;/strong> - &lt;code>penColor&lt;/code> and &lt;code>allColors&lt;/code>. Inside of our &lt;code>setup()&lt;/code> function we assigned &lt;code>penColor&lt;/code> to the initial color we want to draw with and we assigned &lt;code>allColors&lt;/code> to an &lt;strong>array&lt;/strong> of all of the colors we want to randomly pick from later on. An array can be thought of as a &lt;strong>list of values or variables&lt;/strong>. At the end of our script we added a new function that is called every time you press any key on your keyboard. Since we would only like to change the pen’s color when the spacebar key is pressed we need to use an &lt;strong>if statement&lt;/strong>. &lt;code>KeyCode 32&lt;/code> is the signal your computer sends to the web browser when you press the spacebar key on your keyboard
 &lt;span class="sidenote-number">&lt;small class="side" role="note">
 You can use &lt;a href="https://keycode.info">keycode.info&lt;/a> to check what value is sent for each key on your keyboard.
@@ -531,16 +585,14 @@ input min. new min.&lt;/code>&lt;/pre>&lt;/div>
 &lt;span class="kd">function&lt;/span> &lt;span class="nx">windowResized&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="nx">resizeCanvas&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">windowWidth&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">windowWidth&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;span class="nx">background&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">238&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">130&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">238&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;span class="p">}&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>Once you refresh your page you should see an ellipse in the center of the canvas that constantly warps and changes shape. As you move your mouse around the canvas you should also see that the background color changes accordingly.&lt;/p>
 &lt;video muted playsinline controls poster="/media/change-color.png" src="https://textfile.io/media/change-color.mp4">&lt;/video>
 &lt;p>To take this further you can even combine your shape-changing animation code with your mouse tracking code from earlier in order to have the ellipse both constantly animate while also changing shape based off of where your mouse is on the web page. If you want to try this out change your &lt;code>myWidth&lt;/code> and &lt;code>myHeight&lt;/code> variables to the following code.&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="kd">let&lt;/span> &lt;span class="nx">myWidth&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">100&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">sin&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">frameCount&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">25&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="mi">70&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">+&lt;/span>
 &lt;span class="p">(&lt;/span>&lt;span class="nx">map&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">mouseX&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">width&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">width&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">width&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">));&lt;/span>
 &lt;span class="kd">let&lt;/span> &lt;span class="nx">myHeight&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">100&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">sin&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">frameCount&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">15&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="mi">50&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">+&lt;/span>
-&lt;span class="p">(&lt;/span>&lt;span class="nx">map&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">mouseY&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">));&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;span class="p">(&lt;/span>&lt;span class="nx">map&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">mouseY&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">));&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>You should also try changing the magic numbers
 &lt;span class="sidenote-number">&lt;small class="side" role="note">
 In general, it isn&amp;rsquo;t a great idea to use plain numbers that aren&amp;rsquo;t assigned variable names in your code because it makes your code more difficult to understand when it&amp;rsquo;s read by others. You can learn more about &amp;ldquo;magic numbers&amp;rdquo; &lt;a href="https://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_constants">here&lt;/a>.
@@ -572,8 +624,7 @@ in these lines. For example the number we are adding to the entire result (100 i
 &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">html&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>Once the library and model are imported we can start building our program in the &lt;code>script.js&lt;/code> file. Firstly, we need to define two global variables: one to define a &lt;code>button&lt;/code> element that will active the webcam when it is clicked and a &lt;strong>boolean&lt;/strong> variable (a boolean is a variable type that can have the value of either &lt;code>true&lt;/code> or &lt;code>false&lt;/code>) named &lt;code>videoStarted&lt;/code> which will keep track of whether or not our button was pressed.&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-JS" data-lang="JS">&lt;span class="kd">let&lt;/span> &lt;span class="nx">button&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;span class="kd">let&lt;/span> &lt;span class="nx">videoStarted&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;span class="kd">let&lt;/span> &lt;span class="nx">videoStarted&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">;&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>Next we can start writing our &lt;code>setup()&lt;/code> function. Just like in our previous scripts we are going to create a canvas to display the output of our program. Additionally, we&amp;rsquo;ll create an HTML button that is attached to our &lt;code>button&lt;/code> variable and apply some CSS style options to it. On the last line we&amp;rsquo;re going to define the name of a function we would like to call when this button is pressed.&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-JS" data-lang="JS">&lt;span class="kd">function&lt;/span> &lt;span class="nx">setup&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="nx">canvas&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">createCanvas&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">windowWidth&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">windowWidth&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">);&lt;/span>
@@ -587,8 +638,7 @@ in these lines. For example the number we are adding to the entire result (100 i
 &lt;span class="nx">button&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">style&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;border-radius&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;5px&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;span class="nx">button&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">style&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;font-size&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;15px&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;span class="nx">button&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">mousePressed&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">startVideo&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;span class="p">}&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>When the button is pressed it will call the &lt;code>startVideo()&lt;/code> function which first sets the &lt;code>videoStarted&lt;/code> variable to &lt;code>true&lt;/code> then it hides the HTML button so that it can&amp;rsquo;t be pressed again. Once this is complete we start capturing video from the webcam, hide it from the webpage, and connect it to our &lt;code>clmtrackr&lt;/code> object.&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-JS" data-lang="JS">&lt;span class="kd">function&lt;/span> &lt;span class="nx">startVideo&lt;/span>&lt;span class="p">(){&lt;/span>
 &lt;span class="nx">videoStarted&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="p">;&lt;/span>
@@ -603,8 +653,7 @@ in these lines. For example the number we are adding to the entire result (100 i
 &lt;span class="nx">ctracker&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nx">clm&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">tracker&lt;/span>&lt;span class="p">();&lt;/span>
 &lt;span class="nx">ctracker&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">init&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">pModel&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;span class="nx">ctracker&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">start&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">videoInput&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">elt&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;span class="p">}&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>Our &lt;code>draw()&lt;/code> function is pretty simple. All we need to do is check if the &lt;code>videoStarted&lt;/code> variable is &lt;code>true&lt;/code> and, if so, clear the screen and re-draw the background. All of the face tracking logic is handled by the &lt;code>getPositions()&lt;/code> function which is built into the &lt;code>clmtrackr&lt;/code> library. All that&amp;rsquo;s left for us to do is to draw with the data &lt;code>clmtrackr&lt;/code> provides us which we&amp;rsquo;ll do in the &lt;code>drawElements()&lt;/code> function.&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-JS" data-lang="JS">&lt;span class="kd">function&lt;/span> &lt;span class="nx">draw&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">videoStarted&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="p">){&lt;/span>
@@ -613,8 +662,7 @@ in these lines. For example the number we are adding to the entire result (100 i
 &lt;span class="nx">getPositions&lt;/span>&lt;span class="p">();&lt;/span>
 &lt;span class="nx">drawElements&lt;/span>&lt;span class="p">();&lt;/span>
 &lt;span class="p">}&lt;/span>
-&lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;span class="p">}&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>The &lt;code>drawElements()&lt;/code> is where we will do most of our work. After checking that &lt;code>clmtrackr&lt;/code> has supplied its &lt;code>positions&lt;/code> array with a list of points we can start creating &lt;strong>vector&lt;/strong> variable for different facial features. You can think of vectors as arrays that allow us to store both the X and Y positions of the features we would like to track.&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-JS" data-lang="JS">&lt;span class="kd">function&lt;/span> &lt;span class="nx">drawElements&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">positions&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">length&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
@@ -622,8 +670,7 @@ in these lines. For example the number we are adding to the entire result (100 i
 &lt;span class="kd">var&lt;/span> &lt;span class="nx">eye2pos&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">createVector&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">positions&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">32&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="nx">positions&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">32&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">]);&lt;/span>
 &lt;span class="kd">var&lt;/span> &lt;span class="nx">nosepos&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">createVector&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">positions&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">41&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="nx">positions&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">41&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">]);&lt;/span>
 &lt;span class="kd">var&lt;/span> &lt;span class="nx">mouthpos&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">createVector&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">positions&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">57&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="nx">positions&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">57&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">]);&lt;/span>
-&lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;span class="p">}&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>Once we have these variables defined it would be helpful to draw the basic shape of our face which we&amp;rsquo;ll do in the &lt;code>drawFaceOutline()&lt;/code> function. We can calculate the size, position, and rotation of our head using the list of positions &lt;code>clmtrackr&lt;/code> gives us.&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-JS" data-lang="JS">&lt;span class="kd">function&lt;/span> &lt;span class="nx">drawFaceOutline&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="nx">stroke&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">);&lt;/span>
@@ -636,8 +683,7 @@ in these lines. For example the number we are adding to the entire result (100 i
 &lt;span class="kd">var&lt;/span> &lt;span class="nx">mSize&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">p1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">dist&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">p2&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;span class="nx">ellipse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="mi">10&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">mSize&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mf">1.3&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">mSize&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mf">1.5&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;span class="nx">pop&lt;/span>&lt;span class="p">();&lt;/span>
-&lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;span class="p">}&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>Back in the &lt;code>drawElements()&lt;/code> function all that&amp;rsquo;s left to do is draw some interesting shapes for each feature we would like to represent.&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-JS" data-lang="JS">&lt;span class="c1">// eyes
 &lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="nx">fill&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">);&lt;/span>
@@ -658,8 +704,7 @@ in these lines. For example the number we are adding to the entire result (100 i
 &lt;span class="p">);&lt;/span>
 &lt;span class="c1">// mouth
 &lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="nx">fill&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;span class="nx">ellipse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">mouthpos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">mouthpos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">y&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">20&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">10&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;span class="nx">ellipse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">mouthpos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">mouthpos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">y&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">20&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">10&lt;/span>&lt;span class="p">);&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>We can even draw features that we don&amp;rsquo;t have specific variables for by approximating their location based off of known points.&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-JS" data-lang="JS">&lt;span class="c1">// hair
 &lt;/span>&lt;span class="c1">&lt;/span>&lt;span class="nx">fill&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">);&lt;/span>
@@ -672,8 +717,7 @@ in these lines. For example the number we are adding to the entire result (100 i
 &lt;span class="nx">eye2pos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">y&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">eye2pos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">x&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="nx">eye1pos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span>
 &lt;span class="nx">eye2pos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">x&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">eye2pos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">x&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="nx">eye1pos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="p">),&lt;/span>
 &lt;span class="nx">eye2pos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">y&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">eye2pos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">x&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="nx">eye1pos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="mi">2&lt;/span>
-&lt;span class="p">);&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;span class="p">);&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>All of this is just experimentation with a lot of trial and error but that is where a lot of the fun comes from! For an exercise try drawing really wacky hair with the &lt;a href="https://p5js.org/reference/#/p5/curve">curve() function&lt;/a> or try to draw ears. For an extra challenge you can even draw a mouth that changes its shape when you smile or frown.&lt;/p>
 &lt;p>Here is our complete &lt;code>script.js&lt;/code> file.&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-JS" data-lang="JS">&lt;span class="kd">let&lt;/span> &lt;span class="nx">button&lt;/span>&lt;span class="p">;&lt;/span>
@@ -773,8 +817,7 @@ in these lines. For example the number we are adding to the entire result (100 i
 &lt;span class="kd">function&lt;/span> &lt;span class="nx">windowResized&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="nx">resizeCanvas&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">windowWidth&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">windowWidth&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;span class="nx">background&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">255&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">213&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">135&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;span class="p">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;span class="p">}&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;video muted playsinline controls poster="/media/face-tracking.png" src="https://textfile.io/media/face-tracking.mp4">&lt;/video>
 &lt;hr>
 &lt;h2 id="moving-forward">Moving forward&lt;/h2>
