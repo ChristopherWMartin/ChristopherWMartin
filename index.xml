@@ -157,16 +157,16 @@ LLL.LL..LL&lt;/code>&lt;/pre>&lt;/div>
 ░░ ▓░░
 ▓░ ░▓&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>Then we can create an animation of our generated layouts reaching equilibrium&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="k">while&lt;/span> &lt;span class="bp">True&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="k">while&lt;/span> &lt;span class="kc">True&lt;/span>&lt;span class="p">:&lt;/span>
 &lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">system&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;clear&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;span class="n">rows&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">columns&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">popen&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;stty size&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">read&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">split&lt;/span>&lt;span class="p">()&lt;/span>
 &lt;span class="n">layout&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">generate_layout&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">int&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">columns&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nb">int&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">rows&lt;/span>&lt;span class="p">))&lt;/span>
 &lt;span class="n">seats&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">model_seats&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">layout&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;span class="n">occupied_seat_counts&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">]&lt;/span>
-&lt;span class="k">while&lt;/span> &lt;span class="bp">True&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;span class="k">while&lt;/span> &lt;span class="kc">True&lt;/span>&lt;span class="p">:&lt;/span>
 &lt;span class="n">seats&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">model_seats&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">seats&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># model the next seat layout&lt;/span>
 &lt;span class="n">layout&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">print_layout&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">seats&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;span class="k">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">layout&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">flush&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="bp">True&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># display our new seat layout&lt;/span>
+&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">layout&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">flush&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">True&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># display our new seat layout&lt;/span>
 &lt;span class="n">occupied_seats&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">layout&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">count&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;▓&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># this should be whichever&lt;/span>
 &lt;span class="c1"># char you use to represent&lt;/span>
 &lt;span class="c1"># occupied seats&lt;/span>
